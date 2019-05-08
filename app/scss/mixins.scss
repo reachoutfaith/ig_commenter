@@ -1,0 +1,53 @@
+// -------------------- Font Mixins -------------------- //
+@mixin navText {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+@mixin Title {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+@mixin Text {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+}
+
+@mixin packagesText {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+@mixin fontSet($size: 1rem, $align: left, $color: black){
+	font-size: $size;
+	text-align: $align;
+	color: $color;
+};
+
+// -------------------- Pseudo Mixins -------------------- //
+@mixin pseudo ($content: '', $display: block, $position: absolute) {
+	content: $content;
+	display: $display;
+	position: $position;
+}; 
+
+// -------------------- Background Image Function -------------------- //
+@each $name in 'icon__comment', 'icon__chat', 'icon__support' {
+	.#{$name} {
+		background: url('../images/#{$name}.svg') no-repeat;
+		display: block;
+		background-size: contain;
+	}
+};
+
+@each $name in 'stepOne', 'stepTwo', 'stepThree' {
+	.#{$name} {
+		background: url('../images/#{$name}.svg') no-repeat;
+		display: block;
+		background-size: contain;
+	}
+};
+
+
+// -------------------- Placeholder selectors -------------------- //

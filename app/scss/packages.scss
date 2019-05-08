@@ -1,0 +1,267 @@
+// -------------------- Packages Page -------------------- //
+
+.header {
+	display: flex;
+	justify-content: space-between;
+
+	&__logo {
+		border: 1px solid black;
+	}
+
+	&__nav {
+		display: flex;
+		flex-basis: 50%;
+		justify-content: flex-end;
+
+		.menu__list {
+			display: flex;
+			width: 100%;
+			justify-content: space-around;
+
+			&-item{
+				
+				list-style-type: none;
+
+				.item__link {
+					display: block;
+					padding: 1rem 1.5rem;
+					@include navText();
+					@include fontSet($bigText, center, $Text);
+					text-decoration: none;
+					position: relative;
+
+					&:before {
+						content: '';
+					    position: absolute;
+					    transition: transform .5s ease;
+						left: 0;
+					    bottom: 0;
+					    width: 100%;
+					    height: 2px;
+					    background: $linkHover;
+					    transform:  scaleX(0);
+					}
+
+					&:hover:before {
+					    transform:  scaleX(1);
+					  }
+				}
+			}
+		}
+
+	.menu__icon{
+			display: none;
+		}
+	}
+}
+
+
+.wrapper--packages {
+		background: linear-gradient(to right, #d81b60, #d41a5f, #cf1a5e, #cb195d, #c7195c, #cc3568, #d14974, #d55a80, #e17e9c, #eba1b7, #f4c2d2, #fce4ec);
+		height: 10rem;
+
+		&:before,
+		&:after {
+			content: none;
+		}
+}
+
+
+.header--packages {
+	padding: 1rem;
+	background: #FAFAFA;
+	border-bottom: 2px solid #D81B60;
+}
+
+.packages__intro {
+	display: flex;
+	justify-content: center;
+	@include Text();
+	@include fontSet(2rem, center, $Text);
+	letter-spacing: .1rem;
+	padding: 6rem 0rem 4rem 0rem;
+	margin: 0rem;
+	background: $benefitBg;
+	
+	&--icon {
+		display: block;
+		width: 2rem;
+		height: 2rem;
+		background: url('../images/timeIcon.svg') no-repeat;
+		background-size: cover;
+		margin: 0rem 1rem;
+	}
+
+	&--highlight {
+		font-weight: bold;
+		color: $iconColor;
+		margin-left: .5rem;
+	}
+}
+
+.packages {
+	display: flex;
+	justify-content: center;
+	padding: 3rem;
+	background: $benefitBg;
+
+
+	.package {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		border: 1px solid #E0E0E0;
+		border-radius: .5rem;
+		margin: 2rem 0rem;
+		width: calc(100% / 5);
+		
+		&__name {
+			@include navText();
+			@include fontSet(2rem, center, black);
+			letter-spacing: .3rem;
+			padding: 2rem 3rem;
+			text-transform: uppercase;
+		}
+
+		&__price {
+			@include navText();
+			@include fontSet(5rem, center, black);
+			letter-spacing: .1rem;
+			padding: 2.5rem 3rem;
+			display: flex;
+
+
+			&--currency {
+				@include navText();
+				@include fontSet(2.5rem, center, black);
+				margin: 0rem .5rem auto auto;
+			}
+
+			&--cents {
+				@include navText();
+				font-weight: bold;
+				@include fontSet(2.5rem, center, black);
+				margin: 0rem auto auto .5rem;
+			}
+
+		}
+
+		&__comments {
+			@include navText();
+			@include fontSet(1.8rem, center, $linkHover);
+			padding: 4rem 3rem 3rem 3rem;
+			background: #eee;
+			font-weight: bold;
+			position: relative;
+			
+			&--num {
+				font-weight: bold;
+				margin: 0rem .5rem;
+			}
+
+			&::before {
+				content: "";
+				background: url('../images/packageIcon.svg');
+				background-size: cover;
+				width: 5rem;
+				height: 5rem;
+				display: block;
+				position: absolute;
+				top: -2rem;
+				left: 40%;
+			}
+
+		}
+
+		&__list {
+			list-style-type: none;
+			padding: 0rem 3rem;
+			background: $packageBg;
+			margin: 0rem;
+
+			&-item {
+				@include packagesText();
+				@include fontSet(1.5rem, center, black);
+				padding: 1.5rem 2rem;
+				border-bottom: 1px solid #E0E0E0;
+
+			}
+		}
+
+		&__button {
+			display: flex;
+			padding: 2rem 3rem;
+			width: 70%;
+			margin: 3rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			text-decoration: none;
+			position: relative;
+			transition: all .5s ease;
+			
+			&:hover {
+				background: darken($Decoration, 5%);
+			}
+
+			&-text {
+				@include navText();
+				@include fontSet(1.5rem, right, #fff);
+				letter-spacing: .2rem;
+				text-transform: uppercase;
+				width: calc(100% - 5rem);
+				margin: auto;
+			}
+
+			&::before {
+				@include pseudo();
+				width: 3rem;
+				height: 3rem;
+				background: url('../images/buyIcon2.svg') no-repeat;
+				background-size: cover;
+				left: 1rem;
+				top: 25%;
+				z-index: 3;
+			}
+
+			&::after {
+				@include pseudo();
+				height: 100%;
+				width: 6rem;
+				top: 0rem;
+				left: 0rem;
+				border-radius: .5rem;
+				background-color: darken($Decoration, 10%);
+				transition: all .5s ease;
+				
+			}
+
+			&:hover.package__button:after {
+				background-color: #00B4B7;
+			}
+		}
+
+		.hotButton {
+			background: $linkHover;
+			transition: all .5s ease;
+
+			&:hover {
+				background: darken($linkHover, 5%);
+			}
+
+			&::after {
+				background-color: darken($linkHover, 10%);
+				transition: all .5s ease;
+			}
+
+			&:hover.hotButton::after {
+				background-color: #D8004F;
+			}
+		}
+	}
+
+	.hotPackage {
+		border: 3px solid $linkHover;
+		margin: 0rem;
+		box-shadow: 0 8px 8px 0 rgba(216, 224, 237, 0.5)
+	}
+}

@@ -1,0 +1,1467 @@
+@import "normalize";
+@import "mixins.scss";
+@import "variables.scss";
+
+// -------------------- -------------------- //
+
+// -------------------- Default settings -------------------- //
+body,
+html {
+    font-size: 10px;
+
+}
+
+// -------------------- Landing Page -------------------- //
+
+.main {
+	display: flex;
+	flex-direction: column;
+
+	.wrapper {
+		padding: 3rem 2rem;
+		background-image: url('../images/bg7new1.jpg');
+		background-size: cover;
+		position: relative;
+	
+		.header {
+			display: flex;
+			justify-content: space-between;
+
+			&__logo {
+				border: 1px solid black;
+			}
+
+			&__nav {
+				display: flex;
+				flex-basis: 50%;
+				justify-content: flex-end;
+
+				.menu__list {
+					display: flex;
+					width: 100%;
+					justify-content: space-around;
+
+					&-item{
+						
+						list-style-type: none;
+
+						.item__link {
+							display: block;
+							padding: 1rem 1.5rem;
+							@include navText();
+							@include fontSet($bigText, center, $Text);
+							text-decoration: none;
+							position: relative;
+
+							&:before {
+								content: '';
+							    position: absolute;
+							    transition: transform .5s ease;
+								left: 0;
+							    bottom: 0;
+							    width: 100%;
+							    height: 2px;
+							    background: $linkHover;
+							    transform:  scaleX(0);
+							}
+
+							&:hover:before {
+							    transform:  scaleX(1);
+							  }
+						}
+					}
+				}
+
+				.menu__icon{
+					display: none;
+				}
+			}
+		}
+
+		.main__image{
+			display: flex;
+			height: 46rem;
+			
+			
+			&-text {
+				display: flex;
+				flex-direction: column;
+				width: 30%;
+				margin: auto auto 17rem 15rem;
+
+				.headline {
+					@include Title();
+					@include fontSet(3.5rem, left, $Title);
+					letter-spacing: .1rem;
+					text-shadow: 1px 1px 1px #4B082C, 1px 1px 1px #E91E63, 2px 2px 1px #F06292;
+					margin: 2rem 0rem;
+					position: relative;
+				}
+
+				.text {
+					@include Text();
+					@include fontSet($bigText, left, $Text);
+					margin: 2rem auto 3rem auto;
+				}
+
+				.main__button {
+					@include Title();
+					@include fontSet($bigButton, center, #fff);
+					letter-spacing: .2rem;
+					text-decoration: none;
+					padding: 1.5rem 3.5rem;
+					border-radius: 4rem;
+					margin: auto;
+					transition: all .5s ease;
+					position: relative;
+					background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+  					background-size: 400% 400%;
+  					animation: gradient 5s ease infinite;
+				  	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+					&:hover {
+						transform: translateY(-3px);
+						box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16), 0 5px 8px rgba(0, 0, 0, 0.1);
+					}
+
+					@keyframes gradient {
+					  0% {
+					    background-position: 14% 0%;
+					  }
+					  50% {
+					    background-position: 87% 100%;
+					  }
+					  100% {
+					    background-position: 14% 0%;
+					  }
+					}
+				}
+			}
+		}
+
+		&::after {
+			@include pseudo();
+			width: 0;
+			height: 0;
+			left: 0rem;
+			bottom: 0rem;
+			border-bottom: 40px solid $benefitBg; 
+			border-right: 700px solid transparent;	
+		}
+		&::before {
+			@include pseudo();
+			width: 0;
+			height: 0;
+			right: 0rem;
+			bottom: 0rem;
+			border-bottom: 40px solid $benefitBg; 
+			border-left: 700px solid transparent;	
+		}
+
+	}
+
+	&__benefits {
+		display: flex;
+		justify-content: space-around;
+		padding: 3rem 2rem;
+		background: $benefitBg;
+
+
+		.benefit {
+			display: flex;
+			flex-direction: column;
+			flex-basis: 20%;
+			padding: 2rem 1rem;
+			transition: all .5s ease;
+
+			&::after {
+				content: '';
+				display: block;
+				height: .3rem;
+				width: 15%;
+				background: $linkHover;
+				margin: auto auto 0rem auto;
+				transition: all .5s ease;
+			}
+
+			&:hover .benefit__title {
+				color: $Hover;
+			}
+
+			&:hover::after {
+				background: $Hover;
+			}
+
+			&:hover .benefit__icon {
+				opacity: .8;
+			}
+
+			&__icon {
+				margin: 0rem auto;
+				width: 10rem;
+				height: 10rem;
+				transition: all .5s ease;
+
+			}
+
+
+			&__title {
+				@include Title();
+				@include fontSet(2rem, center, $benefitTitle);
+				margin: 3rem 0rem 0rem 0rem;
+				transition: all .5s ease;
+
+			}
+
+			&__text {
+				@include Text();
+				@include fontSet($bigText, center, $Text);
+				margin-top: 2rem;
+				padding: 1rem;
+			}
+		}
+	}
+}
+
+.instruction{
+	padding: 3rem 0rem;
+	background: $benefitBg;
+
+	.title {
+		@include Title();
+		@include fontSet($bigTitle, center, $iconColor);
+		margin-bottom: 3rem;
+		letter-spacing: .2rem;
+	}
+
+	&__steps {
+		display: flex;
+		flex-direction: column;
+		
+		.diagonal__bg {
+			margin: 2rem 0rem;
+
+			.step {
+				display: flex;
+				padding: 0rem 2rem;
+
+
+
+				&__svg{
+					width: 450px;
+					height: 450px;
+					
+				}
+
+				&__svg--animated {
+					animation-name: svgAppear;
+					animation-duration: .7s;
+					animation-timing-function: linear;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+
+					@keyframes svgAppear {
+							0% { 
+								opacity: 0;
+								transform: translateY(30px); 
+							}
+							100% {
+								opacity: 1;
+								transform: translateY(0px);
+							}
+					}
+				}
+
+				
+
+				&__text {
+					margin: auto 3rem;
+
+					.step__subtitle {
+						@include Title();
+						@include fontSet($bigTitle, center, #129490);
+						margin: 1rem 0rem;
+						padding: 1rem 1.5rem;
+						letter-spacing: .1rem;
+						position: relative;
+					}
+
+					.step__subtitle--animated {
+
+						&:after, &:before {
+							@include pseudo();
+							height: 2px;
+							background: $linkHover;
+							animation-name: getLonger11Rem;
+							animation-duration: .7s;
+							animation-timing-function: linear;
+							animation-iteration-count: 1;
+							animation-fill-mode: forwards;
+						}
+
+						&:after {
+							bottom: 0rem;
+							left: 40%;
+						}
+
+						&:before {
+							top: 0rem;
+							left: 40%;
+						}
+
+						@keyframes getLonger11Rem {
+							0% { width: 0rem;}
+							100% { width: 11rem;}
+						}
+
+						@media (min-width: 851px) and (max-width: 979px) {
+								&:before, &:after {
+									left: 33%;
+									height: 2px;
+									animation-name: getLonger15Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger15Rem {
+									0% { width: 0rem;}
+									100% { width: 15rem;}
+								}
+						}
+
+						@media (min-width: 767px) and (max-width: 850px){
+								&:before, &:after {
+									left: 30%;
+									height: 2px;
+									animation-name: getLonger15Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger15Rem {
+									0% { width: 0rem;}
+									100% { width: 15rem;}
+								}
+						}
+
+						@media (min-width: 670px) and (max-width: 767px){
+							&:before, &:after {
+									left: 35%;
+									height: 2px;
+									animation-name: getLonger17Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger17Rem {
+									0% { width: 0rem;}
+									100% { width: 17rem;}
+								}
+						}
+
+						@media (min-width: 550px) and (max-width: 669px){
+								&:before, &:after {
+									left: 32%;
+									height: 2px;
+									animation-name: getLonger16Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger16Rem {
+									0% { width: 0rem;}
+									100% { width: 16rem;}
+								}
+						}
+
+						@media (min-width: 450px) and (max-width: 549px){
+								&:before, &:after {
+									left: 30%;
+									height: 2px;
+									animation-name: getLonger17Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger17Rem {
+									0% { width: 0rem;}
+									100% { width: 17rem;}
+								}
+						}
+
+						@media (min-width: 400px) and (max-width: 449px){
+								&:before, &:after {
+									left: 27%;
+									height: 2px;
+									animation-name: getLonger18Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger18Rem {
+									0% { width: 0rem;}
+									100% { width: 18rem;}
+								}
+						}
+
+						@media (min-width: 366px) and (max-width: 399px){
+								&:before, &:after {
+									left: 24%;
+									height: 2px;
+									animation-name: getLonger19Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger19Rem {
+									0% { width: 0rem;}
+									100% { width: 19rem;}
+								}
+						}
+
+						@media screen and (max-width: 365px){
+								&:before, &:after {
+									left: 23%;
+									height: 2px;
+									animation-name: getLonger19Rem;
+									animation-duration: .7s;
+									animation-timing-function: linear;
+									animation-iteration-count: 1;
+									animation-fill-mode: forwards;
+
+								}
+							
+								@keyframes getLonger19Rem {
+									0% { width: 0rem;}
+									100% { width: 19rem;}
+								}
+						}
+					}
+
+					.step__list {
+						padding: 1rem 2rem;
+
+						&-item {
+							list-style-type: decimal;
+							@include Text();
+							@include fontSet( $bigList);
+							margin: 2rem 0rem;
+							padding: 0rem 1rem;
+						}
+					}
+				}
+			}
+
+			.step--odd {
+				transform:  rotate(-2deg) skew(-2deg);
+				flex-direction: row;
+			}
+
+			.step--even {
+				transform:  rotate(2deg) skew(2deg);
+				flex-direction: row-reverse;
+			}
+
+			.step--oddChanged {
+				transform:  rotate(2deg) skew(2deg);
+				flex-direction: row;
+			}
+		}
+
+		.diagonal__bg--odd {
+			transform:  rotate(2deg) skew(2deg);
+			background-image: linear-gradient(to right bottom, #58defb, #70e2fb, #85e5fb, #97e9fc, #a7ecfc, #b6eefe, #c4f0ff, #d1f2ff, #dff3ff, #ecf4ff, #f5f7fd, #fafafa);
+		}
+
+		.diagonal__bg--even {
+			transform:  rotate(-2deg) skew(-2deg);
+			
+		}
+
+		.diagonal__bg--oddChanged {
+			transform:  rotate(-2deg) skew(-2deg);
+			background-image: linear-gradient(to right bottom, #58defb, #70e2fb, #85e5fb, #97e9fc, #a7ecfc, #b6eefe, #c4f0ff, #d1f2ff, #dff3ff, #ecf4ff, #f5f7fd, #fafafa);
+		}
+	}
+}
+
+.comments {
+	padding: 3rem 2rem 5rem 2rem;
+	background: linear-gradient(to bottom, #fafafa, #f6f6f6, #f2f2f2, #efefef, #ebebeb);
+	
+
+	&__slider {
+		
+
+		.slide {
+			width: 100%;
+			height: 200px;
+			
+
+			.card__user {
+				display: flex;
+				width: 60%;
+				margin: 0rem auto;
+
+
+
+				.user__image {
+					width: 100px;
+					height: 100px;
+					border-radius: 50%;
+
+				}
+
+				.user__info{
+					flex-basis: 75%;
+					margin-left: 5rem;
+					display: flex;
+					flex-direction: column;
+
+					.user__comment {
+						display: block;
+						@include Text();
+						@include fontSet($bigButton, left, $Text);
+						padding: 0rem 2rem;
+						position: relative;
+
+						&:before, &:after {
+							@include pseudo();
+							width: 4rem;
+							height: 4rem;
+						}
+
+						&:before {
+							background: url('../images/quote2.svg') no-repeat;
+							background-size: contain;
+							top: -2rem;
+							left: -2rem;
+						}
+
+						&:after {
+							background: url('../images/quote2End.svg') no-repeat;
+							background-size: contain;
+							bottom: -2rem;
+							right: 0rem;
+						}
+					}
+
+					.user__name {
+						@include Title();
+						@include fontSet($bigText, left, $Decoration);
+						padding: 1rem 4rem;
+						position: relative;
+
+						&:before {
+							@include pseudo();
+							top: 0rem;
+							left: 0rem;
+							width: 3rem;
+							height: 3rem;
+							background: url('../images/igIcon.svg') no-repeat;
+							background-size: contain;
+						}
+					}
+				}
+			}
+		}
+
+		.flickity-button {
+			width: 4rem;
+			height: 4rem;
+			border: none;
+			background: transparent;
+			border-radius: 50%;
+			transition: all .3s ease;
+
+			&:hover .flickity-button-icon {
+				fill: lighten($iconColor, 15%);
+				opacity: .7;
+			}
+		}
+
+		.flickity-button-icon {
+			fill: $iconColor;
+		}
+
+		.flickity-prev-next-button.previous {
+			top: 50%;
+		  	left: 30px;
+		}
+		.flickity-prev-next-button.next {
+			top: 50%;
+		  	right: 30px;
+		}
+
+		.flickity-page-dots .dot.is-selected {
+			background: $iconColor;
+		}
+	}
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem 2rem 1rem 2rem;
+	justify-content: center;
+	background: $footerBg;
+
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		padding-top: 2rem;
+		margin: 0rem auto;
+
+		.telegram {
+			display: flex;
+			justify-content: center;
+			
+
+			&__text {
+				@include Text();
+				@include fontSet($bigButton, center, #eee);
+				letter-spacing: .1rem;
+				margin-right: 1rem;
+
+			}
+
+			&__link{
+				@include Text();
+				@include fontSet($bigButton, center, $Decoration);
+				letter-spacing: .1rem;
+				text-decoration: none;
+				position: relative;
+				transition: color .3s ease;
+				padding-left: 3.5rem;
+
+
+				&:hover {
+					color: lighten($Decoration, 15%);
+				}
+
+				&:before {
+					@include pseudo();
+					top: 0rem;
+					left: 0rem;
+					background: url('../images/telegram.svg');
+					width: 3rem;
+					height: 3rem;
+					background-size: contain;
+					margin-right: 2rem;
+				}
+			}
+
+		}
+
+		.footer__links {
+			display: flex;
+			justify-content: space-between;
+			margin: 4rem 0rem;
+			
+			
+			.footer__link {
+				@include navText();
+				@include fontSet($bigList, center, #E0E0E0);
+				text-decoration: none;
+				margin: 0rem 4rem;
+				transition: color .3s ease;
+
+				&:hover {
+					color: $Hover;
+					
+				}
+			}
+
+		}
+	}
+
+	&__copyright {
+		margin: 0rem auto;
+
+		.copyright{
+			@include Text();
+			@include fontSet(1rem, center, #757575);
+		}
+	}
+}
+
+// -------------------- Mediaqueries -------------------- //
+
+@media (min-width: 980px) and (max-width: 1070px) {
+	.main {
+		.wrapper {
+			background-image: url('../images/bg7Shorter.jpg');
+
+			&::before{
+				border-left: 550px solid transparent;
+			}
+
+			&::after{
+				border-right: 550px solid transparent;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.main {
+		
+		.wrapper {
+			background-image: url('../images/bg7ShorterTry.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: right bottom;
+			padding: 4rem 2rem;
+
+			&::before, &::after {
+				bottom: -1px;
+			}
+
+			.header {
+				&__nav {
+					flex-basis: 70%;
+					justify-content: space-between;
+					
+					.menu__list {
+						&-item {
+							.item__link {
+								font-size: $mbText;
+							}
+						}
+					}
+				}
+			}
+
+			.main__image {
+				height: 100%;
+				padding-bottom: 10rem;
+
+				&-text {
+					width: 45%;
+					margin: 5rem auto auto 15rem;
+
+					.headline {
+						font-size: 3.7rem;
+					}
+
+					.text {
+						font-size: $mbText;
+					}
+
+					.main__button {
+						font-size: $mbButton;
+						padding: 2rem 4rem;
+					}
+				}
+			}
+		}
+
+		&__benefits {
+			.benefit {
+				&__title {
+					font-size: 2.2rem;
+				}
+
+				&__text {
+					font-size: $mbText;
+				}
+			}
+		}
+	}
+
+	.instruction {
+		.title{
+			font-size: $mbTitle;
+		}
+
+		&__steps {
+			.diagonal__bg{
+				.step{
+
+					&__text {
+						width: 50%;
+						margin: auto 0rem;
+
+						.step__subtitle {
+							font-size: $mbTitle;
+						}
+							
+					}
+
+						.step__list {
+							&-item {
+								font-size: $mbList;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	.comments{
+		&__slider {
+			.slide {
+				.card__user {
+					.user__info {
+						.user__comment {
+							font-size: $mbList;
+						}
+						.user__name {
+							font-size: $mbText;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer {
+		&__info {
+			.telegram {
+				&__text,
+				&__link {
+					font-size: $mbButton;
+				}
+			}
+
+			.footer__links {
+				.footer__link {
+					font-size: $mbList;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.main {
+		
+		.wrapper {
+
+			&::before, &::after {
+				content: none;
+			}
+
+
+			.header {
+				&__nav {
+					flex-basis: 80%;
+					justify-content: space-between;
+					
+					.menu__list {
+						&-item {
+							.item__link {
+								font-size: $mbText;
+							}
+						}
+					}
+				}
+			}
+
+			.main__image {
+				height: 100%;
+				padding-bottom: 7rem;
+
+				&-text {
+					width: 55%;
+					margin: 3rem auto 0rem auto;
+
+					.headline {
+						font-size: 3.7rem;
+					}
+
+					.text {
+						font-size: $mbText;
+						margin: 0rem auto;
+					}
+
+					.main__button {
+						font-size: $mbButton;
+						padding: 2rem 4rem;
+						margin: 4rem auto;
+					}
+				}
+			}
+		}
+
+		&__benefits {
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 0rem 2rem;
+
+			.benefit {
+				margin: auto;
+				flex-basis: 45%;
+
+				&__title {
+					font-size: 2.2rem;
+				}
+
+				&__text {
+					font-size: $mbText;
+				}
+			}
+		}
+	}
+
+	.instruction {
+		.title{
+			font-size: $mbTitle;
+			margin-bottom: 2rem;
+		}
+
+		&__steps {
+			.diagonal__bg{
+				margin: 0rem;
+
+				.step{
+					flex-direction: column;
+
+					&__svg{
+						margin: 0rem auto;
+					}
+
+					&__text {
+						width: 80%;
+						margin: 0rem auto;
+
+						.step__subtitle {
+							font-size: $mbTitle;
+						}
+							
+					}
+
+						.step__list {
+							&-item {
+								font-size: $mbList;
+							}
+						}
+					}
+					&::nth-child(2){
+						padding: 1rem 0rem;
+					}
+				}
+			}
+		}
+
+	.comments{
+		padding: 3rem 1rem 4rem 1rem;
+
+		&__slider {
+			.slide {
+				height: 250px;
+
+				.card__user {
+					width: 75%;
+
+					.user__info {
+						.user__comment {
+							font-size: $mbList;
+						}
+						.user__name {
+							font-size: $mbText;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer {
+		&__info {
+			.telegram {
+				&__text,
+				&__link {
+					font-size: $mbButton;
+				}
+			}
+
+			.footer__links {
+				.footer__link {
+					font-size: $mbList;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 450px) and (max-width: 549px){
+	.main {
+		
+		.wrapper {
+
+			&::before, &::after {
+				content: none;
+			}
+
+			.header {
+				&__nav {
+					flex-basis: 80%;
+					justify-content: space-between;
+					position: relative;
+					flex-direction: column;
+					
+					.menu__list {
+						display: flex;
+						width: 50%;
+						position: absolute;
+						z-index: 5;
+						padding-left: 0rem;
+						top: 3rem;
+						right: -1.5rem;
+						flex-direction: column;
+						align-items: flex-end;
+						opacity: 0;
+						visibility: hidden;
+						transition: all .5s ease;
+						
+
+						&-item {
+							width: 100%;
+							margin: .2rem 0rem;
+							box-shadow: 1px 2px 2px 0px darken($iconColor, 20%);
+							border-radius: .3rem;
+
+							.item__link {
+								background: $iconColor;
+								border-radius: .3rem;
+								color: #fff;
+								font-size: $mbText;
+								padding: 2rem 3.5rem;
+								transition: all .5s ease;
+
+								&:before{
+									content: none;
+								}
+
+								&:hover,
+								&:focus {
+									background: lighten($iconColor, 15%);
+								}
+
+							}
+						}
+					}
+
+					.menu__list--opened {
+						visibility: visible;
+						transition: all .5s ease;
+						opacity: 1;
+
+						.menu__list-item {
+							.item__link {
+								box-shadow: 1px 2px 2px 0px darken($iconColor, 20%);
+							}
+						}
+					}
+
+					.menu__icon {
+						display: block;
+						width: 4rem;
+						height: 4rem;
+						background: url('../images/menuSvg2.svg') no-repeat;
+						background-size: contain;
+						margin-left: auto;
+					}
+				}
+			}
+
+			.main__image {
+				height: 100%;
+				padding-bottom: 7rem;
+
+				&-text {
+					width: 55%;
+					margin: 3rem auto 0rem auto;
+
+					.headline {
+						font-size: 3.7rem;
+					}
+
+					.text {
+						font-size: $mbText;
+						margin: 0rem auto;
+					}
+
+					.main__button {
+						font-size: $mbButton;
+						padding: 2rem 4rem;
+						margin: 4rem auto;
+					}
+				}
+			}
+		}
+
+		&__benefits {
+			flex-wrap: nowrap;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0rem 2rem;
+
+			.benefit {
+				margin: 2rem auto;
+				flex-basis: 45%;
+
+				&__title {
+					font-size: 2.2rem;
+				}
+
+				&__text {
+					font-size: $mbText;
+				}
+			}
+		}
+	}
+
+	.instruction {
+		.title{
+			font-size: $mbTitle;
+			margin-bottom: 2rem;
+		}
+
+		&__steps {
+			.diagonal__bg{
+				margin: 0rem;
+
+				.step{
+					flex-direction: column;
+
+					&__svg{
+						margin: 0rem auto;
+						width: 300px;
+					}
+
+					&__text {
+						width: 90%;
+						margin: 0rem auto;
+
+						.step__subtitle {
+							font-size: $mbTitle;
+						}
+							
+					}
+
+						.step__list {
+							&-item {
+								font-size: $mbList;
+							}
+						}
+					}
+					&::nth-child(2){
+						padding: 1rem 0rem;
+					}
+				}
+			}
+		}
+
+	.comments{
+		padding: 3rem 1rem 4rem 1rem;
+
+		&__slider {
+			.slide {
+				height: 300px;
+
+				.card__user {
+					width: 85%;
+
+					.user__info {
+						.user__comment {
+							font-size: $mbList;
+						}
+						.user__name {
+							font-size: $mbText;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer {
+		&__info {
+			.telegram {
+				&__text,
+				&__link {
+					font-size: $mbButton;
+				}
+			}
+
+			.footer__links {
+				display: flex;
+				flex-direction: column;
+
+				.footer__link {
+					font-size: $mbList;
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 449px) {
+	.main {
+		
+		.wrapper {
+
+			&::before, &::after {
+				content: none;
+			}
+
+			.header {
+				&__nav {
+					flex-basis: 100%;
+					justify-content: space-between;
+					position: relative;
+					flex-direction: column;
+					
+					.menu__list {
+						display: flex;
+						width: 100%;
+						position: absolute;
+						z-index: 5;
+						padding-left: 0rem;
+						top: 4rem;
+						right: -1.5rem;
+						flex-direction: column;
+						align-items: flex-end;
+						opacity: 0;
+						visibility: hidden;
+						transition: all .5s ease;
+						
+
+						&-item {
+							width: 100%;
+							margin: .2rem 0rem;
+							box-shadow: 1px 2px 2px 0px darken($iconColor, 20%);
+							border-radius: .3rem;
+
+							.item__link {
+								background: $iconColor;
+								border-radius: .3rem;
+								color: #fff;
+								font-size: $mbText;
+								padding: 2rem 3.5rem;
+								transition: all .5s ease;
+
+								&:before{
+									content: none;
+								}
+
+								&:hover,
+								&:focus {
+									background: lighten($iconColor, 15%);
+								}
+
+							}
+						}
+					}
+
+					.menu__list--opened {
+						visibility: visible;
+						transition: all .5s ease;
+						opacity: 1;
+					}
+
+					.menu__icon {
+						display: block;
+						width: 4rem;
+						height: 4rem;
+						background: url('../images/menuSvg2.svg') no-repeat;
+						background-size: contain;
+						margin-left: auto;
+					}
+				}
+			}
+
+			.main__image {
+				height: 100%;
+				padding-bottom: 7rem;
+
+				&-text {
+					width: 90%;
+					margin: 4rem auto 0rem auto;
+
+					.headline {
+						font-size: 3.7rem;
+
+					}
+
+					.text {
+						font-size: $mbText;
+						margin: 2rem auto;
+						color: #fff;
+					}
+
+					.main__button {
+						font-size: $mbButton;
+						padding: 2rem 4rem;
+						margin: 4rem auto;
+					}
+				}
+			}
+		}
+
+		&__benefits {
+			flex-wrap: nowrap;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0rem 2rem;
+
+			.benefit {
+				margin: 2rem auto;
+				flex-basis: 45%;
+
+				&__title {
+					font-size: 2.2rem;
+				}
+
+				&__text {
+					font-size: $mbText;
+				}
+			}
+		}
+	}
+
+	.instruction {
+		.title{
+			font-size: $mbTitle;
+			margin-bottom: 2rem;
+		}
+
+		&__steps {
+			.diagonal__bg{
+				margin: 0rem;
+
+				.step{
+					flex-direction: column;
+
+					&__svg{
+						margin: 0rem auto;
+						width: 250px;
+						height: 250px;
+					}
+
+					&__text {
+						width: 100%;
+						margin: 0rem;
+
+						.step__subtitle {
+							font-size: $mbTitle;
+						}
+							
+					}
+
+						.step__list {
+							&-item {
+								font-size: $mbList;
+							}
+						}
+					}
+					&::nth-child(2){
+						padding: 1rem 0rem;
+					}
+				}
+			}
+		}
+
+	.comments{
+		padding: 3rem 1rem 4rem 1rem;
+
+		&__slider {
+			.slide {
+				height: 300px;
+
+				.card__user {
+					flex-direction: column;
+					width: 100%;
+
+					.user__image {
+						margin: 0rem auto;
+					}
+
+					.user__info {
+						margin: 2rem;
+
+						.user__comment {
+							font-size: $mbList;
+							text-align: center;
+						}
+						.user__name {
+							box-sizing: border-box;
+							margin: 0rem auto;
+							font-size: $mbText;
+							
+						}
+					}
+				}
+			}
+
+			.flickity-prev-next-button.previous {
+				top: 50%;
+			  	left: 2px;
+			}
+			.flickity-prev-next-button.next {
+				top: 50%;
+			  	right: 2px;
+			}
+
+			.flickity-page-dots {
+				bottom: -3rem;
+			}
+		}
+	}
+
+	.footer {
+		&__info {
+			.telegram {
+				&__text,
+				&__link {
+					font-size: $mbButton;
+				}
+			}
+
+			.footer__links {
+				display: flex;
+				flex-direction: column;
+				
+				
+				
+				.footer__link {
+					font-size: $mbList;
+					margin: 2rem 0rem;
+				}
+			}
+		}
+	}
+}
+
+
+// -------------------- Importing other pages -------------------- //
+
+@import "packages";
