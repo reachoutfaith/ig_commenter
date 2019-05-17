@@ -2,16 +2,16 @@
 @import "mixins.scss";
 @import "variables.scss";
 
-// -------------------- -------------------- //
+/* -------------------- -------------------- */
 
-// -------------------- Default settings -------------------- //
+/* -------------------- Default settings -------------------- */
 body,
 html {
     font-size: 10px;
 
 }
 
-// -------------------- Landing Page -------------------- //
+/* -------------------- Landing Page -------------------- */
 
 .main {
 	display: flex;
@@ -707,7 +707,7 @@ html {
 	}
 }
 
-// -------------------- Mediaqueries -------------------- //
+/* -------------------- Mediaqueries -------------------- */
 
 @media (min-width: 980px) and (max-width: 1070px) {
 	.main {
@@ -1462,6 +1462,6 @@ html {
 }
 
 
-// -------------------- Importing other pages -------------------- //
+/* -------------------- Importing other pages -------------------- */
 
 @import "packages";

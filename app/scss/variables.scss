@@ -8,16 +8,18 @@ $linkHover: #D81B60;
 $iconColor: #C2185B;
 $benefitBg: #fafafa;
 $footerBg: #0C4243;
-$packageBg: linear-gradient(to bottom, #eeeeee, #f1f1f1, #f4f4f4, #f7f7f7, #fafafa);;
+$packageBg: linear-gradient(to bottom, #eeeeee, #f1f1f1, #f4f4f4, #f7f7f7, #fafafa);
+$packageButton: #A9AABC;
 
 
-// min-width: 980px;
+
+/* min-width: 980px; */
 $bigText: 1.4rem; //nav,mainText,benefitText,userName
 $bigTitle: 3rem; //instrTitle,stepSubtitle
 $bigList: 1.5rem; // instList, footerLink
 $bigButton: 1.6rem; //mainButton,userComment,footerText
 
-//min-width: 768px;
+/*min-width: 768px; */
 $mbText: 1.5rem; // medium-big
 $mbTitle: 3.2rem;
 $mbList: 1.5rem;

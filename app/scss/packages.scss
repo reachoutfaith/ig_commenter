@@ -1,4 +1,4 @@
-// -------------------- Packages Page -------------------- //
+/* -------------------- Packages Page -------------------- */
 
 .header {
 	display: flex;
@@ -73,195 +73,374 @@
 	border-bottom: 2px solid #D81B60;
 }
 
-.packages__intro {
+.packages__wrapper	{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	@include Text();
-	@include fontSet(2rem, center, $Text);
-	letter-spacing: .1rem;
-	padding: 6rem 0rem 4rem 0rem;
-	margin: 0rem;
 	background: $benefitBg;
-	
-	&--icon {
-		display: block;
-		width: 2rem;
-		height: 2rem;
-		background: url('../images/timeIcon.svg') no-repeat;
-		background-size: cover;
-		margin: 0rem 1rem;
+	padding: 2rem 0rem;
+
+	.packages__intro {
+		display: flex;
+		justify-content: center;
+		@include Text();
+		@include fontSet(2rem, center, $Text);
+		letter-spacing: .1rem;
+		margin: 4rem auto;
+
+		&--text {
+			margin: 0rem .3rem;
+			display: flex;
+		}
+		
+		&--icon {
+			display: block;
+			width: 2rem;
+			height: 2rem;
+			background: url('../images/timeIcon.svg') no-repeat;
+			background-size: cover;
+			margin: 0rem 1rem;
+		}
+
+		&--highlight {
+			font-weight: bold;
+			color: $iconColor;
+			margin-left:  .5rem;
+		}
 	}
 
-	&--highlight {
-		font-weight: bold;
-		color: $iconColor;
-		margin-left: .5rem;
+	.packages {
+		display: flex;
+		justify-content: center;
+		padding: 3rem 2rem;
+
+		.package {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			border: 1px solid #E0E0E0;
+			border-radius: .5rem;
+			margin: 2rem 0rem;
+			width: calc(100% / 5);
+			
+			&__name {
+				@include navText();
+				@include fontSet(2rem, center, black);
+				letter-spacing: .3rem;
+				padding: 2rem 3rem;
+				text-transform: uppercase;
+			}
+
+			&__price {
+				@include navText();
+				@include fontSet(5rem, center, black);
+				letter-spacing: .1rem;
+				padding: 2.5rem 3rem;
+				display: flex;
+
+
+				&--currency {
+					@include navText();
+					@include fontSet(2.5rem, center, black);
+					margin: 0rem .5rem auto auto;
+				}
+
+				&--cents {
+					@include navText();
+					font-weight: bold;
+					@include fontSet(2.5rem, center, black);
+					margin: 0rem auto auto .5rem;
+				}
+
+			}
+
+			&__comments {
+				@include navText();
+				@include fontSet(1.8rem, center, $linkHover);
+				padding: 4rem 3rem 3rem 3rem;
+				background: #eee;
+				font-weight: bold;
+				position: relative;
+				
+				&--num {
+					font-weight: bold;
+					margin: 0rem .5rem;
+				}
+
+				&::before {
+					content: "";
+					background: url('../images/packageIcon.svg');
+					background-size: cover;
+					width: 5rem;
+					height: 5rem;
+					display: block;
+					position: absolute;
+					top: -2rem;
+					left: 40%;
+				}
+
+			}
+
+			&__list {
+				list-style-type: none;
+				padding: 0rem 3rem;
+				background: $packageBg;
+				margin: 0rem;
+
+				&-item {
+					@include packagesText();
+					@include fontSet(1.5rem, center, black);
+					padding: 1.5rem 2rem;
+					border-bottom: 1px solid #E0E0E0;
+
+				}
+			}
+
+			&__button {
+				display: flex;
+				padding: 2rem 3rem;
+				width: 70%;
+				margin: 3rem auto;
+				border-radius: .5rem;
+				background: $packageButton;
+				text-decoration: none;
+				position: relative;
+				transition: all .5s ease;
+				
+				&:hover {
+					background: darken($packageButton, 5%);
+				}
+
+				&-text {
+					@include navText();
+					@include fontSet(1.5rem, right, #fff);
+					letter-spacing: .2rem;
+					text-transform: uppercase;
+					width: calc(100% - 5rem);
+					margin: auto;
+				}
+
+				&::before {
+					@include pseudo();
+					width: 3rem;
+					height: 3rem;
+					background: url('../images/buyIcon2.svg') no-repeat;
+					background-size: cover;
+					left: 1rem;
+					top: 25%;
+					z-index: 3;
+				}
+
+				&::after {
+					@include pseudo();
+					height: 100%;
+					width: 6rem;
+					top: 0rem;
+					left: 0rem;
+					border-radius: .5rem;
+					background-color: darken($packageButton, 10%);
+					transition: all .5s ease;
+					
+				}
+
+				&:hover.package__button:after {
+					background-color: $packageButton;
+				}
+			}
+
+		}
+
+		.hotPackage {
+			border: 3px solid $Decoration;
+			margin: 0rem;
+			box-shadow: 0 8px 8px 0 rgba(216, 224, 237, 0.5);
+			position: relative;
+
+			&:after {
+				@include pseudo(); 
+				top:0rem;
+				right: 0rem;
+				width: 0;
+				height: 0;
+				border-top: 50px solid $Decoration; 
+				border-left: 50px solid transparent;
+
+			}
+
+			&:before{
+				@include pseudo(); 
+				content: 'hot';
+				@include navText();
+				top:1rem;
+				right: 0rem;
+				z-index: 5;
+				text-transform: uppercase;
+				@include fontSet(1.3rem, center, #fff);
+				transform: rotate(50deg);
+			}
+
+			.package__name {
+				color: $Decoration;
+				font-weight: bold;
+				text-shadow: 1px 1px 1px darken($Decoration, 15%);
+			}
+
+			.package__button {
+				background: $Decoration;
+				transition: all .5s ease;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
+
+				&::after {
+					background-color: darken($Decoration, 10%);
+					transition: all .5s ease;
+				}
+
+				&:hover.hotButton::after {
+					background-color: #00B4B7;
+				}
+			}
+		}
+
+		.salePackage {
+			border: 3px solid $linkHover;
+			margin: 0rem;
+			box-shadow: 0 8px 8px 0 rgba(216, 224, 237, 0.5);
+			position: relative;
+
+			&:after {
+				@include pseudo(); 
+				top:0rem;
+				right: 0rem;
+				width: 0;
+				height: 0;
+				border-top: 50px solid $linkHover; 
+				border-left: 50px solid transparent;
+
+			}
+
+			&:before{
+				@include pseudo(); 
+				content: 'sale';
+				@include navText();
+				top:1rem;
+				right: 0rem;
+				z-index: 5;
+				text-transform: uppercase;
+				@include fontSet(1.3rem, center, #fff);
+				transform: rotate(50deg);
+			}
+
+			.package__name {
+				color: $linkHover;
+				font-weight: bold;
+				text-shadow: 1px 1px 1px darken($linkHover, 15%);
+			}
+
+			.package__button {
+				background: $linkHover;
+				transition: all .5s ease;
+
+				&:hover {
+					background: darken($linkHover, 5%);
+				}
+
+				&::after {
+					background-color: darken($linkHover, 10%);
+					transition: all .5s ease;
+				}
+
+				&:hover.hotButton::after {
+					background-color: #D8004F;
+				}
+			}
+		}
 	}
 }
 
-.packages {
-	display: flex;
-	justify-content: center;
-	padding: 3rem;
-	background: $benefitBg;
+/* -------------------- Mediaqueries -------------------- */
 
+@media (min-width: 980px) and (max-width: 1070px) {
+	.packages {
+		padding: 2rem;
+		flex-wrap: wrap;
+		.package {
+			flex-basis: 30%;
+			margin: 1rem !important;
+		}
+	}
+}
 
-	.package {
-		display: flex;
+@media (min-width: 768px) and (max-width: 979px) {
+	.packages__intro {
+		margin: 2rem auto !important;
+		padding: 1rem;
 		flex-direction: column;
-		justify-content: center;
-		border: 1px solid #E0E0E0;
-		border-radius: .5rem;
-		margin: 2rem 0rem;
-		width: calc(100% / 5);
-		
-		&__name {
-			@include navText();
-			@include fontSet(2rem, center, black);
-			letter-spacing: .3rem;
-			padding: 2rem 3rem;
-			text-transform: uppercase;
-		}
+		text-align: center;
 
-		&__price {
-			@include navText();
-			@include fontSet(5rem, center, black);
-			letter-spacing: .1rem;
-			padding: 2.5rem 3rem;
-			display: flex;
-
-
-			&--currency {
-				@include navText();
-				@include fontSet(2.5rem, center, black);
-				margin: 0rem .5rem auto auto;
-			}
-
-			&--cents {
-				@include navText();
-				font-weight: bold;
-				@include fontSet(2.5rem, center, black);
-				margin: 0rem auto auto .5rem;
-			}
-
-		}
-
-		&__comments {
-			@include navText();
-			@include fontSet(1.8rem, center, $linkHover);
-			padding: 4rem 3rem 3rem 3rem;
-			background: #eee;
-			font-weight: bold;
-			position: relative;
-			
-			&--num {
-				font-weight: bold;
-				margin: 0rem .5rem;
-			}
-
-			&::before {
-				content: "";
-				background: url('../images/packageIcon.svg');
-				background-size: cover;
-				width: 5rem;
-				height: 5rem;
-				display: block;
-				position: absolute;
-				top: -2rem;
-				left: 40%;
-			}
-
-		}
-
-		&__list {
-			list-style-type: none;
-			padding: 0rem 3rem;
-			background: $packageBg;
-			margin: 0rem;
-
-			&-item {
-				@include packagesText();
-				@include fontSet(1.5rem, center, black);
-				padding: 1.5rem 2rem;
-				border-bottom: 1px solid #E0E0E0;
-
-			}
-		}
-
-		&__button {
-			display: flex;
-			padding: 2rem 3rem;
-			width: 70%;
-			margin: 3rem auto;
-			border-radius: .5rem;
-			background: $Decoration;
-			text-decoration: none;
-			position: relative;
-			transition: all .5s ease;
-			
-			&:hover {
-				background: darken($Decoration, 5%);
-			}
-
-			&-text {
-				@include navText();
-				@include fontSet(1.5rem, right, #fff);
-				letter-spacing: .2rem;
-				text-transform: uppercase;
-				width: calc(100% - 5rem);
-				margin: auto;
-			}
-
-			&::before {
-				@include pseudo();
-				width: 3rem;
-				height: 3rem;
-				background: url('../images/buyIcon2.svg') no-repeat;
-				background-size: cover;
-				left: 1rem;
-				top: 25%;
-				z-index: 3;
-			}
-
-			&::after {
-				@include pseudo();
-				height: 100%;
-				width: 6rem;
-				top: 0rem;
-				left: 0rem;
-				border-radius: .5rem;
-				background-color: darken($Decoration, 10%);
-				transition: all .5s ease;
-				
-			}
-
-			&:hover.package__button:after {
-				background-color: #00B4B7;
-			}
-		}
-
-		.hotButton {
-			background: $linkHover;
-			transition: all .5s ease;
-
-			&:hover {
-				background: darken($linkHover, 5%);
-			}
-
-			&::after {
-				background-color: darken($linkHover, 10%);
-				transition: all .5s ease;
-			}
-
-			&:hover.hotButton::after {
-				background-color: #D8004F;
-			}
+		&--text{
+			margin: .5rem auto !important;
 		}
 	}
-
-	.hotPackage {
-		border: 3px solid $linkHover;
-		margin: 0rem;
-		box-shadow: 0 8px 8px 0 rgba(216, 224, 237, 0.5)
+	.packages {
+		padding: 2rem;
+		flex-wrap: wrap;
+		.package {
+			flex-basis: 45%;
+			margin: 1rem !important;
+		}
 	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.packages__intro {
+		margin: 1rem auto !important;
+		padding: 1rem;
+		flex-direction: column;
+		text-align: center;
+
+		&--text{
+			margin: .5rem auto !important;
+		}
+	}
+	.packages {
+		padding: 2rem;
+		flex-wrap: wrap;
+		.package {
+			flex-basis: 45%;
+			margin: 1rem !important;
+		}
+	}
+}
+
+@media (min-width: 450px) and (max-width: 549px){
+	.packages__wrapper {
+	 		.packages__intro {
+			margin: 0rem auto !important;
+			padding: 1rem;
+			flex-direction: column;
+			text-align: center;
+
+			&--text{
+				margin: .5rem auto !important;
+			}
+		}
+		.packages {
+			padding: 1rem 2rem;
+			flex-direction: column;	
+
+			.package {
+				width: 100% !important;
+				margin: 1rem 0rem ;
+
+				&--comments {
+					&:before {
+						left: 45%;
+					}
+				}
+			}
+		}
+	 }
 }

@@ -1,4 +1,4 @@
-// -------------------- Font Mixins -------------------- //
+/* -------------------- Font Mixins -------------------- */
 @mixin navText {
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
@@ -25,14 +25,14 @@
 	color: $color;
 };
 
-// -------------------- Pseudo Mixins -------------------- //
+/* -------------------- Pseudo Mixins -------------------- */
 @mixin pseudo ($content: '', $display: block, $position: absolute) {
 	content: $content;
 	display: $display;
 	position: $position;
 }; 
 
-// -------------------- Background Image Function -------------------- //
+/* -------------------- Background Image Function -------------------- */
 @each $name in 'icon__comment', 'icon__chat', 'icon__support' {
 	.#{$name} {
 		background: url('../images/#{$name}.svg') no-repeat;
@@ -50,4 +50,4 @@
 };
 
 
-// -------------------- Placeholder selectors -------------------- //
+/* -------------------- Placeholder selectors -------------------- */
