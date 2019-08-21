@@ -1,0 +1,574 @@
+/* -------------------- Buying Package -------------------- */
+/* -------------------- Step One. Username -------------------- */
+
+.order{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background: #fafafa;
+	padding: 3rem;
+
+	&__title {
+		@include Title();
+		@include fontSet(2.5rem, center, $iconColor);
+		margin-bottom: 2rem;
+		letter-spacing: .2rem;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		
+		.order__package--name {
+			@include navText();
+			@include fontSet(2rem, center, black);
+			letter-spacing: .3rem;
+			padding: 1rem 0rem;
+			text-transform: uppercase;
+		}
+
+		.order__package--price {
+			@include navText();
+			@include fontSet(3.5rem, center, black);
+			letter-spacing: .1rem;
+			padding: 1rem 0rem;
+			display: flex;
+			margin: 0rem auto;
+
+
+			&Currency {
+				@include navText();
+				@include fontSet(2rem, center, black);
+				margin: 0rem .5rem auto auto;
+
+			}
+		}
+	}
+
+	&__subtitle {
+		@include Text();
+		@include fontSet(1.8rem, center, $Text);
+		letter-spacing: .1rem;
+		margin: 2rem auto;
+	}
+
+	&__form--username{
+		display: flex;
+		flex-direction: column;
+		padding: 2rem 3rem;
+		width: 60%;
+		margin: 0rem auto;
+
+		.form__username {
+			width: 100%;
+			border: 1px solid darken(#eee, 20%);
+			box-sizing: border-box;
+			outline: none;
+			border-radius: .4rem;
+			padding: 2rem 3rem;
+			@include Text();
+			@include fontSet(1.6rem, center, $Text);
+			margin: 0rem auto;
+
+		}
+
+		.form__button--submit {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 2rem 3rem;
+			width: 50%;
+			margin: 3rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			transition: all .5s ease;
+			
+
+			.button__text {
+				@include navText();
+				@include fontSet(1.5rem, center, #fff);
+				letter-spacing: .2rem;
+				text-transform: uppercase;
+				margin: auto;
+
+			}
+			
+			&:hover {
+				box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px $Decoration;
+			}
+		}
+	}
+
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media (min-width: 550px) and (max-width: 767px) {
+
+	.order {
+		&__form--username {
+			width: 80%;
+		}
+	}
+}
+
+@media (min-width: 450px) and (max-width: 549px){
+	.order {
+		padding: 2rem;
+			&__form--username {
+				padding: 0rem;
+				width: 100%;
+
+				.form__username {
+					box-sizing: border-box;
+				}
+
+				.form__button--submit {
+					width: 70%;
+				}
+			}
+		}
+}
+
+
+@media screen and (max-width: 449px) {
+	.order {
+		padding: 2rem;
+
+	&__form--username {
+			padding: 0rem;
+			width: 100%;
+
+			.form__username {
+				box-sizing: border-box;
+			}
+
+			.form__button--submit {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+/* -------------------- Step Two. Choosing posts -------------------- */
+
+.order {
+	&__info{
+		.order__package--username {
+			@include Text();
+			@include fontSet(1.7rem, center, black);
+			letter-spacing: .3rem;
+			padding: 1rem 0rem;
+		}
+	}
+
+	.error__message {
+		display: none;
+		@include navText();
+		@include fontSet(1.6rem, center, $error);
+		padding: 1rem 0rem;
+	}
+
+	.error__message--active {
+		display: block;
+	}
+
+	&__gallery {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 80%;
+		margin: 0rem auto;
+
+		.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+
+			&__cell {
+				display: flex;
+				flex-basis: 20%;
+				margin: 2rem;
+				
+
+				.post__image {
+					width: 150px;
+					margin: 0rem auto;
+					border-radius: .4rem;
+					border: 2px solid transparent;
+				}
+
+				.post__image--chosen {
+					border: 2px solid $iconColor;
+				}
+			}
+		}
+
+		&--button {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 2rem;
+			width: 20%;
+			margin: 2rem auto;
+			border-radius: .5rem;
+			background: $iconColor;
+			transition: all .5s ease;
+			
+			.gallery__button--text{
+				@include navText();
+				@include fontSet(1.3rem, center, #fff);
+				text-transform: uppercase;
+				letter-spacing: .1rem;
+				margin: auto;
+
+			}
+
+			&:hover {
+				box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px $iconColor;
+			}
+		}
+	}
+
+	&__form{
+		width: 60%;
+		margin: 0rem auto;
+
+		.form__button--submit {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 2rem 3rem;
+			width: 50%;
+			margin: 3rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			transition: all .5s ease;
+
+			.button__text {
+				@include navText();
+				@include fontSet(1.5rem, center, #fff);
+				letter-spacing: .2rem;
+				text-transform: uppercase;
+				margin: auto;
+
+			}
+			
+			&:hover {
+				box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px $Decoration;
+			}
+		}
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+	.order {
+		&__gallery {
+			width: 90%;
+
+			&--button {
+				width: 30%;
+			}
+		}
+
+		&__form {
+			width: 80%;
+
+			.form__button--submit {
+				width: 70%;
+			}
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.order {
+		&__gallery {
+			width: 90%;
+
+			.gallery {
+				justify-content: center;
+			}
+
+			&--button {
+				width: 40%;
+			}
+		}
+
+		&__form {
+			width: 80%;
+
+			.form__button--submit {
+				width: 80%;
+			}
+		}
+	}
+}
+
+@media (min-width: 450px) and (max-width: 549px){
+	.order {
+		&__gallery {
+			width: 100%;
+
+			.gallery {
+				justify-content: center;
+
+				&__cell {
+					flex-basis: 40%;
+				}
+			}
+
+			&--button {
+				width: 50%;
+			}
+		}
+
+		&__form {
+			width: 80%;
+
+			.form__button--submit {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 449px) {
+	.order {
+		&__gallery {
+			width: 100%;
+
+			.gallery {
+				justify-content: center;
+
+				&__cell {
+					flex-basis: 40%;
+				}
+			}
+
+			&--button {
+				width: 50%;
+			}
+		}
+
+		&__form {
+			width: 80%;
+
+			.form__button--submit {
+				width: 100%;
+			}
+		}
+	}
+}
+
+/* -------------------- Step Three. Choosing categories -------------------- */
+.order {
+	&__posts {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		width: 80%;
+		margin: 0rem auto;
+
+		.post {
+			margin: 2rem;
+			padding: 1rem;
+
+			.box__image{
+				display: flex;
+				position: relative;
+				margin: 0rem auto;
+				width: 15rem;
+
+				.post__image {
+					width: 15rem;
+					border-radius: .4rem;
+					margin: 0rem auto;
+				}
+
+				.comments__info {
+					width: 15rem;
+					height: 100%;
+					padding: 2rem 0rem;
+					box-sizing: border-box;
+					border-radius: .4rem;
+					position: absolute;
+					background: #2C2C2C;
+					@include Title();
+					@include fontSet(2.6rem, center, #fff);
+					letter-spacing: .1rem;
+					opacity: .5;
+				}
+			}
+
+			&__buttons {
+				display: flex;
+
+				.post__button {
+					margin: 1rem;
+					padding: .5rem;
+					width: 50%;
+					outline: none;
+					background: #F2F2F2;
+					@include fontSet(2.3rem, center, darken(#F2F2F2, 25%));
+					@include packagesText();
+					border: 1px solid darken(#F2F2F2, 25%);
+					border-radius: .4rem;
+					transition: all .5s ease;
+
+					&:hover {
+						background: lighten(#f2f2f2, 2%);
+						color: $Decoration;
+						border: 1px solid $Decoration;
+					}
+				}
+			}
+
+			&__text {
+				@include Text();
+				@include fontSet(1.7rem, center, $Text);
+				margin: 2rem auto;
+			}
+
+			&__categories {
+				display: flex;
+				flex-direction: column;
+
+				.category {
+					padding: 1rem;
+					margin: 1rem 0rem;
+					@include Text();
+					@include fontSet( 1.5rem, left, $Text);
+					width: 100%;
+					box-sizing: border-box;
+					border: none;
+					background: #F2F2F2;
+					border: 1px solid darken(#F2F2F2, 25%);
+					border-radius: .4rem;
+				}
+			}
+		}
+	}
+}
+
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media (min-width: 768px) and (max-width: 990px) {
+
+	.order {
+		&__posts {
+			width: 90%;
+			justify-content: center;
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.order {
+		padding: 2rem 1rem;
+		&__posts {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+}
+
+@media (min-width: 450px) and (max-width: 549px){
+	.order {
+		padding: 2rem 1rem;
+		&__posts {
+			width: 100%;
+			justify-content: center;
+
+			.post {
+				flex-basis: 100%;
+				margin: 2rem 0rem;
+
+				&__buttons {
+					justify-content: center;
+					.post__button {
+						padding: 1rem;
+						width: 25%;
+					}
+				}
+
+				&__text {
+					display: flex;
+					text-align: center;
+					font-size: 1.8rem;
+					margin: 2rem auto;
+					width: 50%;
+				}
+
+				&__categories {
+					margin: 1rem;
+				}
+			}
+		}
+
+		&__form {
+			width: 80%;
+
+			.form__button--submit {
+				width: 80%;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 449px) {
+	.order {
+		padding: 2rem 1rem;
+		&__posts {
+			width: 100%;
+			justify-content: center;
+
+			.post {
+				flex-basis: 100%;
+				margin: 2rem 0rem;
+
+				&__buttons {
+					justify-content: center;
+					.post__button {
+						padding: 1rem;
+						width: 25%;
+					}
+				}
+
+				&__text {
+					display: flex;
+					text-align: center;
+					font-size: 1.8rem;
+					margin: 2rem auto;
+					width: 70%;
+				}
+
+				&__categories {
+					margin: 1rem;
+				}
+			}
+		}
+
+		&__form {
+			width: 90%;
+
+			.form__button--submit {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+/* -------------------- Step Four. Choosing comments according to the categories -------------------- */
+

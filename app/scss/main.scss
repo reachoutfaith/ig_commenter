@@ -19,7 +19,7 @@ html {
 
 	.wrapper {
 		padding: 3rem 2rem;
-		background-image: url('../images/bg7new1.jpg');
+		background-image: url('../images/background.jpg');
 		background-size: cover;
 		position: relative;
 	
@@ -223,6 +223,506 @@ html {
 	}
 }
 
+.offers--best {
+	padding: 3rem 1rem;
+	background: $benefitBg;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+
+
+	.title {
+		@include Title();
+		@include fontSet($bigTitle, center, $iconColor);
+		margin-bottom: 3rem;
+		letter-spacing: .2rem;
+	}
+
+	&__list{
+		margin: 0rem auto 4rem auto;
+		flex-basis: 70%;
+
+
+		&Item {
+			@include Text();
+			@include fontSet($bigList, center,$Text);
+			padding: .5rem;
+		}
+	}
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		z-index: 5;
+		height: 50rem;
+
+		.package {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			border: 1px solid #E0E0E0;
+			border-radius: .5rem;
+			margin: 2rem auto;
+			min-width: 23%;
+			background: #fff;
+			box-shadow: 0 10px 14px 2px rgba(216, 224, 237, 0.5);
+
+
+			&__price {
+				@include navText();
+				@include fontSet(4rem, center, #2F4858);
+				letter-spacing: .1rem;
+				padding: 2rem;
+				display: flex;
+
+
+				&--currency {
+					@include navText();
+					@include fontSet(2rem, center, #2F4858);
+					margin: 0rem .5rem auto auto;
+				}
+
+				&--cents {
+					@include navText();
+					font-weight: bold;
+					@include fontSet(2rem, center, #2F4858);
+					margin: 0rem auto auto .5rem;
+				}
+
+			}
+
+			&__icon {
+				display: none;
+			}
+
+			&__comments {
+				display: block;
+				@include navText();
+				@include fontSet(3rem, center, #009F86);
+				padding: 3rem 1rem 2rem 1rem;
+				font-weight: bold;
+				letter-spacing: .1rem;
+				position: relative;
+
+				&--num {
+					font-weight: bold;
+					margin: 0rem .5rem;
+				}
+
+			}
+
+			&__button {
+				display: flex;
+				padding: 2rem 3rem;
+				width: 70%;
+				margin: 3rem auto;
+				border-radius: .5rem;
+				background: #fff;
+				text-decoration: none;
+				transition: all .5s ease;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
+
+				&-text {
+					@include navText();
+					@include fontSet(1.5rem, center, #fff);
+					letter-spacing: .2rem;
+					text-transform: uppercase;
+					width: calc(100% - 5rem);
+					margin: auto;
+				}
+			}
+
+		}
+
+		.packageAside--left {
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: -3;
+			transform: translate3D(0, 0, 0);
+			transition: all 1s ease;
+			background: url('../images/landingOfferCardLeft.svg') no-repeat;
+			background-position: bottom;
+			background-size: cover;
+
+			.package__comments {
+				color:#0C4243;
+			}
+
+			.package__button {
+				background: #0C4243;
+
+				&:hover {
+					background: lighten(#0C4243, 5%);
+				}
+			}
+
+		}
+
+		.packageAside--leftAnimated{
+			transform: translate3D(-350px, 130px, 0);
+		}
+
+		.packageAside--right {
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: -5;
+			transform: translate3D(0, 0, 0);
+			transition: all 1s ease;
+			background: url('../images/landingOfferCardRight.svg') no-repeat;
+			background-position: bottom;
+			background-size: cover;
+
+			.package__comments {
+				color: #880E4F;
+			}
+
+			.package__button {
+				background: #880E4F;
+
+				&:hover {
+					background: lighten(#880E4F, 5%);
+				}
+			}	
+		}
+
+		.packageAside--rightAnimated {
+			transform: translate3D(350px, 130px, 0);
+		}
+
+		.packageMain {
+			@include pseudo();
+			z-index: 10;
+			background: #fff;
+		}
+
+		.hotPackage {
+			border: 3px solid $error;
+			position: absolute;
+			background-color: #fff;
+			background: url('../images/landingOfferCardHot.svg') no-repeat;
+			background-position: bottom;
+			background-size: cover;
+			
+
+			&:after {
+				@include pseudo();
+				top:0rem;
+				right: 0rem;
+				width: 0;
+				height: 0;
+				border-top: 50px solid $error;
+				border-left: 50px solid transparent;
+
+			}
+
+			&:before{
+				@include pseudo();
+				content: 'hot';
+				@include navText();
+				top:1rem;
+				right: 0rem;
+				z-index: 5;
+				text-transform: uppercase;
+				@include fontSet(1.3rem, center, #fff);
+				transform: rotate(50deg);
+			}
+
+			.package__comments {
+				color: #881E00;
+			}
+
+			.package__button {
+				background: #881E00;
+				transition: all .5s ease;
+
+				&:hover {
+					background: lighten(#881E00, 5%);
+				}
+			}
+		}
+
+	}
+
+	@media (min-width: 700px) and (max-width: 767px) {
+	.offers--best {
+			padding: 3rem 1rem;
+
+			&__box{
+				justify-content: center; 
+
+				.package {
+					width: 25%;
+					padding: 0rem 1rem;
+
+					&__price {
+						font-size: 3.2rem;
+						padding: .5rem;
+
+						&--currency,
+						&--cents {
+							font-size: 1.6rem;
+						}
+					}
+
+					&__comments {
+						font-size: 2.3rem;
+						padding: 3rem .5rem 2rem .5rem;
+					}
+
+					&__button {
+						width: 80%;
+						padding: 1.5rem .5rem;
+						
+
+						&-text {
+							font-size: 1.3rem;
+						}
+					}
+				}
+
+				.packageAside--leftAnimated{
+					transform: translate3D(-220px, 130px, 0);
+				}
+
+				.packageAside--rightAnimated{
+					transform: translate3D(220px, 130px, 0);
+				}
+			}
+		}
+	}
+
+	@media (min-width: 600px) and (max-width: 699px) {
+	.offers--best {
+		padding: 3rem 1rem 0rem 1rem;
+
+		&__box{
+			justify-content: center; 
+
+			.package {
+				width: 25%;
+				padding: 0rem 1rem;
+
+				&__price {
+					font-size: 3rem;
+					padding: .5rem;
+
+					&--currency,
+					&--cents {
+						font-size: 1.5rem;
+					}
+				}
+
+				&__comments {
+					font-size: 2rem;
+					padding: 3rem .5rem 2rem .5rem;
+				}
+
+				&__button {
+					width: 100%;
+					box-sizing: border-box;
+					padding: 1.5rem .5rem;
+					
+
+					&-text {
+						font-size: 1.2rem;
+					}
+				}
+			}
+
+			.packageAside--leftAnimated{
+				transform: translate3D(-200px, 130px, 0);
+			}
+
+			.packageAside--rightAnimated{
+				transform: translate3D(200px, 130px, 0);
+			}
+
+			.hotPackage {
+				&:after {
+					@include pseudo();
+					top:0rem;
+					right: 0rem;
+					width: 0;
+					height: 0;
+					border-top: 30px solid $error;
+					border-left: 30px solid transparent;
+
+				}
+
+				&:before{
+					@include pseudo();
+					content: 'hot';
+					@include navText();
+					top:.3rem;
+					right: 0rem;
+					z-index: 5;
+					text-transform: uppercase;
+					@include fontSet(1.1rem, center, #fff);
+					transform: rotate(50deg);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 599px) {
+	.offers--best {
+		padding: 3rem 1rem 0rem 1rem;
+		position: static;
+
+		&__box{
+			position: static;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+
+			.package {
+				width: 50%;
+				padding: 0rem 2rem;
+				position: static;
+				margin: 2rem auto;
+
+				&__price {
+					font-size: 4rem;
+					padding: 2rem;
+
+					&--currency,
+					&--cents {
+						font-size: 2rem;
+					}
+				}
+
+				&__comments {
+					font-size: 3rem;
+				}
+
+				&__button {
+					box-sizing: border-box;
+					margin: 3rem auto;
+					width: 100%;
+					padding: 2rem 3rem;
+					
+
+					&-text {
+						font-size: 1.5rem;
+					}
+				}
+			}
+
+			.packageAside--left,
+			.packageAside--right {
+				position: static;
+			}
+
+			.packageAside--left {
+				transform: translateX(-500px);
+			}
+
+			.packageAside--right {
+				transform: translateX(500px);
+			}
+
+
+			.packageAside--leftAnimated{
+				position: static;
+				transform: translate3D(0, 0, 0);
+				order: 2;
+
+			}
+
+			.packageAside--rightAnimated{
+				position: static;
+				transform: translate3D(0, 0, 0);
+				order: 3;
+
+			}
+
+			.hotPackage {
+				position: relative;
+				order: 1;
+
+				&:after {
+					@include pseudo();
+					top:0rem;
+					right: 0rem;
+					width: 0;
+					height: 0;
+					border-top: 50px solid $error;
+					border-left: 50px solid transparent;
+
+				}
+
+				&:before{
+					@include pseudo();
+					content: 'hot';
+					@include navText();
+					top:1rem;
+					right: 0rem;
+					z-index: 5;
+					text-transform: uppercase;
+					@include fontSet(1.3rem, center, #fff);
+					transform: rotate(50deg);
+				}
+			}
+		}
+	}
+
+	&__link {
+		position: static;
+	}
+}
+
+
+
+	&__link {
+		margin: 3rem auto 0rem auto;
+		@include Title();
+		@include fontSet($bigButton, center, #2F4858);
+		letter-spacing: .2rem;
+		text-decoration: none;
+		padding: 1rem 2rem;
+		transition: all .5s ease;
+		position: relative;
+		transition: all .7s ease;
+
+		&:hover {
+			color: #C2185B;
+		}
+
+	  	&:after {
+	  		content: '';
+	  		display: block;
+	  		position: absolute;
+	  		bottom: 0rem;
+	  		left: 0rem;
+	  		width: 100%;
+	  		height: .2rem;
+	  		background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+			background-size: 400% 400%;
+			animation: gradientLink 2s ease infinite;
+
+			@keyframes gradientLink {
+			  0% {
+			    background-position: 14% 0%;
+			  }
+			  50% {
+			    background-position: 87% 100%;
+			  }
+			  100% {
+			    background-position: 14% 0%;
+			  }
+			}
+	  	}
+	}
+}
+
 .instruction{
 	padding: 3rem 0rem;
 	background: $benefitBg;
@@ -279,7 +779,7 @@ html {
 
 					.step__subtitle {
 						@include Title();
-						@include fontSet($bigTitle, center, #129490);
+						@include fontSet($bigTitle, center, $benefitTitle);
 						margin: 1rem 0rem;
 						padding: 1rem 1.5rem;
 						letter-spacing: .1rem;
@@ -712,7 +1212,7 @@ html {
 @media (min-width: 980px) and (max-width: 1070px) {
 	.main {
 		.wrapper {
-			background-image: url('../images/bg7Shorter.jpg');
+			background-image: url('../images/backgroundShorter.jpg');
 
 			&::before{
 				border-left: 550px solid transparent;
@@ -723,6 +1223,14 @@ html {
 			}
 		}
 	}
+
+	.offers--best {
+		&__box{
+			.package {
+				min-width: 27%;
+			}
+		}
+	}
 }
 
 
@@ -730,7 +1238,7 @@ html {
 	.main {
 		
 		.wrapper {
-			background-image: url('../images/bg7ShorterTry.jpg');
+			background-image: url('../images/backgroundShorterLess.jpg');
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: right bottom;
@@ -788,6 +1296,40 @@ html {
 				&__text {
 					font-size: $mbText;
 				}
+			}
+		}
+	}
+
+	.offers--best {
+		padding: 3rem 1rem;
+
+		&__box{
+			justify-content: center; 
+
+			.package {
+				width: 27%;
+
+				&__price {
+					font-size: 3.5rem;
+					padding: 1rem;
+
+					&--currency,
+					&--cents {
+						font-size: 1.7rem;
+					}
+				}
+
+				&__comments {
+					font-size: 2.5rem;
+				}
+			}
+
+			.packageAside--leftAnimated{
+				transform: translate3D(-270px, 130px, 0);
+			}
+
+			.packageAside--rightAnimated{
+				transform: translate3D(270px, 130px, 0);
 			}
 		}
 	}
@@ -928,6 +1470,8 @@ html {
 			}
 		}
 	}
+
+	
 
 	.instruction {
 		.title{
@@ -1084,7 +1628,7 @@ html {
 						display: block;
 						width: 4rem;
 						height: 4rem;
-						background: url('../images/menuSvg2.svg') no-repeat;
+						background: url('../images/menu.svg') no-repeat;
 						background-size: contain;
 						margin-left: auto;
 					}
@@ -1137,6 +1681,100 @@ html {
 			}
 		}
 	}
+
+	.offers--best {
+		padding: 3rem 1rem 0rem 1rem;
+		position: static;
+
+		&__box{
+			position: static;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+
+			.package {
+				width: 60%;
+				padding: 0rem 2rem;
+				position: static;
+				margin: 2rem auto;
+
+				&__price {
+					font-size: 4rem;
+					padding: 2rem;
+
+					&--currency,
+					&--cents {
+						font-size: 2rem;
+					}
+				}
+
+				&__comments {
+					font-size: 3rem;
+				}
+
+				&__button {
+					box-sizing: border-box;
+					margin: 3rem auto;
+					width: 100%;
+					padding: 2rem 3rem;
+					
+
+					&-text {
+						font-size: 1.5rem;
+					}
+				}
+			}
+
+			.packageAside--left,
+			.packageAside--right {
+				position: static;
+			}
+
+
+			.packageAside--leftAnimated{
+				position: static;
+				transform: translate3D(0, 0, 0);
+				order: 2;
+
+			}
+
+			.packageAside--rightAnimated{
+				position: static;
+				transform: translate3D(0, 0, 0);
+				order: 3;
+
+			}
+
+			.hotPackage {
+				position: relative;
+				order: 1;
+
+				&:after {
+					@include pseudo();
+					top:0rem;
+					right: 0rem;
+					width: 0;
+					height: 0;
+					border-top: 50px solid $error;
+					border-left: 50px solid transparent;
+
+				}
+
+				&:before{
+					@include pseudo();
+					content: 'hot';
+					@include navText();
+					top:1rem;
+					right: 0rem;
+					z-index: 5;
+					text-transform: uppercase;
+					@include fontSet(1.3rem, center, #fff);
+					transform: rotate(50deg);
+				}
+			}
+		}
+	}
+
 
 	.instruction {
 		.title{
@@ -1292,7 +1930,7 @@ html {
 						display: block;
 						width: 4rem;
 						height: 4rem;
-						background: url('../images/menuSvg2.svg') no-repeat;
+						background: url('../images/menu.svg') no-repeat;
 						background-size: contain;
 						margin-left: auto;
 					}
@@ -1347,6 +1985,105 @@ html {
 			}
 		}
 	}
+
+		.offers--best {
+		padding: 3rem 1rem 0rem 1rem;
+		position: static;
+
+		&__box{
+			position: static;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+
+			.package {
+				width: 80%;
+				padding: 0rem 2rem;
+				position: static;
+				margin: 2rem auto;
+				opacity: 0;
+
+
+				&__price {
+					font-size: 4.5rem;
+					padding: 2rem;
+					margin: 4rem auto;
+
+					&--currency,
+					&--cents {
+						font-size: 2.2rem;
+					}
+				}
+
+				&__comments {
+					font-size: 3.5rem;
+				}
+
+				&__button {
+					box-sizing: border-box;
+					margin: 3rem auto;
+					width: 100%;
+					padding: 2rem 3rem;
+					
+
+					&-text {
+						font-size: 1.5rem;
+					}
+				}
+			}
+
+			.packageAside--left,
+			.packageAside--right {
+				position: static;
+			}
+
+			.packageAside--leftAnimated{
+				position: static;
+				transform: translate3D(0, 0, 0);
+				opacity: 1;
+				order: 2;
+
+			}
+
+			.packageAside--rightAnimated{
+				position: static;
+				transform: translate3D(0, 0, 0);
+				opacity: 1;
+				order: 3;
+
+			}
+
+			.hotPackage {
+				position: relative;
+				order: 1;
+				opacity: 1;
+
+				&:after {
+					@include pseudo();
+					top:0rem;
+					right: 0rem;
+					width: 0;
+					height: 0;
+					border-top: 50px solid $error;
+					border-left: 50px solid transparent;
+
+				}
+
+				&:before{
+					@include pseudo();
+					content: 'hot';
+					@include navText();
+					top:1rem;
+					right: 0rem;
+					z-index: 5;
+					text-transform: uppercase;
+					@include fontSet(1.3rem, center, #fff);
+					transform: rotate(50deg);
+				}
+			}
+		}
+	}
+
 
 	.instruction {
 		.title{
@@ -1465,3 +2202,4 @@ html {
 /* -------------------- Importing other pages -------------------- */
 
 @import "packages";
+@import "buyProcess.scss";

@@ -1,0 +1,111 @@
+		<div class="order">
+			<h2 class="order__title">Step Three</h2>
+			<div class="order__info">
+				<span class="order__package--name">100 Comments</span>
+				<span class="order__package--price"><span class="order__package--priceCurrency">&#36;</span>25</span>
+				<span class="order__package--username">Instagram username: user</span>
+			</div>
+			<p class="error__message">You have chosen more posts that are allowed in this package</p>
+			<div class="order__posts">
+				<div class="post">
+					<div class="box__image">
+						<img src="images/user1.jpg" alt="" class="post__image"/>
+						<span class="comments__info"><span class="comments__number">5</span> comments</span>
+					</div>
+					<div class="post__buttons"><button class="post__button--up post__button">+</button><button class="post__button--down post__button">-</button></div>
+					<span class="post__text">Choose category below</span>
+					<div class="post__categories">
+								<select name="" id="" class="category">
+								<option value="" selected="selected" class="category__item">Emotions</option>
+								<option value="" class="category__item">Themes</option>
+								<option value="" class="category__item">For professional</option>
+							</select>
+							<select name="" id="" class="category">
+							<option value="" selected="selected" class="category__item">Like</option>
+							<option value="" class="category__item">Sad</option>
+							<option value="" class="category__item">Love</option>
+						</select>
+					</div>
+				</div>
+				<div class="post">
+					<div class="box__image">
+						<img src="images/user1.jpg" alt="" class="post__image"><span class="comments__info"><span class="comments__number">5</span> comments</span>
+					</div>
+					<div class="post__buttons"><button class="post__button--up post__button">+</button><button class="post__button--down post__button">-</button></div>
+					<span class="post__text">Choose category below</span>
+					<div class="post__categories"><select name="" id="" class="category">
+								<option value="" selected="selected" class="category__item">Emotions</option>
+								<option value="" class="category__item">Themes</option>
+								<option value="" class="category__item">For professional</option>
+							</select><select name="" id="" class="category">
+							<option value="" selected="selected" class="category__item">Like</option>
+							<option value="" class="category__item">Sad</option>
+							<option value="" class="category__item">Love</option>
+						</select>
+					</div>
+				</div>
+		<div class="post">
+			<div class="box__image">
+				<img src="images/user1.jpg" alt="" class="post__image"><span class="comments__info"><span class="comments__number">5</span> comments</span>
+			</div>
+			<div class="post__buttons"><button class="post__button--up post__button">+</button><button class="post__button--down post__button">-</button></div>
+			<span class="post__text">Choose category below</span>
+			<div class="post__categories"><select name="" id="" class="category">
+						<option value="" selected="selected" class="category__item">Emotions</option>
+						<option value="" class="category__item">Themes</option>
+						<option value="" class="category__item">For professional</option>
+					</select><select name="" id="" class="category">
+					<option value="" selected="selected" class="category__item">Like</option>
+					<option value="" class="category__item">Sad</option>
+					<option value="" class="category__item">Love</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<form action="" class="order__form">
+		<button class="form__button--submit btn__posts--submit"><span class="button__text">submit</span></button>
+	</form>
+	</div>
+
+	<script>
+			$(window).load(function(){
+				$('.header').addClass('header--packages');
+			});
+		</script>
+<script>
+	$(window).load(function(){
+		let maxNum = 20;
+
+		$('.post__button--up').on('click', function(){
+			let parentBox = $(this).parent().parent();
+			let number = parentBox.find('.comments__number').text();
+			number++;
+			parentBox.find('.comments__number').text(number);
+		})
+
+		$('.post__button--down').on('click', function(){
+			let parentBox = $(this).parent().parent();
+			let number = parentBox.find('.comments__number').text();
+			number--;
+			parentBox.find('.comments__number').text(number);
+		});
+
+
+		$('.btn__posts--submit').on('click', function(){
+			event.preventDefault();
+			let totalNumber = 0;
+			$('.comments__number').each(function(){
+				let count = +($(this).text());
+				totalNumber += count;
+			});
+
+			if (totalNumber > maxNum){
+				$('.error__message').addClass('error__message--active');
+			} else {
+				if ($('.error__message').hasClass('error__message--active')){
+					$('.error__message').removeClass('error__message--active');
+				};
+			};
+		});
+	});
+</script>

@@ -23,15 +23,15 @@ gulp.task('default', ['delFiles','html', 'sass','js', 'image','fonts', 'watch'],
 });
 
 
-// Deleting all the files from the dist 
+// Deleting all the files from the dist2 
 gulp.task('delFiles', function () {
-    delFiles('./dist/*');
+    delFiles('./dist2/*');
 });
 
 //HTML 
 gulp.task('html', function () {
     gulp.src(['./app/index.html'])
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist2'));
 
     browserSync.reload({stream: false});
 });
@@ -42,31 +42,31 @@ gulp.task('sass', function () {
     gulp.src(['./app/scss/main.scss', './app/scss/flickity.min.css'])
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist2/css'));
         browserSync.reload({stream: false});
 });
 
 
 
-//Transferring images from app to dist
+//Transferring images from app to dist2
 gulp.task('image', function () {
   gulp.src('./app/images/*')
     .pipe(image())
-    .pipe(gulp.dest('./dist/images'));
+    .pipe(gulp.dest('./dist2/images'));
     browserSync.reload({stream: false});
 });
 
-//Transferring fonts from app to dist 
+//Transferring fonts from app to dist2 
 gulp.task('fonts', function () {
   gulp.src('./app/fonts/*')
-    .pipe(gulp.dest('./dist/fonts'));
+    .pipe(gulp.dest('./dist2/fonts'));
     browserSync.reload({stream: false});
 });
 
-//Transferring js files from app to dist
+//Transferring js files from app to dist2
 gulp.task('js', function () {
     gulp.src('./app/js/*')
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./dist2/js'));
     
     browserSync.reload({stream: false});
 });
@@ -86,7 +86,7 @@ gulp.task('watch', ['browserSync'], function () {
 gulp.task('browserSync', function(){
     browserSync.init({
         server: {
-            baseDir: './dist'
+            baseDir: './dist2'
         }
     });
 });
