@@ -11,7 +11,8 @@ $footerBg: #0C4243;
 $packageBg: linear-gradient(to bottom, #eeeeee, #f1f1f1, #f4f4f4, #f7f7f7, #fafafa);
 $packageButton: #A9AABC;
 $error: #f44336;
-
+$diagBgBlue: linear-gradient(to right bottom, #58defb, #70e2fb, #85e5fb, #97e9fc, #a7ecfc, #b6eefe, #c4f0ff, #d1f2ff, #dff3ff, #ecf4ff, #f5f7fd, #fafafa);;
+$diagBgPink: linear-gradient(to right bottom, #d81b60, #e04877, #e7688e, #ec84a4, #f09eb9, #f0afca, #f0bfd8, #f1cfe4, #f0dbed, #f0e6f4, #f4f0f8, #fafafa);
 
 
 /* min-width: 980px; */
@@ -26,3 +27,10 @@ $mbText: 1.5rem; // medium-big
 $mbTitle: 3.2rem;
 $mbList: 1.5rem;
 $mbButton: 1.7rem;
+
+
+// @media (min-width: 450px) and (max-width: 549px)
+// @media (min-width: 550px) and (max-width: 767px)
+// @media (min-width: 768px) and (max-width: 951px)
+// @media (min-width: 952px) and (max-width: 1120px)
+// @media screen and (min-width: 1121px)

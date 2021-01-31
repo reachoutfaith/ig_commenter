@@ -1,0 +1,184 @@
+/* -------------------- Contact Form -------------------- */
+.wrapper {
+	padding: 2rem 1rem;
+	background: url('../images/landingOfferCardRight.svg') no-repeat;
+	background-size: cover;
+	background-position: bottom right;
+
+	.order__title{
+		letter-spacing: 0;
+	}
+
+	.order__subtitle{
+		font-size: 1.6rem;
+		width: 100%;
+		margin: 2rem auto;
+		text-align: center;
+	}
+	.contactForm{
+		display: flex;
+		flex-direction: column;
+		background: #fff;
+		@include btnShadow();
+		padding: 2rem 1.5rem;
+		margin: 2rem 0rem;
+		border-radius: .5rem;
+
+		&__label{
+			@include navTextBold();
+			@include fontSet(1.7rem, left, #111);
+			margin-bottom: 1rem;
+
+		}
+
+		&__input{
+			@include navText();
+			@include fontSet(2rem, left, #111);
+			padding: 1rem;
+			background: #F5F5F5;
+			margin-bottom: 2rem;
+			border: 1px solid transparent;
+			border-radius: .5rem;
+
+			&:focus {
+				outline: none;
+				border: 1px solid #21B4B7;
+			}
+		}
+
+		&__textarea{
+			@include navText();
+			@include fontSet(2rem, left, #111);
+			padding: 1rem;
+			background: #F5F5F5;
+			border: 1px solid transparent;
+			border-radius: .5rem;
+
+			&:focus {
+				outline: none;
+				border: 1px solid #21B4B7;
+			}
+		}
+
+		&__button {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 2rem 3rem;
+			width: 80%;
+			margin: 3rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			transition: all .5s ease;
+			@include btnShadow();
+
+			.button__text {
+				@include Text();
+				@include fontSet(1.5rem, center, #fff);
+				text-transform: uppercase;
+				margin: auto;
+
+			}
+
+			&:active {
+				background: darken($Decoration, 5%);
+			}
+
+		}
+	}
+}
+
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media (min-width: 450px) and (max-width: 549px){
+	.wrapper {
+		.order__subtitle{
+			width: 80%;
+		}
+		.contactForm {
+			width: 80%;
+			margin: 2rem auto;
+		}
+	}
+}
+
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.wrapper {
+		.order__subtitle{
+			width: 70%;
+		}
+		.contactForm {
+			width: 70%;
+			margin: 2rem auto;
+
+			&__button {
+				width: 70%;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.wrapper {
+		.order__subtitle{
+			width: 70%;
+		}
+		.contactForm {
+			width: 55%;
+			margin: 2rem auto;
+
+			&__label {
+				font-size: 1.7rem;
+			}
+
+			&__input,
+			&__textarea{
+				font-size: 1.8rem;
+			}
+
+			&__button {
+				width: 55%;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 952px) {
+	.wrapper {
+		background-size: 80% auto;
+		background-position: right;
+
+		.order__subtitle{
+			width: 70%;
+			font-size: 1.5rem;
+		}
+		.contactForm {
+			width: 40%;
+			margin: 4rem auto;
+
+			&__label {
+				font-size: 1.6rem;
+			}
+
+			&__input,
+			&__textarea{
+				font-size: 1.7rem;
+			}
+
+			&__button {
+				width: 45%;
+				transition: all .5s ease;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
+			}
+		}
+	}
+}
+
+

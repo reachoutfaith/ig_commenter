@@ -4,7 +4,10 @@ let gulp = require('gulp'), //Сам gulp
     delFiles = require('del'), //Удаление файлов
     autoprefixer = require('gulp-autoprefixer'), // Префиксы для кроссбраузерности
     image = require('gulp-image'), // Модуль для изображений
-    browserSync = require('browser-sync').create(); // browser Sync
+    browserSync = require('browser-sync').create(),
+    uglifyJs = require('gulp-uglify'), //Модуль для сжатия js
+    cssMinify555 = require('gulp-csso'), //Модуль для сжатия css
+    babel = require('gulp-babel'); //Для преобразования ES6 (ES2015) -> ES5
 
 
 /**
@@ -42,7 +45,7 @@ gulp.task('sass', function () {
     gulp.src(['./app/scss/main.scss', './app/scss/flickity.min.css'])
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(gulp.dest('./dist2/css'));
+        .pipe(gulp.dest('./dist2/css'))
         browserSync.reload({stream: false});
 });
 
@@ -65,7 +68,7 @@ gulp.task('fonts', function () {
 
 //Transferring js files from app to dist2
 gulp.task('js', function () {
-    gulp.src('./app/js/*')
+        gulp.src('./app/js/*')
         .pipe(gulp.dest('./dist2/js'));
     
     browserSync.reload({stream: false});

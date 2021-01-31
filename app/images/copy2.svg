@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" style="width: 100%; height: 100%;"><desc>Made with illustrio</desc>
+  
+<g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="main-stroke">
+    
+    <path fill="none" d="M31.409,11.798 L24.406,18.8 C23.633,19.573 22.379,19.573 21.604,18.8 L20.202,17.398 L27.209,10.395 L21.605,4.791 L14.603,11.798 L13.2,10.395 C12.426,9.622 12.426,8.367 13.2,7.593 L20.203,0.59 C20.98,-0.187 22.231,-0.187 23.005,0.59 L31.41,8.996 C32.188,9.77 32.188,11.021 31.409,11.798 Z M17.4,20.204 L10.397,27.211 L4.79,21.603 L11.8,14.6 L10.397,13.197 C9.62,12.423 8.369,12.423 7.595,13.197 L0.588,20.204 C-0.189,20.977 -0.189,22.228 0.588,23.002 L8.998,31.411 C9.772,32.185 11.022,32.185 11.8,31.411 L18.802,24.404 C19.575,23.631 19.575,22.381 18.802,21.602 L17.4,20.204 Z M10.397,21.603 C11.171,22.381 12.425,22.381 13.199,21.603 L21.604,13.198 C22.378,12.424 22.378,11.17 21.604,10.396 C20.831,9.623 19.576,9.623 18.802,10.396 L10.396,18.802 C9.62,19.574 9.62,20.829 10.397,21.603 Z" transform="translate(19 19)" stroke="none" class="main-stroke"></path>
+  </g></g><style>
+          .main-fill {fill: #212121;}
+          .main-stroke {stroke: #212121;}
+          .secondary-fill {fill: #fff;}
+          .secondary-stroke {stroke: #fff;}
+
+          .main-fill--darken {fill: #000000;}
+          .main-stroke--darken {stroke: #000000;}
+          .secondary-fill--darken {fill: #d9d9d9;}
+          .secondary-stroke--darken {stroke: #d9d9d9;}
+
+          .main-fill--darkener {fill: #000000;}
+          .main-stroke--darkener {stroke: #000000;}
+          .secondary-fill--darkener {fill: #bfbfbf;}
+          .secondary-stroke--darkener {stroke: #bfbfbf;}
+        </style></svg>

@@ -1,0 +1,299 @@
+<div class="order">
+	<h1 class="order__title">Get Extra Boost!</h1>
+	<h2 class="order__undertitle">To get likes on your posts choose one option</h2>
+	<div class="likesBox">
+		<div class="likes__wrapper">
+			<img src="images/user1.jpg" alt="post image" class="likes__img">
+			<div class="likes__buttons">
+				<button class="likes__button"><span class="button__text">30 likes</span></button>
+				<button class="likes__button likes__button--chosen"><span class="button__text">50 likes</span></button>
+				<button class="likes__button"><span class="button__text">100 likes</span></button>
+			</div>
+		</div>
+		<div class="likes__wrapper">
+			<img src="images/user1.jpg" alt="post image" class="likes__img">
+			<div class="likes__buttons">
+				<button class="likes__button"><span class="button__text">30 likes</span></button>
+				<button class="likes__button"><span class="button__text">50 likes</span></button>
+				<button class="likes__button likes__button--chosen"><span class="button__text">100 likes</span></button>
+			</div>
+		</div>
+		<div class="likes__wrapper">
+			<img src="images/user1.jpg" alt="post image" class="likes__img">
+			<div class="likes__buttons">
+				<button class="likes__button likes__button--chosen"><span class="button__text">30 likes</span></button>
+				<button class="likes__button"><span class="button__text">50 likes</span></button>
+				<button class="likes__button"><span class="button__text">100 likes</span></button>
+			</div>
+		</div>
+	</div>
+	<span class="order__undertitle">+ likes for only $YY (-Z%)</span>
+	<button class="form__button--submit"><span class="button__text">submit</span></button>
+	<button class="form__button--submit likes__button--skip"><span class="button__text">Skip this step</span></button>
+</div>
+
+
+/* -------------------- Step Extra. Likes -------------------- */
+
+.order {
+	.likesBox {
+		display: flex;
+		flex-direction: column;
+
+		.likes__wrapper {
+			display: flex;
+			height: 7rem;
+			justify-content: center;
+			margin: 1rem 0rem;
+
+			.likes__img{
+				width: 7rem;
+				height: 100%;
+				border-radius: 1rem;
+				margin-right: 1rem;
+				
+			}
+
+			.likes__buttons {
+				display: flex;
+				margin: auto 0rem;
+				
+
+				.likes__button{
+					display: flex;
+					outline: none;
+					border: none;
+					background: #EEEEEE;
+					border: 1px solid #E0E0E0;
+					box-sizing: border-box;
+					@include Text();
+					@include fontSet(1.5rem, center, #212121);
+					width: 7.5rem;
+					height: 5rem;
+					border-radius: .5rem;
+					@include transition();
+
+
+					.button__text {
+						margin: auto;
+					}
+				}
+
+				.likes__button--chosen{
+					background: #C2185B;
+					border: 1px solid #C2185B;
+					color: #fff;
+					box-shadow: 0px 4px 4px rgba(33, 33, 33, 0.15);
+					@include transition();
+
+					.button__text {
+						margin: auto;
+						@include subTitle();
+					}
+				}
+			}
+		}
+	}
+
+	.form__button--submit {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 2rem 3rem;
+			width: 80%;
+			margin: 0rem auto 2rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			transition: all .5s ease;
+			@include btnShadow();
+			
+
+			.button__text {
+				@include Text();
+				@include fontSet(1.5rem, center, #fff);
+				text-transform: uppercase;
+				margin: auto;
+
+			}
+
+			&:active {
+				background: darken($Decoration, 5%);
+			}
+			
+		}
+
+		.likes__button--skip {
+			background: #EEEEEE;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			border-radius: 5px;
+			margin-bottom: 3rem;
+			
+			.button__text{
+				@include fontSet(1.4rem, center, #212121);
+				text-transform: none;
+			}
+
+			&:active {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+
+	
+}
+
+/* -------------------- Mediaqueries -------------------- */
+@media (min-width: 450px) and (max-width: 549px) {
+	.order {
+		.likesBox {
+			.likes__wrapper {
+				.likes__img{
+					margin-right: 2rem;
+				}
+				.likes__buttons{
+					.likes__button {
+						height: 5rem;
+						width: 8rem;
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+
+		.form__button--submit {
+			width: 70%;
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.order {
+		.likesBox {
+			.likes__wrapper {
+				height: 7.5rem;
+				.likes__img {
+					width: 7.5rem;
+				}
+				.likes__buttons{
+					.likes__button {
+						height: 5.5rem;
+						width: 9rem;
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+
+		.form__button--submit {
+			width: 55%;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.order {
+		.likesBox {
+			.likes__wrapper {
+				height: 8rem;
+				.likes__img {
+					width: 8rem;
+				}
+				.likes__buttons{
+					.likes__button {
+						height: 6rem;
+						width: 10rem;
+						font-size: 1.6rem;
+
+						&:hover {
+							background: #C2185B;
+							color: #fff;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+
+		.form__button--submit {
+			width: 35%;
+		}
+
+		.likes__button--skip {
+			&:hover {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+	}
+}
+
+@media (min-width: 952px) and (max-width: 1120px) {
+	.order {
+		.likesBox {
+			.likes__wrapper {
+				height: 8rem;
+				.likes__img {
+					width: 8rem;
+				}
+				.likes__buttons{
+					.likes__button {
+						height: 6rem;
+						width: 10rem;
+						font-size: 1.6rem;
+
+						&:hover {
+							background: #C2185B;
+							color: #fff;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+
+		.form__button--submit {
+			width: 30%;
+		}
+
+		.likes__button--skip {
+			&:hover {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1121px) {
+	.order {
+		.likesBox {
+			.likes__wrapper {
+				height: 8rem;
+
+				.likes__img {
+					width: 8rem;
+				}
+				.likes__buttons{
+					.likes__button {
+						height: 6rem;
+						width: 10rem;
+						font-size: 1.6rem;
+
+						&:hover {
+							background: #C2185B;
+							color: #fff;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+
+		.form__button--submit {
+			width: 23%;
+		}
+
+		.likes__button--skip {
+			&:hover {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+	}
+}

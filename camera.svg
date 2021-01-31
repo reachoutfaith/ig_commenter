@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" style="width: 100%; height: 100%;"><desc>Made with illustrio</desc>
+  
+<g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="main-stroke">
+    
+    
+  </g><g fill="none" transform="translate(20.125 21.583)" stroke="none" class="main-stroke">
+      <circle cx="14.875" cy="14.904" r="4.76" fill="none" stroke="none" class="main-stroke"></circle>
+      <path d="M10.4125,0.0291666667 L7.735,3.00416667 L2.975,3.00416667 C1.33875,3.00416667 0,4.34291667 0,5.97916667 L0,23.8291667 C0,25.4654167 1.33875,26.8041667 2.975,26.8041667 L26.775,26.8041667 C28.41125,26.8041667 29.75,25.4654167 29.75,23.8291667 L29.75,5.97916667 C29.75,4.34291667 28.41125,3.00416667 26.775,3.00416667 L22.015,3.00416667 L19.3375,0.0291666667 L10.4125,0.0291666667 L10.4125,0.0291666667 Z M14.875,22.3416667 C10.71,22.3416667 7.4375,19.0691667 7.4375,14.9041667 C7.4375,10.7391667 10.71,7.46666667 14.875,7.46666667 C19.04,7.46666667 22.3125,10.7391667 22.3125,14.9041667 C22.3125,19.0691667 19.04,22.3416667 14.875,22.3416667 L14.875,22.3416667 Z" fill="none" stroke="none" class="main-stroke"></path>
+    </g></g><style>
+          .main-fill {fill: #000000;}
+          .main-stroke {stroke: #000000;}
+          .secondary-fill {fill: #f7f9ff;}
+          .secondary-stroke {stroke: #f7f9ff;}
+
+          .main-fill--darken {fill: #000000;}
+          .main-stroke--darken {stroke: #000000;}
+          .secondary-fill--darken {fill: #aac0ff;}
+          .secondary-stroke--darken {stroke: #aac0ff;}
+
+          .main-fill--darkener {fill: #000000;}
+          .main-stroke--darkener {stroke: #000000;}
+          .secondary-fill--darkener {fill: #7799ff;}
+          .secondary-stroke--darkener {stroke: #7799ff;}
+        </style></svg>

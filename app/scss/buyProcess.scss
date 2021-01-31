@@ -6,7 +6,7 @@
 	flex-direction: column;
 	justify-content: center;
 	background: #fafafa;
-	padding: 3rem;
+	padding: 2rem;
 
 	&__title {
 		@include Title();
@@ -45,23 +45,22 @@
 		}
 	}
 
-	&__subtitle {
+	&__undertitle {
 		@include Text();
-		@include fontSet(1.8rem, center, $Text);
-		letter-spacing: .1rem;
+		@include fontSet(1.6rem, center, $Text);
 		margin: 2rem auto;
 	}
 
 	&__form--username{
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 3rem;
-		width: 60%;
-		margin: 0rem auto;
+		padding: 0rem;
+		width: 100%;
+		margin: 2rem auto;
 
 		.form__username {
 			width: 100%;
-			border: 1px solid darken(#eee, 20%);
+			border: 1px solid darken(#eee, 10%);
 			box-sizing: border-box;
 			outline: none;
 			border-radius: .4rem;
@@ -69,6 +68,7 @@
 			@include Text();
 			@include fontSet(1.6rem, center, $Text);
 			margin: 0rem auto;
+			@include shadow();
 
 		}
 
@@ -77,25 +77,26 @@
 			border: none;
 			display: flex;
 			padding: 2rem 3rem;
-			width: 50%;
+			width: 80%;
 			margin: 3rem auto;
 			border-radius: .5rem;
 			background: $Decoration;
 			transition: all .5s ease;
+			@include btnShadow();
 			
 
 			.button__text {
-				@include navText();
+				@include Text();
 				@include fontSet(1.5rem, center, #fff);
-				letter-spacing: .2rem;
 				text-transform: uppercase;
 				margin: auto;
 
 			}
-			
-			&:hover {
-				box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px $Decoration;
+
+			&:active {
+				background: darken($Decoration, 5%);
 			}
+			
 		}
 	}
 
@@ -103,21 +104,12 @@
 
 /* -------------------- Mediaqueries -------------------- */
 
-@media (min-width: 550px) and (max-width: 767px) {
-
-	.order {
-		&__form--username {
-			width: 80%;
-		}
-	}
-}
-
-@media (min-width: 450px) and (max-width: 549px){
+@media (min-width: 450px) and (max-width: 549px) {
 	.order {
 		padding: 2rem;
 			&__form--username {
 				padding: 0rem;
-				width: 100%;
+				width: 80%;
 
 				.form__username {
 					box-sizing: border-box;
@@ -131,20 +123,59 @@
 }
 
 
-@media screen and (max-width: 449px) {
+@media (min-width: 550px) and (max-width: 767px) {
 	.order {
-		padding: 2rem;
 
-	&__form--username {
-			padding: 0rem;
-			width: 100%;
+		&__form--username {
+			width: 80%;
+		}
 
-			.form__username {
-				box-sizing: border-box;
-			}
+		.form__button--submit {
+					width: 60%;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.order {
+		padding: 3rem;
+
+		&__subtitle {
+			font-size: 1.8rem;
+		}
+
+		&__form--username {
+			width: 70%;
 
 			.form__button--submit {
-				width: 100%;
+				width: 50%;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 952px) {
+	.order {
+		padding: 3rem;
+
+		&__subtitle {
+			font-size: 1.8rem;
+		}
+
+		&__form--username {
+			width: 60%;
+
+			.form__button--submit {
+				width: 40%;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
 			}
 		}
 	}
@@ -158,7 +189,7 @@
 		.order__package--username {
 			@include Text();
 			@include fontSet(1.7rem, center, black);
-			letter-spacing: .3rem;
+			letter-spacing: .1rem;
 			padding: 1rem 0rem;
 		}
 	}
@@ -167,7 +198,6 @@
 		display: none;
 		@include navText();
 		@include fontSet(1.6rem, center, $error);
-		padding: 1rem 0rem;
 	}
 
 	.error__message--active {
@@ -176,25 +206,24 @@
 
 	&__gallery {
 		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		width: 80%;
+		flex-direction: row;
+		justify-content: center;
+		width: 100%;
 		margin: 0rem auto;
 
 		.gallery {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: center;
 			
 
 			&__cell {
 				display: flex;
-				flex-basis: 20%;
-				margin: 2rem;
-				
+				flex-basis: 25%;
+				margin: 1rem;
 
 				.post__image {
-					width: 150px;
+					width: 80px;
 					margin: 0rem auto;
 					border-radius: .4rem;
 					border: 2px solid transparent;
@@ -206,34 +235,53 @@
 			}
 		}
 
-		&--button {
+	}
+
+	&__gallery--button {
 			outline: none;
 			border: none;
 			display: flex;
-			padding: 2rem;
-			width: 20%;
-			margin: 2rem auto;
-			border-radius: .5rem;
-			background: $iconColor;
+			height: 5.5rem;
+			width: 50%;
+			margin: 0rem auto;
+			background: $linkHover;
 			transition: all .5s ease;
+			@include btnShadow();
+			border-radius: 5px;
 			
 			.gallery__button--text{
-				@include navText();
+				@include Text();
 				@include fontSet(1.3rem, center, #fff);
-				text-transform: uppercase;
-				letter-spacing: .1rem;
 				margin: auto;
+				position: relative;
 
 			}
 
-			&:hover {
-				box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px $iconColor;
+			.pending--on {
+				background: url('../images/pendingIcon.svg') no-repeat;
+				width: 4rem;
+				height: 4rem;
+				background-size: cover;
+				animation: rotationArrow 1s infinite linear;
+
+				@keyframes rotationArrow {
+					  50% {
+					    transform: rotate(180deg);
+					  }
+					  100% {
+					    transform: rotate(360deg);
+					  }
+					}
+
+			}
+
+			&:active {
+				background: darken($linkHover, 5%);
 			}
 		}
-	}
 
 	&__form{
-		width: 60%;
+		width: 100%;
 		margin: 0rem auto;
 
 		.form__button--submit {
@@ -241,14 +289,15 @@
 			border: none;
 			display: flex;
 			padding: 2rem 3rem;
-			width: 50%;
+			width: 80%;
 			margin: 3rem auto;
 			border-radius: .5rem;
 			background: $Decoration;
 			transition: all .5s ease;
+			@include btnShadow();
 
 			.button__text {
-				@include navText();
+				@include Text();
 				@include fontSet(1.5rem, center, #fff);
 				letter-spacing: .2rem;
 				text-transform: uppercase;
@@ -256,27 +305,41 @@
 
 			}
 			
-			&:hover {
-				box-shadow: 0px 0px 0px 2px white, 0px 0px 0px 4px $Decoration;
+			&:active {
+				background: darken($Decoration, 5%);
 			}
+
+			&:disabled {
+				opacity: .6;
+				color: grey;
+			}
+
 		}
 	}
 }
 
 /* -------------------- Mediaqueries -------------------- */
 
-
-
-@media (min-width: 768px) and (max-width: 979px) {
-
+@media (min-width: 450px) and (max-width: 549px){
 	.order {
 		&__gallery {
-			width: 90%;
+			width: 100%;
 
-			&--button {
-				width: 30%;
+			.gallery {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+
+				&__cell {
+					flex-basis: 25%;
+					margin: 1rem;
+				}
 			}
 		}
+
+		&__gallery--button {
+				width: 40%;
+			}
 
 		&__form {
 			width: 80%;
@@ -291,169 +354,322 @@
 @media (min-width: 550px) and (max-width: 767px) {
 	.order {
 		&__gallery {
-			width: 90%;
+			width: 100%;
 
 			.gallery {
 				justify-content: center;
-			}
-
-			&--button {
-				width: 40%;
-			}
-		}
-
-		&__form {
-			width: 80%;
-
-			.form__button--submit {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
 				width: 80%;
-			}
-		}
-	}
-}
-
-@media (min-width: 450px) and (max-width: 549px){
-	.order {
-		&__gallery {
-			width: 100%;
-
-			.gallery {
-				justify-content: center;
 
 				&__cell {
-					flex-basis: 40%;
+					flex-basis: 20%;
+					margin: 1rem;
 				}
 			}
-
-			&--button {
-				width: 50%;
-			}
 		}
+
+		&__gallery--button {
+				width: 35%;
+			}
 
 		&__form {
 			width: 80%;
 
 			.form__button--submit {
-				width: 100%;
+				width: 65%;
 			}
 		}
 	}
 }
 
 
-@media screen and (max-width: 449px) {
+@media (min-width: 768px) and (max-width: 951px) {
+
 	.order {
+		padding-top: 0rem;
+
+
 		&__gallery {
 			width: 100%;
 
 			.gallery {
+				display: flex;
+				flex-wrap: wrap;
 				justify-content: center;
+				width: 80%;
 
 				&__cell {
-					flex-basis: 40%;
+					display: flex;
+					flex-basis: 20%;
+					margin: 1rem;
+
+					.post__image {
+						width: 100px;
+					}
 				}
+
 			}
 
-			&--button {
-				width: 50%;
-			}
 		}
+
+		&__gallery--button {
+				width: 25%;
+
+				&:hover {
+					background: darken($linkHover, 5%);
+				}
+			}
 
 		&__form {
 			width: 80%;
 
 			.form__button--submit {
-				width: 100%;
+				width: 50%;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 952px) {
+	.order {
+		padding-top: 0rem;
+
+		&__gallery {
+			width: 80%;
+			margin: 0rem auto;
+
+			.gallery {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				width: 70%;
+
+				&__cell {
+					display: flex;
+					flex-basis: 20%;
+					margin: 1rem;
+
+					.post__image {
+						width: 120px;
+					}
+				}
+
+			}
+		}
+
+		&__gallery--button {
+				width: 15%;
+
+				&:hover {
+					background: darken($linkHover, 5%);
+				}
+			}
+
+		&__form {
+			width: 80%;
+
+			.form__button--submit {
+				width: 40%;
+
+				&:hover {
+					background: darken($Decoration, 5%);
+				}
 			}
 		}
 	}
 }
 
 /* -------------------- Step Three. Choosing categories -------------------- */
-.order {
-	&__posts {
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		width: 80%;
-		margin: 0rem auto;
+.categories {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0rem auto;
 
-		.post {
-			margin: 2rem;
-			padding: 1rem;
+	.pending--on {
+				background: url('../images/pendingIcon.svg') no-repeat;
+				width: 4rem;
+				height: 4rem;
+				background-size: cover;
+				animation: rotationArrow 1s infinite linear;
 
-			.box__image{
-				display: flex;
-				position: relative;
-				margin: 0rem auto;
-				width: 15rem;
+				@keyframes rotationArrow {
+					  50% {
+					    transform: rotate(180deg);
+					  }
+					  100% {
+					    transform: rotate(360deg);
+					  }
+					}
 
-				.post__image {
-					width: 15rem;
-					border-radius: .4rem;
-					margin: 0rem auto;
-				}
-
-				.comments__info {
-					width: 15rem;
-					height: 100%;
-					padding: 2rem 0rem;
-					box-sizing: border-box;
-					border-radius: .4rem;
-					position: absolute;
-					background: #2C2C2C;
-					@include Title();
-					@include fontSet(2.6rem, center, #fff);
-					letter-spacing: .1rem;
-					opacity: .5;
-				}
 			}
 
-			&__buttons {
+	.pending--onBg {
+		background-color: $iconColor;
+		margin: 1rem auto;
+		border-radius: 50rem;
+	}
+
+	&__box{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0rem auto;
+		position: relative;
+		width: 100%;
+
+		.category__btn{
+			@include Text();
+			@include fontSet(1.7rem, center, #fff);
+			padding: 2rem 2.5rem;
+			margin: 1rem 0rem;
+			width: 100%;
+			background: $Decoration;
+			border-radius: .5rem;
+			outline: none;
+			border: none;
+			transition: all .5s ease;
+			@include btnShadow();
+
+			&:active {
+				background: darken($Decoration, 5%);
+			}
+		}
+
+		.ctgC,
+		.ctgL,
+		.ctgR {
+			transition: transform .6s ease;
+		}
+
+		.ctgL {
+			transition: transform .6s ease;
+		}
+
+		.ctgR {
+			transition: transform .6s ease;
+		}
+
+		.ctgL--clicked{
+			transform: translateY(70px);
+			transition: transform .6s ease;
+		}
+
+		.ctgR--clicked{
+			transform: translateY(-70px);
+			transition: transform .6s ease;
+		}
+
+		.category__btn--back {
+			background: $packageButton;
+			
+
+			&:active{
+				background: darken($packageButton, 5%);
+			}
+		}
+	}
+
+
+	.category__btn--back {
+			background: $packageButton;
+			@include Text();
+			padding: 1.5rem 2rem;
+			@include fontSet(1.7rem, center, #fff);
+			width: 100%;
+			border-radius: .5rem;
+			margin: auto 1rem;
+			outline: none;
+			border: none;
+			transition: all .5s ease;
+			margin: 2rem auto;
+			@include btnShadow();
+
+			&:hover{
+				background: darken($packageButton, 5%);
+			}
+		}
+
+	.subcategories__box {
+		// display: none;
+		margin: 1rem auto;
+		width: 100%;
+		.subcategory__list{
+			// display: none;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			list-style-type: none;
+			padding: 0rem;
+
+			&Item{
 				display: flex;
+				background: $linkHover;
+				border-radius: .3rem;
+				padding: 1rem 2rem;
+				margin: 1rem 0rem;
+				transition: background .3s ease;
+				@include btnShadow();
 
-				.post__button {
-					margin: 1rem;
-					padding: .5rem;
-					width: 50%;
-					outline: none;
-					background: #F2F2F2;
-					@include fontSet(2.3rem, center, darken(#F2F2F2, 25%));
-					@include packagesText();
-					border: 1px solid darken(#F2F2F2, 25%);
-					border-radius: .4rem;
-					transition: all .5s ease;
 
-					&:hover {
-						background: lighten(#f2f2f2, 2%);
-						color: $Decoration;
-						border: 1px solid $Decoration;
+				.subcategory__arrow{
+					width: 4rem;
+					height: 4rem;
+					background: url('../images/subcategory__arrow.svg') no-repeat;
+					background-size: cover;
+					align-self: center;
+					transition: all .3s ease;
+				}
+
+				.subcategory__name {
+					@include Text();
+					@include fontSet(1.7rem, left, #fff);
+					letter-spacing: .1rem;
+					align-self: center;
+				}
+
+				.item__isHot {
+					position: relative;
+
+					&:after {
+						content: '';
+						position: absolute;
+						display: block;
+						background: url('../images/itemIsHot.svg') no-repeat;
+						background-size: contain;
+						height: 2.5rem;
+						width: 3.1rem;
+						top: 0rem;
+						right: -4rem;
 					}
 				}
+
 			}
 
-			&__text {
-				@include Text();
-				@include fontSet(1.7rem, center, $Text);
-				margin: 2rem auto;
-			}
+			&Item--active{
+				background: $error;
+				transition: background .3s ease;
 
-			&__categories {
-				display: flex;
-				flex-direction: column;
-
-				.category {
-					padding: 1rem;
-					margin: 1rem 0rem;
-					@include Text();
-					@include fontSet( 1.5rem, left, $Text);
-					width: 100%;
-					box-sizing: border-box;
-					border: none;
-					background: #F2F2F2;
-					border: 1px solid darken(#F2F2F2, 25%);
-					border-radius: .4rem;
+				.subcategory__arrow {
+					margin-left: .5rem;
 				}
+			}
+
+			.subcategory__listItem--hover {
+				&:active {
+					background: darken($linkHover, 5%);
+				}
+
+				&:active .subcategory__arrow {
+					margin-left: .5rem;
+				}
+
 			}
 		}
 	}
@@ -462,11 +678,1232 @@
 
 /* -------------------- Mediaqueries -------------------- */
 
-@media (min-width: 768px) and (max-width: 990px) {
-
+@media (min-width: 450px) and (max-width: 549px) {
 	.order {
-		&__posts {
+		.categories {
+			width: 80%;
+			margin: 0rem auto;
+
+			&__box {
+				.category__btn {
+					width: 18rem;
+					margin: 1rem auto;
+					font-size: 1.6rem;
+					padding: 1.7rem 2rem;
+				}
+			}
+
+			.category__btn--back {
+				width: 18rem;
+				padding: 1.7rem 2rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+.order {
+		.categories {
+			&__box{
+				flex-direction: row;
+				justify-content: center;
+				margin: 0rem auto;
+
+				.category__btn {
+					margin: 2rem 1rem;
+					width: 15rem;
+					font-size: 1.6rem;
+					padding: 1rem 1.5rem;
+				}
+
+				.ctgL--clicked{
+					transform: translateX(215px);
+					transition: transform 1s ease;
+				}
+
+				.ctgR--clicked{
+					transform: translateX(-215px);
+					transition: transform 1s ease;
+				}
+			}
+
+			.category__btn--back {
+				padding: 1.5rem 2rem;
+				width: 18rem;
+			}
+
+			.subcategories__box {
+				width: 70%;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 990px) {
+	.order {
+		.categories {
+			width: 100%;
+			&__box{
+				flex-direction: row;
+				justify-content: center;
+				margin: 0rem auto;
+
+				.category__btn {
+					margin: 2rem;
+					width: 18rem;
+					font-size: 1.6rem;
+					padding: 2rem 2.5rem;
+
+					&:hover {
+						background: darken($Decoration, 5%);
+					}
+				}
+
+				.ctgL--clicked{
+					transform: translateX(300px);
+					transition: transform 1s ease;
+				}
+
+				.ctgR--clicked{
+					transform: translateX(-300px);
+					transition: transform 1s ease;
+				}
+			}
+
+			.category__btn--back {
+				padding: 2rem 2.5rem;
+				width: 18rem;
+				margin: 2rem auto;
+
+				&:hover{
+					background: darken($packageButton, 5%);
+				}
+			}
+
+			.subcategories__box {
+				width: 55%;
+
+				.subcategory__list {
+					&Item {
+						&:hover {
+							background: darken($linkHover, 5%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 991px) {
+	.order {
+		.categories {
+			width: 100%;
+			&__box{
+				flex-direction: row;
+				justify-content: center;
+				margin: 0rem auto;
+
+				.category__btn {
+					margin: 2rem 3rem;
+					width: 18rem;
+					font-size: 1.6rem;
+					padding: 1.5rem 2rem;
+
+					&:hover {
+						background: darken($Decoration, 5%);
+					}
+				}
+
+				.ctgL--clicked{
+					transform: translateX(300px);
+					transition: transform 1s ease;
+				}
+
+				.ctgR--clicked{
+					transform: translateX(-300px);
+					transition: transform 1s ease;
+				}
+			}
+
+			.category__btn--back {
+				padding: 1.5rem 2rem;
+				width: 18rem;
+				margin: 2rem auto;
+
+				&:hover{
+					background: darken($packageButton, 5%);
+				}
+			}
+
+			.subcategories__box {
+				width: 40%;
+
+				.subcategory__list {
+					.subcategory__listItem--hover {
+						&:hover {
+							background: darken($linkHover, 5%);
+						}
+
+						&:hover .subcategory__arrow {
+							margin-left: .5rem;
+						}
+
+					}
+				}
+			}
+		}
+
+		&__form {
+			.form__button--submit {
+				width: 35%;
+			}
+		}
+	}
+}
+/* -------------------- Step Four. Choosing comments -------------------- */
+
+.order {
+	padding: 2rem 1rem;
+
+	&__info {
+		.counter__box {
+			display: flex;
+			margin: 0rem auto;
+
+			.numberOfSlide {
+				margin-right: .3rem;
+			}
+			.order__counter {
+				@include Text();
+				@include fontSet(1.8rem, center, #111);
+			}
+		}
+
+		.order__details {
+			display: none;
+			margin: 1rem 0rem;
+			@include Text();
+			@include fontSet(1.6rem, center, #111);
+
+			&Comments {
+				@include Text();
+				@include fontSet(1.8rem, center, $linkHover);
+			}
+		}
+	}
+
+	.slider {
+		width: 100%;
+		margin: 2rem auto 0rem auto;
+
+		&__cell{
+			width: 100%;
+			padding-bottom: 1rem;
+			margin: 0rem;
+			margin-bottom: 2rem;
+			.card__comment {
+				display: flex;
+				box-sizing: border-box;
+				width: 100%;
+				flex-direction: column;
+				justify-content: center;
+				background: #FAFAFA;
+				border: 1px solid #CDCDCD;
+				@include shadow();
+				border-radius: 3px;
+				margin: 0rem auto;
+				height: auto;
+				padding-bottom: 1rem;
+
+				.card__header{
+					padding: 1.5rem;
+					display: flex;
+
+					&--icon {
+						display: block;
+						width: 26px;
+						height: 26px;
+						border-radius: 5rem;
+						background: #C4C4C4;
+						margin-right: 1rem;
+					}
+
+					&--name {
+						@include Title();
+						@include fontSet(1.5rem, left, #111);
+						margin: auto 0rem;
+					}
+
+				}
+				.card__photo {
+					width: 250px;
+					margin: 0rem auto;
+					box-sizing: border-box;
+				}
+
+				.card__icons {
+					display: flex;
+					padding: 1rem;
+			
+					.card__icon--heart {
+						width: 3rem;
+						height: 3rem;
+						margin: 0rem .6rem;
+					}
+
+					.card__icon--comment {
+						width: 2.5rem;
+						height: 2.5rem;
+						margin: auto 0rem;
+					}
+
+					.card__icon--view {
+						width: 3rem;
+						height: 3rem;
+						margin: auto 0rem;
+						margin-top: .5rem;
+					}
+				}
+
+				.card__list{
+					padding: 1rem .5rem;
+					margin: 0rem;
+
+					&Item{
+						display: flex;
+						box-sizing: border-box;
+						margin: 1rem 0rem 0rem 0rem;
+
+						.listItem__number{
+							@include Text();
+							@include fontSet(1.4rem, center, $Decoration);
+							margin-right: .5rem;
+							width: 5%;
+						}
+
+						.listItem__text{
+							@include Text();
+							@include fontSet(1.5rem, left, #111);
+							width: 74%;
+						}
+
+						.listItem__input{
+							@include Text();
+							@include fontSet(1.5rem, left, #111);
+							width: 74%;
+						}
+
+						.listItem__button--submit{
+							margin-left: .3rem;
+							padding: 1rem;
+							background: $linkHover;
+							@include btnShadow();
+							border-radius: 5px;
+							@include Text();
+							@include fontSet(1.4rem, center, #fff);
+							outline: none;
+							border: none;
+							transition: background .5s ease;
+							
+
+							&:active {
+								background: darken($linkHover, 5%);
+							}
+
+						}
+
+						.listItem__buttons{
+							display: flex;
+							width: 26%;
+
+							.comment__status {
+								@include Text();
+								@include fontSet(1.2rem, left, #fff);
+								padding: .5rem 1rem;
+								border-radius: 1rem;
+								box-sizing: border-box;
+								margin-left:auto;
+							}
+
+							.comment__status--completed{
+								background: #388E3C;
+							}
+							.comment__status--soon {
+								background: #FFA000;
+							}
+							.listItem__button {
+								margin: 0rem .4rem;
+								width: 2.2rem;
+								height: 2.2rem;
+								outline: none;
+								border: none;
+								transition: all .3s ease;
+
+								
+							}
+
+							.card__btn--delete {
+								width: 2rem;
+								height: 2rem;
+							}
+
+							.card__btn__edit {								
+								transition: all .5s ease;
+							}
+
+							.btn__edit--active {
+								transform: translateX(5px);
+							}
+
+							.btn__refresh--active {
+								display: block;
+								animation: rotation 1s infinite linear;
+
+								@keyframes rotation {
+									  50% {
+									    transform: rotate(360deg);
+									  }
+									  100% {
+									    transform: rotate(0deg);
+									  }
+									}
+								}
+
+							.btn__delete--active {
+								transform: scale(0.8);
+							}
+
+							.card__btn--edit,
+							.card__btn--delete,
+							.card__btn--refresh {
+								&:active {
+									opacity: .5;
+								}
+							}
+						}
+					}
+				}
+
+				&--showMore{
+					display: flex;
+					margin: 0rem auto .5rem auto;
+					padding: 1.5rem 2rem;
+					background: $linkHover;
+					@include btnShadow();
+					border-radius: 5px;
+					@include Text();
+					@include fontSet(1.4rem, center, #fff);
+					outline: none;
+					border: none;
+					transition: background .5s ease;
+					margin: 2rem auto;
+					
+
+					&:active {
+						background: darken($linkHover, 5%);
+					}
+				}
+			}
+		}
+
+		.flickity-button {
+			width: 4rem;
+			height: 4rem;
+			border: none;
+			background: $iconColor;
+			border-radius: 50%;
+			transition: all .3s ease;
+
+			&:active .flickity-button-icon {
+				fill: #fff;
+				opacity: .7;
+			}
+		}
+
+		.flickity-button:disabled {
+		  display: none;
+		}
+
+		.flickity-button-icon {
+			fill: #fff;
+		}
+
+		.flickity-prev-next-button.previous {
+			top: 25%;
+			left: 5px;
+		}
+		.flickity-prev-next-button.next {
+			top: 25%;
+		  	right: 5px;
+		}
+
+		.flickity-page-dots .dot.is-selected {
+			background: $iconColor;
+		}
+	}
+
+		.card__comment--upload {
+			display: flex;
+			margin: 0rem auto .5rem auto;
+			padding: 2rem 2.5rem;
+			background: $linkHover;
+			@include btnShadow();
+			border-radius: 5px;
+			@include Text();
+			@include fontSet(1.5rem, center, #fff);
+			outline: none;
+			border: none;
+			transition: background .5s ease;
+			
+
+			&:active {
+				background: darken($linkHover, 5%);
+			}
+		}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media (min-width: 450px) and (max-width: 549px){
+	.order {
+
+		.slider {
 			width: 90%;
+
+			&__cell {
+				.card__comment {
+					width: 36rem;
+					margin: 0rem auto;
+					.card__list {
+						padding: 1rem;
+						&Item{
+							.listItem__text {
+								width: 70%;
+							}
+
+							.listItem__input {
+								width: 70%;
+							}
+							.listItem__buttons {
+								width: 25%;
+							}
+						}
+					}
+				}
+			}
+
+			.flickity-button {
+				width: 3.5rem;
+				height: 3.5rem;
+				background: $iconColor;
+
+				&:active .flickity-button-icon {
+					opacity: .7;
+					fill: #fff;
+				}
+			}
+
+			.flickity-button-icon{
+				fill: #fff;
+			}
+
+			.flickity-prev-next-button.previous {
+				top: 25%;
+			  	left: -10px;
+			}
+			.flickity-prev-next-button.next {
+				top: 25%;
+			  	right: -10px;
+			}
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.order {
+
+		.slider {
+			width: 70%;
+
+			&__cell {
+				.card__comment {
+					width: 36rem;
+					margin: 0rem auto;
+					.card__list {
+						padding: 1rem;
+						&Item{
+							.listItem__number {
+								font-size: 1.5rem;
+							}
+							.listItem__text {
+								width: 70%;
+							}
+
+							.listItem__input {
+								width: 70;
+							}
+							.listItem__buttons {
+								width: 25%;
+							}
+						}
+					}
+				}
+			}
+
+			.flickity-button {
+				width: 7rem;
+				height: 7rem;
+				border: none;
+				background: transparent;
+
+				&:active .flickity-button-icon {
+					fill: darken($iconColor, 15%);
+					opacity: .7;
+				}
+			}
+
+			.flickity-button-icon{
+				fill: $iconColor;
+			}
+
+			.flickity-prev-next-button.previous {
+				top: 50%;
+			  	left: -70px;
+			}
+			.flickity-prev-next-button.next {
+				top: 50%;
+			  	right: -70px;
+			}
+
+			.flickity-page-dots .dot.is-selected {
+				background: $iconColor;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.order {
+
+		.slider {
+			width: 60%;
+
+			&__cell {
+				.card__comment {
+					width: 38rem;
+					margin: 0rem auto;
+					.card__list {
+						padding: 1rem;
+						&Item{
+
+							.listItem__number {
+								font-size: 1.5rem;
+							}
+
+							.listItem__text {
+								width: 73%;
+							}
+
+							.listItem__input {
+								width: 73%;
+							}
+
+							.listItem__button--submit {
+								&:hover {
+									background: darken($linkHover, 5%);
+								}
+							}
+							.listItem__buttons {
+								width: 22%;
+
+								.card__btn--edit,
+								.card__btn--delete,
+								.card__btn--refresh {
+									&:hover {
+										opacity: .5;
+									}
+								}
+							}
+						}
+					}
+
+					&--showMore {
+						&:hover {
+							background: darken($linkHover, 5%);
+						}
+					}
+				}
+			}
+
+			.flickity-button {
+				width: 7rem;
+				height: 7rem;
+				border: none;
+				background: transparent;
+
+				&:hover .flickity-button-icon {
+					fill: darken($iconColor, 15%);
+					opacity: .7;
+				}
+			}
+
+			.flickity-button-icon{
+				fill: $iconColor;
+			}
+
+			.flickity-prev-next-button.previous {
+				top: 50%;
+			  	left: -100px;
+			}
+			.flickity-prev-next-button.next {
+				top: 50%;
+			  	right: -100px;
+			}
+
+			.flickity-page-dots .dot.is-selected {
+				background: $iconColor;
+			}
+		}
+
+		.card__comment--upload{
+			&:hover {
+				background: darken($linkHover, 5%);
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 952px) {
+		.order {
+			padding: 0rem;
+
+		.slider {
+			width: 60%;
+			margin: 2rem auto;
+
+			&__cell {
+				padding-bottom: 1rem;
+				.card__comment {
+					width: 38rem;
+					margin: 0rem auto;
+
+					.card__list {
+						padding: 1rem;
+						&Item{
+							.listItem__number {
+								font-size: 1.5rem;
+							}
+
+							.listItem__text {
+								width: 73%;
+							}
+
+							.listItem__input {
+								width: 73%;
+							}
+
+							.listItem__button--submit {
+								&:hover {
+									background: darken($linkHover, 5%);
+								}
+							}
+							.listItem__buttons {
+								width: 22%;
+
+								.listItem__button {
+									width: 2.5rem;
+									height: 2.5rem;
+									margin: 0rem 0.3rem;
+
+								}
+
+								.card__btn--edit,
+								.card__btn--delete,
+								.card__btn--refresh {
+									&:hover {
+										opacity: .5;
+									}
+								}
+							}
+						}
+					}
+
+					&--showMore {
+						&:hover {
+							background: darken($linkHover, 5%);
+						}
+					}
+				}
+			}
+
+			.flickity-button {
+				width: 7rem;
+				height: 7rem;
+				border: none;
+				background: transparent;
+
+				&:hover .flickity-button-icon {
+					fill: darken($iconColor, 15%);
+					opacity: .7;
+				}
+			}
+
+			.flickity-button-icon{
+				fill: $iconColor;
+			}
+
+			.flickity-prev-next-button.previous {
+				top: 50%;
+			  	left: 40px;
+			}
+			.flickity-prev-next-button.next {
+				top: 50%;
+			  	right: 40px;
+			}
+
+			.flickity-page-dots .dot.is-selected {
+				background: $iconColor;
+			}
+		}
+
+		.card__comment--upload{
+			&:hover {
+				background: darken($linkHover, 5%);
+			}
+		}
+
+		&__form {
+			.form__button--submit {
+				width: 30%;
+			}
+		}
+	}
+}
+
+/* -------------------- Step Extra. Likes -------------------- */
+
+.order {
+	
+	.likes__posts {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		
+
+		.img__wrapper{
+			height: 7rem;
+			margin: 1rem;
+			.likes__post{
+				width: 7rem;
+				height: 100%;
+				border-radius: 1rem;
+			}
+		}
+	}
+
+	.likes__checkBox {
+		display: flex;
+		justify-content: center;
+		margin: 2rem 0rem 1rem 0rem;
+
+		.checkbox{
+			display: flex;
+			outline: none;
+			border: none;
+			width: 2.5rem;
+			height: 2.5rem;
+			background: #D81B60;
+			border-radius: 5px;
+			position: relative;
+			margin: auto 0rem auto auto;
+		}
+
+		.checkbox--clicked {
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: .6rem;
+				left: .5rem;
+				width: 1.6rem;
+				height: 1.6rem;
+				background: url('../images/checkboxClicked.svg') no-repeat;
+				background-size: contain;
+			}
+		}
+
+		.checkbox__text {
+			@include Text();
+			@include fontSet(1.5rem, center, $Text);
+			margin: auto auto auto 1rem;
+		}
+	}
+
+	.likesBtn__addMore {
+		display: flex;
+		margin: 0rem auto 1rem auto;
+		padding: 2rem 0rem;
+		width: 20rem;
+		//background: $linkHover;
+		@include btnShadow();
+		border-radius: 5px;
+		outline: none;
+		border: none;
+		transition: background .5s ease;
+		margin-bottom: 2rem;
+		background: linear-gradient(120deg, #C2185B, #E91E63, $Decoration);
+			background-size: 400% 400%;
+			animation: gradientLink 2s ease infinite;
+
+			@keyframes gradientLink {
+			  0% {
+			    background-position: 14% 0%;
+			  }
+			  50% {
+			    background-position: 87% 100%;
+			  }
+			  100% {
+			    background-position: 14% 0%;
+			  }
+			}
+
+		.button__text{
+			@include Text();
+			@include fontSet(1.5rem, center, #fff);
+			text-transform: none;
+			margin: auto;
+		}
+		
+
+		&:active {
+			background: darken($linkHover, 5%);
+		}
+	}
+
+	.form__button--submit {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 2rem 3rem;
+			width: 80%;
+			margin: 0rem auto 2rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			transition: all .5s ease;
+			@include btnShadow();
+			
+
+			.button__text {
+				@include Text();
+				@include fontSet(1.5rem, center, #fff);
+				text-transform: uppercase;
+				margin: auto;
+
+			}
+
+			&:active {
+				background: darken($Decoration, 5%);
+			}
+			
+		}
+
+		.likes__button--skip {
+			background: #EEEEEE;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			border-radius: 5px;
+			margin-bottom: 3rem;
+			
+			.button__text{
+				@include fontSet(1.4rem, center, #212121);
+				text-transform: none;
+			}
+
+			&:active {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+
+	
+}
+
+/* -------------------- Mediaqueries -------------------- */
+@media (min-width: 450px) and (max-width: 549px) {
+	.order {
+
+		.form__button--submit {
+			width: 70%;
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.order {
+
+		.form__button--submit {
+			width: 55%;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.order {
+
+		.likesBtn__addMore {
+			&:hover {
+				background: darken($linkHover, 5%);
+			}
+		}
+
+		.form__button--submit {
+			width: 35%;
+			&:hover {
+				background: darken($Decoration, 5%);
+			}
+		}
+
+		.likes__button--skip {
+			&:hover {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+	}
+}
+
+@media (min-width: 952px) and (max-width: 1120px) {
+	.order {
+
+		.likesBtn__addMore {
+			&:hover {
+				background: darken($linkHover, 5%);
+			}
+		}
+
+		
+		.form__button--submit {
+			width: 30%;
+			&:hover {
+				background: darken($Decoration, 5%);
+			}
+		}
+
+		.likes__button--skip {
+			&:hover {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1121px) {
+	.order {
+
+		.likesBtn__addMore {
+			&:hover {
+				background: darken($linkHover, 5%);
+			}
+		}
+
+		
+		.form__button--submit {
+			width: 23%;
+
+			&:hover {
+				background: darken($Decoration, 5%);
+			}
+		}
+
+		.likes__button--skip {
+			&:hover {
+				background: darken(#EEEEEE, 5%);
+			}
+		}
+	}
+}
+/* -------------------- Step Five. Check Out Order -------------------- */
+
+.order {
+	&__btnBack {
+		@include navText();
+		@include fontSet(1.3rem, left, #9E9E9E);
+		text-decoration: none;
+		transition: all .5s ease;
+		margin-bottom: 2rem;
+		transition: all .5s ease;
+
+		&:active {
+			color: darken(#9e9e9e, 5%);
+		}
+	}
+
+	&__postsImages {
+		display: flex;
+		justify-content: flex-start;
+		width: 100%;
+		margin: 0rem auto;
+		flex-wrap: wrap;
+		transition: all .5s ease;
+
+
+		.post__imageItem {
+			margin: 0.5rem 0.7rem;
+			border: 2px solid transparent;
+		}
+
+		.post__imageItem--chosen {
+			border: 2px solid $iconColor;
+		}
+	}
+
+	&__postsCommentsBox {
+		position: relative;
+		height: 20rem;
+		
+		.postItem__commentsList {
+			position: absolute;
+			top:0rem;
+			left: 0rem;
+			margin: 1rem auto;
+			padding: 0rem;
+			height: 100%;
+			list-style-type: none;
+
+			.postItem__comment {
+				display: flex;
+				margin: 1.2rem 0rem;
+				
+
+				.listItem__number{
+					@include Text();
+					@include fontSet(1.3rem, center, $Decoration);
+					margin-right: .5rem;
+					width: 8%;
+				}
+
+				.listItem__text{
+					@include Text();
+					@include fontSet(1.5rem, left, #111);
+					width: 92%;
+				}
+
+			}
+
+			.postItem__btn--upload {
+				display: flex;
+				margin: 2rem auto 0rem auto;
+				padding: 1.5rem 2rem;
+				background: $linkHover;
+				@include btnShadow();
+				border-radius: 5px;
+				@include Text();
+				@include fontSet(1.5rem, center, #fff);
+				outline: none;
+				border: none;
+				transition: background .5s ease;
+
+				&:active {
+					background: darken($linkHover, 5%);
+				}
+			}
+		}
+
+		.postItem__commentsList--visible {
+			z-index: 5;
+			background: #fafafa;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__subtitle {
+		@include navText();
+		@include fontSet(1.7rem, left, #111);
+		margin: 2rem auto 1rem 1rem;
+	}
+
+	&__paymentList {
+		list-style-type: none;
+		padding: 0rem;
+		width: 90%;
+		margin: 0rem auto;
+
+		.payment__listItem {
+			margin: 1.5rem 0rem;
+			transition: all .5s ease;
+
+
+			&Text {
+				@include Text();
+				@include fontSet(1.6rem, left, #111);
+				position: relative;
+				padding: 0rem 1rem;
+				transition: all .5s ease;
+
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					top: 25%;
+					left: -0.5rem;
+					width: 0;
+					height: 0;
+					border-top: 4px solid transparent;
+					border-left: 7px solid $Decoration;
+					border-bottom: 4px solid transparent;
+					transition: all .5s ease;
+				}
+			}
+
+			.payment__listItem--chosen {
+				padding: 0rem 2rem;
+				@include subTitle();
+				transition: all .5s ease;
+
+				&:before {
+					left: 0.5rem;
+					border-left: 7px solid $linkHover;
+				}
+			}
+		}
+
+		.likes__checkBox {
+				.checkbox{
+					margin-left: 1rem;
+				}
+
+				.checkbox--clicked{
+					margin-left: 1rem;
+				}
+			}
+	}
+
+	&__checkOutInput {
+		padding: 1.5rem 1rem;
+		@include navText();
+		@include fontSet(2rem, left, #111);
+		background: #eee;
+		border: none;
+		border-bottom: 1px solid #9E9E9E;
+		outline: none;
+		margin: 1rem 1rem 2rem 1rem;
+
+		&:focus {
+			border-bottom: 1px solid $Decoration;
+		}
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.order {
+		
+
+		&__postsImages {
 			justify-content: center;
 		}
 	}
@@ -474,101 +1911,1248 @@
 
 @media (min-width: 550px) and (max-width: 767px) {
 	.order {
-		padding: 2rem 1rem;
-		&__posts {
-			width: 100%;
-			justify-content: center;
-		}
-	}
-}
-
-@media (min-width: 450px) and (max-width: 549px){
-	.order {
-		padding: 2rem 1rem;
-		&__posts {
-			width: 100%;
-			justify-content: center;
-
-			.post {
-				flex-basis: 100%;
-				margin: 2rem 0rem;
-
-				&__buttons {
-					justify-content: center;
-					.post__button {
-						padding: 1rem;
-						width: 25%;
-					}
-				}
-
-				&__text {
-					display: flex;
-					text-align: center;
-					font-size: 1.8rem;
-					margin: 2rem auto;
-					width: 50%;
-				}
-
-				&__categories {
-					margin: 1rem;
-				}
-			}
+		&__btnBack {
+			margin-left: 1rem;
 		}
 
-		&__form {
+		&__postsImages,
+		&__postsCommentsBox,
+		&__subtitle,
+		&__paymentList {
 			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
-			.form__button--submit {
-				width: 80%;
+		&__postsImages {
+			justify-content: center;
+		}
+
+		&__checkOutInput {
+			width: 80%;
+			margin: 1rem auto 2rem auto;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.order {
+		&__btnBack {
+				margin-left: 3rem;
+				&:hover {
+					color: darken(#9e9e9e, 5%);
+				}
+			}
+
+		&__postsImages,
+		&__postsCommentsBox,
+		&__subtitle,
+		&__paymentList {
+			width: 65%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__postsImages {
+			justify-content: center;
+
+			.post__imageItem{
+				transition: all .5s ease;
+				&:hover {
+					border: 2px solid $linkHover;
+				}
+			}
+		}
+
+		&__postsCommentsBox {
+			.postItem__btn--upload {
+				&:hover {
+					background: darken($linkHover, 5%);
+				}
+			}
+		}
+
+		&__checkOutInput {
+			width: 65%;
+			margin: 1rem auto 2rem auto;
+		}
+
+		&__paymentList {
+
+			.payment__listItem {
+				padding-left: 2rem;
+				&:hover {
+					.payment__listItemText {
+						&:before {
+							left: 0.5rem;
+							border-left: 7px solid $linkHover;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 952px) and (max-width: 1120px) {
+		.order {
+
+			&__btnBack {
+				margin-left: 5rem;
+				&:hover {
+					color: darken(#9e9e9e, 5%);
+				}
+			}
+
+		&__postsImages,
+		&__postsCommentsBox,
+		&__subtitle,
+		&__paymentList {
+			width: 40%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__postsImages {
+			justify-content: center;
+
+			.post__imageItem{
+				transition: all .5s ease;
+				&:hover {
+					border: 2px solid $linkHover;
+				}
+			}
+		}
+
+		&__postsCommentsBox {
+			.postItem__btn--upload {
+				&:hover {
+					background: darken($linkHover, 5%);
+				}
+			}
+		}
+
+		&__paymentList {
+			padding-left: 2rem;
+			.payment__listItem {
+				&:hover {
+					.payment__listItemText {
+						&:before {
+							left: 0.5rem;
+							border-left: 7px solid $linkHover;
+						}
+					}
+				}
+			}
+		}
+
+		&__checkOutInput {
+			width: 40%;
+			margin: 1rem auto 2rem auto;
+		}
+	}
+}
+
+
+@media screen and (min-width: 1121px){
+		.order {
+			&__btnBack {
+				margin-left: 5rem;
+				&:hover {
+					color: darken(#9e9e9e, 5%);
+				}
+			}
+
+		&__postsImages,
+		&__postsCommentsBox,
+		&__subtitle,
+		&__paymentList {
+			width: 30%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__postsImages {
+			justify-content: center;
+
+			.post__imageItem{
+				transition: all .5s ease;
+				&:hover {
+					border: 2px solid $linkHover;
+				}
+			}
+		}
+
+		&__postsCommentsBox {
+			.postItem__btn--upload {
+				&:hover {
+					background: darken($linkHover, 5%);
+				}
+			}
+		}
+
+		&__paymentList {
+			padding-left: 2rem;
+			.payment__listItem {
+				&:hover {
+					.payment__listItemText {
+						&:before {
+							left: 0rem;
+							border-left: 7px solid $linkHover;
+						}
+					}
+				}
+			}
+		}
+
+		&__checkOutInput {
+			width: 30%;
+			margin: 1rem auto 2rem auto;
+		}
+	}
+}
+
+/* -------------------- Payment Card -------------------- */
+
+
+.payment {
+	background: url('../images/bgDecorReferral.svg') no-repeat;
+	background-position: right;
+	background-size: cover;
+	height: 100%;
+
+
+	.order__subtitle {
+		text-align: center;
+		font-size: 1.8rem;
+	}
+
+	&__trackingLink {
+		margin: 2rem 1rem 3rem 1rem;
+		display: flex;
+		justify-content: center;
+		position: relative;
+
+		
+
+		.trackingLink{
+			width: 25rem;
+			border: 1px solid darken(#eee, 10%);
+			box-sizing: border-box;
+			outline: none;
+			border-radius: .4rem;
+			padding: 1.5rem 2rem;
+			background-color: #fafafa;
+			@include Text();
+			@include fontSet(1.4rem, center, $Text);
+			@include btnShadow();
+			
+		}
+
+
+
+		.button--copy {
+			width: 5rem;
+			background: url('../images/copy1.svg') no-repeat;
+			background-size: contain;
+			outline: none;
+			background-color: #fafafa;
+			border: 1px solid darken(#eee, 10%);
+			border-radius: .5rem;
+			padding: 2rem;
+			margin-left: 1rem;
+			@include btnShadow();
+			transition: all .5s ease;
+
+		}
+
+		.btn--scaled {
+			transform: scale(0.95);
+			opacity: .7;
+			transition: all .5s ease;
+		}
+		
+
+	}
+
+	.link__popup {
+		&:after {
+			content: 'you copied the link';
+			display: block;
+			position: absolute;
+			bottom: 5rem;
+			left: 50%;
+			padding: 1rem;
+			@include Text();
+			@include fontSet(1.2rem, left, #212121);
+			border-radius: .5rem;
+			background: #fff;
+		}
+	}
+
+	&__text {
+		@include Text();
+		@include fontSet(1.4rem,center,#212121);
+		display: flex;
+		justify-content: center;
+		margin: 3rem;
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+
+@media (min-width: 768px) and (max-width: 1120px) {
+	.payment {
+		background-position: right;
+		background-size: contain;
+	}
+}
+
+@media screen and (min-width: 1121px) {
+	.payment {
+		background-position: right;
+		background-size: auto;
+	}
+}
+
+
+/* -------------------- Referral Card -------------------- */
+
+
+
+.referral {
+	background: url('../images/bgDecorReferral.svg') no-repeat;
+	background-position: bottom;
+	background-size: cover;
+	height: 100%;
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+
+		.order__undertitle {
+			font-size: 1.7rem;
+			line-height: 2.5rem;
+			margin-top: 0rem;
+		}
+
+		.order__subtitle {
+			margin: 1rem auto;
+			text-align: center;
+		}
+
+		&Link {
+			margin: 0rem auto;
+			min-width: 70%;
+			padding: 1.5rem 2rem;
+			@include navText();
+			@include fontSet(1.8rem, center, #fff);
+			border-radius: .5rem;
+			background: #C2185B;
+			@include btnShadow();
+			border: none;
+			transition: all .5s ease;
+
+		}
+		.referralLink__text {
+			font-weight: 600;
+		}
+
+		.link--clicked {
+			position: relative;
+			background: darken(#C2185B, 5%);
+
+			&:before {
+				content: 'you copied the link';
+				position: absolute;
+				padding: 1rem;
+				@include navText();
+				@include fontSet(1.3rem, center, #111);
+				background: #fff;
+				border: 1px solid #eee;
+				top: -4rem;
+				left: 25%;
+			}
+		}
+
+		&Button {
+			outline: none;
+			border: none;
+			display: flex;
+			padding: 1.5rem 2rem;
+			width: 50%;
+			margin: 2rem auto;
+			border-radius: .5rem;
+			background: $Decoration;
+			transition: all .5s ease;
+			@include btnShadow();
+			
+
+			.button__text {
+				@include Text();
+				@include fontSet(1.5rem, center, #fff);
+				margin: auto;
+
+			}
+
+			&:active {
+				background: darken($Decoration, 5%);
+			}
+		}
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+@media (min-width: 550px) and (max-width: 767px){
+	.referral {
+		&__card{
+			&Link{
+				min-width: 50%;
+			}
+			&Button{
+				width: 40%;
+			}
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 951px) {
+	.referral {
+		background-position: right;
+		background-size: auto;
+
+		&__card {
+			width: 70%;
+			margin: 0rem auto;
+
+			.order__undertitle {
+				font-size: 1.6rem;
+			}
+
+			&Link{
+				min-width: 50%;
+			}
+			&Button{
+				width: 40%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 952px) {
+	.referral {
+		background-position: right;
+		background-size: auto;
+
+		&__card {
+			width: 50%;
+			margin: 0rem auto;
+
+			.order__undertitle {
+				font-size: 1.6rem;
+			}
+
+			.order__subtitle {
+				font-size: 1.7rem;
+				width: 100%;
+			}
+
+			&Link{
+				min-width: 45%;
+			}
+			&Button{
+				width: 35%;
 			}
 		}
 	}
 }
 
 
-@media screen and (max-width: 449px) {
-	.order {
-		padding: 2rem 1rem;
-		&__posts {
+/* -------------------- Tracking Page -------------------- */
+
+.tracking {
+	padding: 1rem 2rem;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 2rem;
+
+		&Image {
+			width: 80px;
+			margin: 1rem auto 2rem auto;
+		}
+
+		.tracker__box {
 			width: 100%;
-			justify-content: center;
+			position: relative;
+			height: 5rem;
 
-			.post {
-				flex-basis: 100%;
-				margin: 2rem 0rem;
+			.progressBar {
+				display: flex;
+				height: 3.8rem;
+				border-radius: 5rem;
+			}
 
-				&__buttons {
-					justify-content: center;
-					.post__button {
-						padding: 1rem;
-						width: 25%;
+			.progressBarComments--behind{
+				background: #B3E5FC;
+			}
+
+			.progressBarComments--front{
+				background: $Decoration;
+
+				.progressBar--frontInfoComments {
+					color: #00695C;
+				}
+			}
+
+			.progressBarLikes--behind{
+				background:#F06292; 
+			}
+
+			.progressBarLikes--front{
+				background: #D81B60;
+
+				.progressBar--frontInfoLikes {
+					color: darken(#D81B60, 30%) !important; 
+				}
+			}
+
+			.progressBarViews--behind{
+				background: #FF8A65; 
+			}
+
+			.progressBarViews--front{
+				background:#E64A19; 
+
+				.progressBar--frontInfoViews {
+					color: darken(#E64A19, 30%);
+				}
+			}
+
+			.progressBar--behind {
+				
+				width: 100%;
+			}
+
+			.progressBar--front{
+				
+				width: 50%;
+				position: absolute;
+				top: 0rem;
+				left: 0rem;
+			}
+
+			.progressBar--frontInfo {
+				margin: auto;
+				@include Text();
+				font-size: 1.7rem;
+				text-align: center;
+				
+			}
+
+			
+			
+			
+
+			
+		}
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+@media (min-width: 450px) and (max-width: 549px) {
+	.tracking {
+		&__box {
+			width:  90%;
+			margin: 0rem auto 2rem auto;
+		}
+	}
+}
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.tracking {
+		&__box {
+			width:  75%;
+			margin: 0rem auto 2rem auto;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.tracking {
+		&__box {
+			width:  50%;
+			margin: 0rem auto 2rem auto;
+		}
+	}
+}
+
+
+@media screen and (min-width: 952px) {
+	.tracking {
+		&__box {
+			width:  35%;
+			margin: 0rem auto 2rem auto;
+		}
+	}
+}
+
+/* -------------------- Error Message -------------------- */
+
+.pageError {
+	padding: 2rem;
+
+	&__content {
+
+		&Icon {
+			height: 10rem;
+			width: 100%;
+			background: url('../images/errorKitty.svg') no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+
+		&Message {
+			@include navText();
+			@include fontSet(1.8rem, center, #111);
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.pageError {
+		&__content {
+			margin: 3rem auto;
+		}
+	}
+}
+
+@media (min-width: 952px) and (max-width: 1120px) {
+	.pageError {
+		&__content {
+			margin: 3rem auto 5rem auto;
+
+			&Icon {
+				height: 8rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1121px) {
+	.pageError {
+		&__content {
+			margin: 4rem auto 7rem auto;
+		
+			&Icon {
+				height: 8rem;
+			}
+		}
+	}
+}
+
+
+/* -------------------- Free Trial Page -------------------- */
+
+.freeTrial {
+	background: url('../images/bgDecorReferral.svg') no-repeat;
+	background-position: bottom;
+	background-size: cover;
+	height: 100%;
+	padding: 2rem;
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 2rem;
+		background: #F5F5F5d9;
+		border-radius: 0.5rem;
+		@include btnShadow();
+
+		.order__undertitle {
+			margin: 1rem auto;
+		}
+
+		.freeTrial__form {
+			display: flex;
+			flex-direction: column;
+
+				.order__subtitle {
+					margin: 1rem auto;
+					font-weight: 600;
+				}
+
+				&Email{
+					border: none;
+					padding: 1.5rem;
+					border-bottom: 1px solid #BDBDBD;
+					background: #f5f5f5d9;
+					@include Text();
+					@include fontSet(1.6rem, left, #111);
+					margin: 1rem auto;
+					width: 100%;
+					box-sizing: border-box;
+					border-radius: .5rem;
+
+					&:focus {
+						outline: none;
+						border-bottom: 1px solid $Decoration;
 					}
 				}
 
-				&__text {
-					display: flex;
-					text-align: center;
-					font-size: 1.8rem;
-					margin: 2rem auto;
-					width: 70%;
-				}
+				&Button {
+					padding: 2rem 3rem;
+					@include Text();
+					@include fontSet(1.7rem, center, #fff);
+					margin: 1rem auto;
+					width: 100%;
+					background: $iconColor;
+					text-decoration: none;
+					border-radius: .5rem;
+					@include btnShadow();
+					border: none;
 
-				&__categories {
-					margin: 1rem;
+					&:active {
+						background: darken($iconColor, 5%);
+					}
+			}
+		}
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.freeTrial {
+		background-size: cover;
+		background-position: right;
+
+		&__card {
+			width: 70%;
+			margin: 0rem auto;
+
+			.freeTrial__form{
+				
+				&Button{
+					width: 80%;
 				}
 			}
 		}
+	}
+}
 
-		&__form {
-			width: 90%;
 
-			.form__button--submit {
+@media (min-width: 550px) and (max-width: 767px) {
+	.freeTrial {
+		background-size: cover;
+		background-position: right;
+
+		&__card {
+			width: 60%;
+			margin: 0rem auto;
+
+			.order__undertitle {
+				font-size: 1.5rem;
+			}
+
+			.freeTrial__form{
+				.order__subtitle{
+					margin: 1rem auto;
+					text-align: center;
+				}
+				
+				&Button{
+					width: 60%;
+				}
+			}
+		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.freeTrial {
+		background-size: auto;
+		background-position: right;
+
+		&__card {
+			width: 45%;
+			margin: 2rem auto;
+
+			.order__undertitle {
+				font-size: 1.5rem;
+			}
+
+			.freeTrial__form{
+				.order__subtitle{
+					margin: 1rem auto;
+					text-align: center;
+					font-size: 1.5rem;
+				}
+				
+				&Button{
+					width: 60%;
+
+					&:hover {
+						background: darken($iconColor, 5%);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media (min-width: 952px) and (max-width: 1120px) {
+	.freeTrial {
+		background-size: auto;
+		background-position: right;
+
+		&__card {
+			width: 40%;
+			margin: 2rem auto 4rem auto;
+
+			.order__undertitle {
+				font-size: 1.5rem;
+			}
+
+			.freeTrial__form{
+				width: 90%;
+				margin: 1rem auto;
+
+				.order__subtitle{
+					margin: 1rem auto;
+					text-align: center;
+					font-size: 1.5rem;
+					width: 100%;
+				}
+				
+				&Button{
+					width: 60%;
+
+					&:hover {
+						background: darken($iconColor, 5%);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 1121px) {
+	.freeTrial {
+		background-size: auto;
+		background-position: right;
+
+		&__card {
+			width: 35%;
+			margin: 2rem auto 4rem auto;
+
+			.order__undertitle {
+				font-size: 1.5rem;
+			}
+
+			.freeTrial__form{
+				width: 90%;
+				margin: 1rem auto;
+
+				.order__subtitle{
+					margin: 1rem auto;
+					text-align: center;
+					font-size: 1.5rem;
+					width: 100%;
+				}
+				
+				&Button{
+					width: 60%;
+
+					&:hover {
+						background: darken($iconColor, 5%);
+					}
+				}
+			}
+		}
+	}	
+}
+
+/* -------------------- Automatic Packages -------------------- */
+.order {
+	.automatic__options{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		width: 85%;
+		margin: 0rem auto;
+
+		.automatic__option{
+			margin: 1rem 2rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.option__name{
+				display: block;
+				@include subTitle();
+				@include fontSet(1.7rem, left, #212121);
+				margin: auto 0rem;
+			}
+			.option__menu{
+				background: #FFFFFF;
+					border: 1px solid #E0E0E0;
+					box-sizing: border-box;
+					box-shadow: 2px 2px 4px rgba(168, 168, 168, 0.25);
+					border-radius: 5px;
+					padding: .5rem .5rem .5rem 3rem;
+					@include navText();
+					@include fontSet(1.5rem, left, #212121);
+					width: 10rem;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+					background: url("../images/arrowDown.svg") no-repeat;
+					background-size: 1.3rem;
+					background-position: calc(100% - 1.3rem) center;
+
+					&:focus {
+						outline: none;
+						border: 1px solid #21B4B7 !important;
+					}
+
+				&Item{
+					&:focus, 
+					&:hover {
+						outline: none;
+						border: none;
+					}
+					
+				}
+			}
+
+			.option__addInfo{
+				display: block;
+				@include navText();
+				@include fontSet(1.3rem, left, #212121);
 				width: 100%;
 			}
 		}
 	}
+
+	.automatic__price {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 4rem auto 2rem auto;
+
+		.price__name {
+			@include subTitle();
+			@include fontSet(2rem, left, #212121);
+			margin: auto .5rem 0rem .5rem;
+		}
+
+		.price--old {
+			@include navText();
+			@include fontSet(1.3rem, left, #212121);
+			position: relative;
+			margin: auto .5rem 0rem .5rem;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: .7rem;
+				left: 0rem;
+				width: 100%;
+				height: .1rem;
+				background: #212121;
+			}
+
+		}
+
+		.price--new {
+			@include navText();
+			@include fontSet(3rem, left, #C2185B);
+
+			.dollar {
+				font-size: 2rem;
+			}
+
+		}
+
+		.price__discount {
+			display: block;
+			width: 100%;
+			@include Text();
+			@include fontSet(1.5rem, center, #212121);
+			margin-top: 1rem;
+
+		}
+	}
+
+	.automatic__info {
+		@include Text();
+		@include fontSet(1.3rem, center, #212121);
+		margin: 2rem 1rem;
+	}
 }
 
 
-/* -------------------- Step Four. Choosing comments according to the categories -------------------- */
+/* -------------------- Mediaqueries -------------------- */
+@media (min-width: 450px) and (max-width: 549px) {
+	.order {
+		.automatic__options {
+			width: 65%;
+		}
+	}
+}
 
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.order {
+		.automatic__options {
+			width: 50%;
+		}
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 951px) {
+	.order {
+		.automatic__options {
+			width: 40%;
+		}
+	}
+}
+
+
+@media (min-width: 952px) and (max-width: 1120px) {
+	.order {
+		.automatic__options {
+			width: 30%;
+		}
+
+		.automatic__info {
+			margin: 2rem auto 3rem auto !important;
+			width: 50%;
+		}
+	}
+}
+
+
+@media screen and (min-width: 1121px) {
+	.order {
+		.automatic__options {
+			width: 30%;
+		}
+	}
+
+	.automatic__info {
+		margin: 2rem auto 3rem auto !important;
+		width: 50%;
+	}
+}
+
+/* -------------------- Automatic Packages -------------------- */
+
+.order{
+	&__info {
+		.profile{
+			margin: 2rem auto 0rem auto;
+			height: 7rem;
+			&__photo {
+				width: 7rem;
+				border-radius: .5rem;
+			}
+		}
+	}
+	.packages__info {
+		display: flex;
+		justify-content: center;
+		margin: .5rem auto;
+
+		&Name{
+			@include Text();
+			@include fontSet(1.5rem, left, #212121);
+			margin-right: 1rem;
+		}
+
+		&Status {
+			@include subTitle();
+			@include fontSet(1.5rem, left, #212121);
+		}
+	}
+
+	.packages__posts {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+
+		.postBox {
+			height: 5rem;
+			margin: 0rem 1rem;
+			transition: all .5s ease;
+			
+
+			.post__image {
+				width: 5rem;
+				height: 100%;
+				border-radius: .5rem;
+			}
+		}
+
+		.postBox--unknown {
+			width: 5rem;
+			background: #C4C4C4;
+			border-radius: .5rem;
+			position: relative;
+
+			&:after {
+				content: '?';
+				display: block;
+				position: absolute;
+				@include navTextBold();
+				@include fontSet(4.5rem, center, #fff);
+				width: 5rem;
+				height: 5rem;
+				top: 0rem;
+				left: 0rem;
+			}
+		}
+
+	}
+
+	.packages__dropdown {
+		display: flex;
+		justify-content: center;
+		margin: 2rem auto;
+		
+
+		.dropdown__name{
+			@include subTitle();
+			@include fontSet(1.5rem, center, #212121);
+			margin: auto 0rem;
+		}
+
+		.dropdown__select {
+			background: transparent;
+			border: none;
+			transition: all .5s ease;
+			outline: none;
+			box-sizing: border-box;
+			padding: .5rem .5rem .5rem 3rem;
+			@include navText();
+			@include fontSet(1.5rem, left, #212121);
+			width: 10rem;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			@include Text();
+			@include fontSet(1.5rem, center, #212121);
+			background: url("../images/arrowDownRed.svg") no-repeat;
+			background-size: 1.3rem;
+			background-position: calc(100% - 1.3rem) center;
+			border-bottom: 1px solid  transparent;
+
+			&:focus {
+				outline: none;
+				border-bottom: 1px solid #C2185B !important;
+			}
+
+				&Item{
+					&:focus, 
+					&:hover {
+						outline: none;
+						border: none;
+					}
+					
+			}
+		}
+
+	}
+
+	.categoryBtn__upload {
+			display: flex;
+		    margin: 2rem auto;
+		    padding: 2rem 2.5rem;
+		    background: #D81B60;
+		    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		    border-radius: 5px;
+		    font-family: 'Raleway', sans-serif;
+		    font-weight: 400;
+		    font-size: 1.5rem;
+		    text-align: center;
+		    color: #fff;
+		    outline: none;
+		    border: none;
+		    transition: background .5s ease; 
+
+		    &:active,
+		    &:hover {
+		      background: #c11856; }
+		}
+
+	.order__text {
+		@include Text();
+		//font-weight: 600;
+		@include fontSet(1.3rem, center, #212121);
+		margin: 0rem auto;
+	}
+
+	.slider {
+		&__cell {
+			.card__comment{
+				.card__icons {
+					.card__iconWrap {
+						position: relative;
+
+						.card__icon--margin {
+							margin-right: 3rem;
+						}
+						.autopackages__icon {
+							position: absolute;
+							display: block;
+							top: -1.5rem;
+							right: 0rem;
+							width: 47px;
+							height: 21px;
+							background: #D81B60;
+							border-radius: 10px;
+							font-family: Lato;
+							font-style: normal;
+							font-weight: normal;
+							font-size: 15px;
+							line-height: 18px;
+							text-align: center;
+							color: #FFFFFF;
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* -------------------- Mediaqueries -------------------- */
+
+@media screen and (min-width: 951px) {
+	.order {
+		.packages__posts{
+			.postBox {
+				&:hover {
+					opacity: .2;
+				}
+			}
+		}
+
+		.packages__dropdown {
+			.dropdown__select {
+				&:hover {
+					border-bottom: 1px solid  #C2185B;
+				}
+			}
+		}
+	}
+}
