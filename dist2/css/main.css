@@ -597,23 +597,24 @@ body {
 .main {
   background: #fafafa; }
   .main .block__text {
-    padding: 0rem 1rem 1rem 1rem; }
+    padding: 0rem .5rem 1rem .5rem; }
     .main .block__textHeadline {
       font-family: 'Raleway', sans-serif;
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2.4rem;
       text-align: center;
       color: #111;
       margin: 0rem; }
       .main .block__textHeadline .colored {
+        display: block;
         color: #BB175A; }
     .main .block__textSubtitle {
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
-      font-size: 2rem;
+      font-size: 1.8rem;
       text-align: center;
       color: #111;
-      padding: 0rem 1rem; }
+      padding: 0rem 0rem; }
     .main .block__textButton {
       display: none; }
   .main .block__img {
@@ -622,11 +623,33 @@ body {
     background-position: right;
     position: relative; }
     .main .block__img .block__imgMobile {
-      background: url("../images/imgMobile.svg") no-repeat;
+      background: url("../images/imgMobileChanged.svg") no-repeat;
       background-size: contain;
       width: 239px;
       height: 444px;
       margin: 0rem auto; }
+    .main .block__img .block__imgCounter {
+      display: block;
+      position: absolute;
+      font-family: Lato;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FFFFFF; }
+    .main .block__img .counter__followers {
+      bottom: 110px;
+      right: 68px; }
+    .main .block__img .counter__likes {
+      bottom: 110px;
+      left: 72px; }
+    .main .block__img .counter__comments {
+      bottom: 110px;
+      left: 107px; }
+    .main .block__img .counter__dm {
+      font-size: 10px;
+      top: 32px;
+      right: 55px; }
     .main .block__img .imgMobile__Text {
       display: none;
       position: absolute;
@@ -702,11 +725,11 @@ body {
   flex-direction: column;
   margin-top: 9rem; }
   .benefits .benefit {
-    padding: 0rem 4rem; }
+    padding: 0rem 1rem; }
     .benefits .benefit__title {
       font-family: 'Raleway', sans-serif;
       font-weight: 600;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       text-align: center;
       color: #fff;
       -webkit-transform: translateY(6rem);
@@ -724,7 +747,7 @@ body {
       margin-top: 3rem;
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       text-align: center;
       color: #fff;
       -webkit-transform: translateY(6rem);
@@ -772,6 +795,11 @@ body {
 .offers--best {
   background: #fafafa;
   padding: 0rem 1rem; }
+  .offers--best .offers__wrapper {
+    display: none; }
+  .offers--best .offers__wrapper--shown {
+    display: flex;
+    flex-direction: column; }
   .offers--best .title {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -780,6 +808,101 @@ body {
     color: #AE1457;
     margin-top: 8rem;
     margin-bottom: 2rem; }
+  .offers--best .services__menu {
+    margin: 0rem .5rem 2.5rem .5rem;
+    list-style-type: none;
+    padding: 0px; }
+    .offers--best .services__menuItem {
+      display: flex;
+      justify-content: center; }
+      .offers--best .services__menuItem .service__button {
+        outline: none;
+        border: 1px solid #CEC8C4;
+        display: flex;
+        padding: 2rem 3rem;
+        width: 25rem;
+        margin: 1rem auto;
+        border-radius: .5rem;
+        background: #E0E0E2;
+        transition: all .5s ease; }
+        .offers--best .services__menuItem .service__button .button__text {
+          font-family: 'Raleway', sans-serif;
+          font-weight: 400;
+          font-size: 1.5rem;
+          text-align: center;
+          color: #fff;
+          text-transform: uppercase;
+          margin: auto; }
+        .offers--best .services__menuItem .service__button:active {
+          background: #1d9fa1; }
+      .offers--best .services__menuItem .service__comments--chosen {
+        background: #21B4B7;
+        border: 1px solid #06AAAD;
+        box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15); }
+      .offers--best .services__menuItem .service__likes--chosen {
+        background: #D81B60;
+        border: 1px solid #B00C48;
+        box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15); }
+      .offers--best .services__menuItem .service__followers--chosen {
+        background: #7E1B91;
+        border: 1px solid #4C0D72;
+        box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15); }
+      .offers--best .services__menuItem .service__automatic--chosen {
+        background: #FF3377;
+        border: 1px solid #DD044C;
+        box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15); }
+      .offers--best .services__menuItem .service__freeTrial--chosen {
+        background: #FFCA28;
+        border: 1px solid #ECB408;
+        box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15); }
+      .offers--best .services__menuItem .service__question {
+        display: none;
+        border: none;
+        outline: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url("../images/questionIcon.svg") no-repeat;
+        background-size: contain;
+        margin: auto;
+        margin-left: 1.3rem; }
+      .offers--best .services__menuItem .service__question--shown {
+        display: block; }
+  .offers--best .services__accordion {
+    display: none;
+    padding: 0 1rem;
+    list-style-type: none; }
+    .offers--best .services__accordionItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: .8rem auto; }
+      .offers--best .services__accordionItem .accordion__questionWrapper {
+        display: flex; }
+        .offers--best .services__accordionItem .accordion__questionWrapper .accordion__icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          background: url("../images/accordionPlus.svg") no-repeat;
+          background-size: contain;
+          margin: auto 1.5rem auto 0rem; }
+        .offers--best .services__accordionItem .accordion__questionWrapper .accordion__text {
+          font-family: Raleway;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 15px;
+          line-height: 18px;
+          color: #212121; }
+        .offers--best .services__accordionItem .accordion__questionWrapper .accordion__icon--clicked {
+          background: url("../images/accordionMinus.svg") no-repeat; }
+      .offers--best .services__accordionItem .accordion__textAnswer {
+        font-family: Raleway;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #212121;
+        margin-left: 4rem; }
+  .offers--best .accordion--shown {
+    display: block; }
   .offers--best__box {
     display: flex;
     flex-direction: column; }
@@ -869,87 +992,6 @@ body {
       margin: 0rem; }
     .offers--best__box .package .package__price--cents--modified {
       margin-right: auto; }
-    .offers--best__box .packageAside--left {
-      background: url("../images/landingOfferCardLeft.svg") no-repeat;
-      background-position: bottom;
-      background-size: cover;
-      order: 2; }
-      .offers--best__box .packageAside--left .package__comments,
-      .offers--best__box .packageAside--left .package__comments--small {
-        color: #0C4243; }
-      .offers--best__box .packageAside--left .package__button {
-        background: #0C4243;
-        transition: all .5s ease; }
-        .offers--best__box .packageAside--left .package__button:active {
-          background: #105759; }
-    .offers--best__box .packageAside--right {
-      background: url("../images/landingOfferCardRight.svg") no-repeat;
-      background-position: bottom;
-      background-size: cover;
-      order: 3; }
-      .offers--best__box .packageAside--right .package__comments,
-      .offers--best__box .packageAside--right .package__comments--small {
-        color: #880E4F;
-        transition: all .5s ease; }
-      .offers--best__box .packageAside--right .package__button {
-        background: #880E4F; }
-        .offers--best__box .packageAside--right .package__button:active {
-          background: #9f105c; }
-    .offers--best__box .packageMain {
-      background: url("../images/landingOfferCardCenter.svg") no-repeat;
-      background-position: bottom;
-      background-size: cover;
-      order: 1; }
-      .offers--best__box .packageMain .package__comments,
-      .offers--best__box .packageMain .package__comments--small {
-        color: #4A214D; }
-      .offers--best__box .packageMain .package__button {
-        background: #4A214D;
-        transition: all .5s ease; }
-        .offers--best__box .packageMain .package__button:active {
-          background: #5b295f; }
-    .offers--best__box .hotPackage {
-      border: 3px solid #f44336;
-      background-color: #fff;
-      background: url("../images/landingOfferCardHot.svg") no-repeat;
-      background-position: bottom;
-      background-size: cover;
-      order: 1;
-      position: relative; }
-      .offers--best__box .hotPackage:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0rem;
-        right: 0rem;
-        width: 0;
-        height: 0;
-        border-top: 50px solid #f44336;
-        border-left: 50px solid transparent; }
-      .offers--best__box .hotPackage:before {
-        content: "";
-        display: block;
-        position: absolute;
-        content: 'hot';
-        font-family: 'Lato', sans-serif;
-        font-weight: 400;
-        top: 1rem;
-        right: 0rem;
-        z-index: 5;
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        text-align: center;
-        color: #fff;
-        -webkit-transform: rotate(50deg);
-                transform: rotate(50deg); }
-      .offers--best__box .hotPackage .package__comments,
-      .offers--best__box .hotPackage .package__comments--small {
-        color: #881E00; }
-      .offers--best__box .hotPackage .package__button {
-        background: #881E00;
-        transition: all .5s ease; }
-        .offers--best__box .hotPackage .package__button:active {
-          background: #a22400; }
   .offers--best .package {
     display: flex;
     flex-direction: column;
@@ -1049,6 +1091,306 @@ body {
       transition: all .5s ease; }
       .offers--best .packageAutomatic .package__button:active {
         background: #e4286d; }
+  .offers--best .commentsPackage1 {
+    background: url("../fonts/../images/commentsPackage1.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .commentsPackage2 {
+    background: url("../fonts/../images/commentsPackage2.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .commentsPackage3 {
+    background: url("../fonts/../images/commentsPackage3.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .commentsPackage4 {
+    background: url("../fonts/../images/commentsPackage4.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .likesPackage1 {
+    background: url("../fonts/../images/likesPackage1.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .likesPackage2 {
+    background: url("../fonts/../images/likesPackage2.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .likesPackage3 {
+    background: url("../fonts/../images/likesPackage3.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .likesPackage4 {
+    background: url("../fonts/../images/likesPackage4.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .followersPackage1 {
+    background: url("../fonts/../images/followersPackage1.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .followersPackage2 {
+    background: url("../fonts/../images/followersPackage2.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .followersPackage3 {
+    background: url("../fonts/../images/followersPackage3.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .followersPackage4 {
+    background: url("../fonts/../images/followersPackage4.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .automaticPackage1 {
+    background: url("../fonts/../images/automaticPackage1.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .automaticPackage2 {
+    background: url("../fonts/../images/automaticPackage2.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .automaticPackage3 {
+    background: url("../fonts/../images/automaticPackage3.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .automaticPackage4 {
+    background: url("../fonts/../images/automaticPackage4.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .freeTrialPackage1 {
+    background: url("../fonts/../images/freeTrialPackage1.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .freeTrialPackage2 {
+    background: url("../fonts/../images/freeTrialPackage2.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .freeTrialPackage3 {
+    background: url("../fonts/../images/freeTrialPackage3.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
+  .offers--best .freeTrialPackage4 {
+    background: url("../fonts/../images/freeTrialPackage4.svg") no-repeat;
+    display: block;
+    background-size: contain;
+    background-position: bottom; }
+  .offers--best .commentsPackage1 .package__button, .offers--best .commentsPackage2 .package__button, .offers--best .commentsPackage3 .package__button, .offers--best .commentsPackage4 .package__button {
+    background: #2F4858; }
+  .offers--best .likesPackage1 .package__button, .offers--best .likesPackage2 .package__button, .offers--best .likesPackage3 .package__button, .offers--best .likesPackage4 .package__button {
+    background: #880E4F; }
+  .offers--best .followersPackage1 .package__button, .offers--best .followersPackage2 .package__button, .offers--best .followersPackage3 .package__button, .offers--best .followersPackage4 .package__button {
+    background: #4C0D72; }
+  .offers--best .automaticPackage1 .package__button, .offers--best .automaticPackage2 .package__button, .offers--best .automaticPackage3 .package__button, .offers--best .automaticPackage4 .package__button {
+    background: #DD044C; }
+  .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
+    background: #F57F17; }
   .offers--best__link {
     display: flex;
     padding: 2rem;

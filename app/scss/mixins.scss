@@ -120,6 +120,20 @@
 	}
 };
 
+//packages on landing
+// @each $name in 'commentsPackage1', 'commentsPackage2', 'commentsPackage3','commentsPackage4',
+// 'likesPackage1', 'likesPackage2', 'likesPackage3','likesPackage4',
+// 'followersPackage1', 'followersPackage2', 'followersPackage3','followersPackage4',
+// 'automaticPackage1', 'automaticPackage2', 'automaticPackage3','automaticPackage4',
+// 'freeTrialPackage1', 'freeTrialPackage2', 'freeTrialPackage3','freeTrialPackage4' {
+// 	.#{$name} {
+// 		background: url('../fonts/../images/#{$name}.svg') no-repeat;
+// 		display: block;
+// 		background-size: contain;
+// 	}
+// };
+
+
 
 
 @each $name in 'stats--comment', 'stats--people', 'stats--activity' {

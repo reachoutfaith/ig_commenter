@@ -1,51 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<title>Document</title>
-		<!-- Flickity CSS -->
-		<link rel="stylesheet" href="css/flickity.min.css">
-		<!-- CSS -->
-		<link rel="stylesheet" href="css/main.css">
-	</head>
-	<body>
-		<div class="nav-bg"></div>
-		<header class="header">
 
-			<a href="#" class="header__logo">Commenter</a>
-			<nav class="header__nav">
-					<ul class="menu__list">
-						<li class="menu__list-item"><a href="#" class="item__link item__link--mobile">Home</a></li>
-						<li class="menu__list-item"><a href="#packages" class="item__link item__link--mobile">Packages</a></li>
-						<li class="menu__list-item"><a href="#aboutUs" class="item__link item__link--mobile">Free Trial</a></li>
-						<li class="menu__list-item"><a href="#aboutUs" class="item__link item__link--mobile">Contact us</a></li>
-					</ul>
-				<div class="menu__icon"></div>
-<!-- 				<div class="lang__box"><span class="lang lang--chosen">EN</span><span class="lang">RU</span></div> -->
-			</nav>
-		</header>
-		<div class="content">
-	<div class="payment">
-		<h1 class="order__title">Payment is successful</h1>
-		<h4 class="order__subtitle">Thank you for your order!</h4>
-		<span class="order__text payment__text">Use your tracking link to check your order status and edit comments on your future not yet uploaded posts</span>
-		<div class="payment__trackingLink"><input type="text" class="trackingLink" id="codeToCopy" value="https://igcomment.com/success-payment/"><button class="button--copy order__btn--copy button--copyClicked"></button></div>
-	</div>
-		</div>
-		<footer class="footer">
-			<div class="footer__info">
-				<div class="telegram">
-					<span class="telegram__text">Follow us on </span><a href="#" class="telegram__link">SmmKingdom</a>
-				</div>
-				<div class="footer__links"><a href="#" class="footer__link">Terms of Service</a><a href="#" class="footer__link">Packages</a><a href="#" class="footer__link">Contact Us</a></div>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+	<!-- Flickity CSS -->
+	<link rel="stylesheet" href="css/flickity.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div class="nav-bg"></div>
+	<header class="header">
+
+		<a href="#" class="header__logo">Commenter</a>
+		<nav class="header__nav">
+			<ul class="menu__list">
+				<li class="menu__list-item"><a href="#" class="item__link item__link--mobile">Home</a></li>
+				<li class="menu__list-item"><a href="#packages" class="item__link item__link--mobile">Packages</a></li>
+				<li class="menu__list-item"><a href="#aboutUs" class="item__link item__link--mobile">Free Trial</a></li>
+				<li class="menu__list-item"><a href="#aboutUs" class="item__link item__link--mobile">Contact us</a></li>
+			</ul>
+			<div class="menu__icon"></div>
+			<!-- 				<div class="lang__box"><span class="lang lang--chosen">EN</span><span class="lang">RU</span></div> -->
+		</nav>
+	</header>
+	<div class="content">
+		<main class="main">
+			<div class="block__text">
+				<h1 class="block__textHeadline">Houston, no more problems with
+					<span class="colored">Instagram activity!</span>
+				</h1>
+				<p class="block__textSubtitle">Boost your profile with comments, likes and new followers!</p>
 			</div>
-			<div class="footer__copyright"><span class="copyright">All Rights Reserved &copy; 2019</span></div>
-		</footer>
-		<!-- jQuery -->
-		<script src="js/jquery-1.9.1.js"></script>
-		<script src="js/main.js"></script>
-		<!-- Flickity JavaScript -->
-		<script src="js/flickity.pkgd.min.js"></script>
-	</body>
+			<div class="block__img">
+				<span class="block__imgCounter counter__followers">74</span>
+				<span class="block__imgCounter counter__likes">56</span>
+				<span class="block__imgCounter counter__comments">23</span>
+				<span class="block__imgCounter counter__dm">12</span>
+				<div class="block__imgMobile"></div>
+				<span class="imgMobile__Text user1Comment"><b>Laura</b> commented your post</span>
+				<span class="imgMobile__Text user2Comment"><b>James</b> started following you</span>
+				<span class="imgMobile__Text user3Comment"><b>Mike</b> liked your post</span>
+				<!-- <span class="imgMobile__Text user4Comment"><b>Jane</b> started following you</span> -->
+			</div>
+			<!-- <a href="#" class="main__button"><span class="main__button--center">View Our Offers</span></a> -->
+		</main>
+		<section class="benefits">
+			<div class="benefit benefit__start">
+				<h3 class="benefit__title">How we work</h3>
+				<i class="benefit__icon benefit__growth"></i>
+				<p class="benefit__text">We have a network where people check profiles on social networks and react to
+					the posts they see : like or comment on the shown media. This website helps you to get real activity
+					on your profile</p>
+			</div>
+			<div class="benefit benefit__middle">
+				<h3 class="benefit__title">We are unique</h3>
+				<i class="benefit__icon benefit__comments"></i>
+				<p class="benefit__text">Our service provide with services from HQ <b>male</b> and <b>female</b>
+					accounts that are from <b>the USA, Europe, Australia.</b></p>
+			</div>
+			<div class="benefit benefit__end">
+				<h3 class="benefit__title">Legit service</h3>
+				<i class="benefit__icon benefit__discount"></i>
+				<p class="benefit__text">The Service works like posting photos or videos with hashtag «like4like» or
+					«follow4follow» on Instagram. The Customer pays for showing their posts in our network and get
+					<b>services from real people </b>
+				</p>
+			</div>
+		</section>
+		<section class="offers--best">
+			<h2 class="title">Our Services</h2>
+			<ul class="services__menu">
+				<li class="services__menuItem">
+					<button class="service__button service--chosen service__comments--chosen" data-name="comments">
+						<span class="button__text">Comments</span></button>
+					<button class="service__question service__question--shown"></button>
+				</li>
+				<li class="services__menuItem">
+					<button class="service__button" data-name="likes">
+						<span class="button__text">Likes</span>
+					</button>
+					<button class="service__question"></button>
+				</li>
+				<li class="services__menuItem">
+					<button class="service__button" data-name="followers">
+						<span class="button__text">Followers</span>
+					</button>
+					<button class="service__question"></button>
+				</li>
+				<li class="services__menuItem">
+					<button class="service__button" data-name="automatic">
+						<span class="button__text">Automatic</span>
+					</button>
+					<button class="service__question"></button>
+				</li>
+				<li class="services__menuItem">
+					<button class="service__button" data-name="freeTrial">
+						<span class="button__text">Free Trial</span>
+					</button>
+					<button class="service__question"></button>
+				</li>
+			</ul>
+			<ul class="services__accordion accordion__comments" data-type="comments">
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Why should I choose comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I edit comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I choose accounts’ gender?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Will real people comment my posts?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+			</ul>
+
+			<ul class="services__accordion accordion__comments" data-type="comments">
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Why should I choose comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I edit comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I choose accounts’ gender?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Will real people comment my posts?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+			</ul>
+
+			<ul class="services__accordion accordion__likes">
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Why should I choose comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I edit comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I choose accounts’ gender?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Will real people comment my posts?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+			</ul>
+
+			<ul class="services__accordion accordion__followers">
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Why should I choose comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I edit comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I choose accounts’ gender?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Will real people comment my posts?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+			</ul>
+
+			<ul class="services__accordion accordion__automatic">
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Why should I choose comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I edit comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I choose accounts’ gender?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Will real people comment my posts?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+			</ul>
+
+			<ul class="services__accordion accordion__freeTrial">
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Why should I choose comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I edit comments?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Can I choose accounts’ gender?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+				<li class="services__accordionItem">
+					<div class="accordion__questionWrapper">
+						<div class="accordion__icon"></div>
+						<span class="accordion__text">Will real people comment my posts?</span>
+					</div>
+					<p class="accordion__textAnswer">Yes, you can! Pick any category you like, press edit button, write
+						your own text and then submit it. Done!</p>
+				</li>
+			</ul>
+
+			<div class="offers--best__box" id="packages">
+				<div class="offers__wrapper offers__wrapper--shown commentsPackage">
+					<div class="package package packageAside--left commentsPackage1">
+						<div class="package__icon packageIcon--left"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageMain commentsPackage2">
+						<div class="package__icon packageIcon--center"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+						<a href="#" class="package__button hotButton"><span class="package__button-text">buy
+								now</span></a>
+					</div>
+					<div class="package packageAside--right commentsPackage3">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageAside--right commentsPackage4">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+				</div>
+
+				<div class="offers__wrapper  likesPackage">
+					<div class="package package packageAside--left likesPackage1">
+						<div class="package__icon packageIcon--left"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageMain likesPackage2">
+						<div class="package__icon packageIcon--center"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+						<a href="#" class="package__button hotButton"><span class="package__button-text">buy
+								now</span></a>
+					</div>
+					<div class="package packageAside--right likesPackage3">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageAside--right likesPackage4">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+				</div>
+
+				<div class="offers__wrapper  followersPackage">
+					<div class="package package packageAside--left followersPackage1">
+						<div class="package__icon packageIcon--left"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageMain followersPackage2">
+						<div class="package__icon packageIcon--center"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+						<a href="#" class="package__button hotButton"><span class="package__button-text">buy
+								now</span></a>
+					</div>
+					<div class="package packageAside--right followersPackage3">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageAside--right followersPackage4">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+				</div>
+
+				<div class="offers__wrapper  automaticPackage">
+					<div class="package package packageAside--left automaticPackage1">
+						<div class="package__icon packageIcon--left"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageMain automaticPackage2">
+						<div class="package__icon packageIcon--center"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+						<a href="#" class="package__button hotButton"><span class="package__button-text">buy
+								now</span></a>
+					</div>
+					<div class="package packageAside--right automaticPackage3">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageAside--right automaticPackage4">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+				</div>
+
+				<div class="offers__wrapper freeTrialPAckage">
+					<div class="package package packageAside--left freeTrialPackage1">
+						<div class="package__icon packageIcon--left"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageMain freeTrialPackage2">
+						<div class="package__icon packageIcon--center"></div>
+						<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__comments package__comments--small package__comments--margin">and</span>
+						<span class="package__comments package__comments--zero"><span
+								class="package__comments--small">up
+								to</span> 25 Likes</span>
+
+						<span class="package__price"><span
+								class="package__comments--small package__price--modified">from
+							</span><span class="package__price--cents">&#36;</span>10<span
+								class="package__price--cents package__price--cents--modified">99</span></span>
+						<a href="#" class="package__button hotButton"><span class="package__button-text">buy
+								now</span></a>
+					</div>
+					<div class="package packageAside--right freeTrialPackage3">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+					<div class="package packageAside--right freeTrialPackage4">
+						<div class="package__icon packageIcon--right"></div>
+						<span class="package__comments"><span class="package__comments--num">50</span>Comments</span>
+						<span class="package__price"><span class="package__price--currency">&#36;</span>10<span
+								class="package__price--cents">99</span></span>
+						<a href="#" class="package__button"><span class="package__button-text">buy now</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- <h2 class="title">NEW Automatic Packages</h2>
+			<div class="package packageAutomatic">
+				<div class="package__icon packageIcon--center"></div>
+				<span class="package__comments "><span class="package__comments--num">50</span>Comments</span>
+				<span class="package__comments package__comments--small package__comments--margin">and</span>
+				<span class="package__comments package__comments--zero"><span class="package__comments--small">up
+						to</span> 25 Likes</span>
+				
+				<span class="package__price"><span class="package__comments--small package__price--modified">from
+					</span><span class="package__price--cents">&#36;</span>10<span
+						class="package__price--cents package__price--cents--modified">99</span></span>
+				<a href="#" class="package__button hotButton"><span class="package__button-text">buy now</span></a> -->
+	</div>
+	<a href="#" class="offers--best__link"><span class="offers--best__link--center">Click here to see more
+			options</span></a>
+	</section>
+	<section class="stats" id="aboutUs">
+		<div class="card__wrapper stats__card--start">
+			<div class="stats__card">
+				<span class="stats__icon stats--comment"></span>
+				<span class="stats__subtitle">More than</span>
+				<span class="stats__title">10,000</span>
+				<span class="stats__subtitle--right">unique and authentic <b>comments</b> in our database</span>
+			</div>
+		</div>
+		<div class="card__wrapper stats__card--middle">
+			<div class="stats__card">
+				<span class="stats__icon stats--people"></span>
+				<span class="stats__subtitle">Already more than</span>
+				<span class="stats__title">20,000</span>
+				<span class="stats__subtitle--right"><b>people</b> joined in our community</span>
+			</div>
+		</div>
+
+		<div class="card__wrapper stats__card--end">
+			<div class="stats__card">
+				<span class="stats__icon stats--activity"></span>
+				<span class="stats__subtitle">We have</span>
+				<span class="stats__title">Activity</span>
+				<span class="stats__subtitle--right">from <b>real</b> people</span>
+			</div>
+		</div>
+	</section>
+	<section class="comments">
+		<div class="comments__slider">
+			<div class="slide">
+				<div class="card__user">
+					<img src="images/user1.jpg" alt="" class="user__image">
+					<div class="user__info">
+						<p class="user__comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, in,
+							ipsam. Consequatur reiciendis laudantium eius ex ea incidunt maxime quidem sit officiis,
+							illum fuga itaque eveniet aut laboriosam est possimus.</p>
+						<span class="user__name">user1</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="card__user">
+					<img src="images/user1.jpg" alt="" class="user__image">
+					<div class="user__info">
+						<p class="user__comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, in,
+							ipsam. Consequatur reiciendis laudantium eius ex ea incidunt maxime quidem sit officiis,
+							illum fuga itaque eveniet aut laboriosam est possimus.</p>
+						<span class="user__name">user2</span>
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="card__user">
+					<img src="images/user1.jpg" alt="" class="user__image">
+					<div class="user__info">
+						<p class="user__comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, in,
+							ipsam. Consequatur reiciendis laudantium eius ex ea incidunt maxime quidem sit officiis,
+							illum fuga itaque eveniet aut laboriosam est possimus.</p>
+						<span class="user__name">user3</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</div>
+	<footer class="footer">
+		<div class="footer__info">
+			<div class="telegram">
+				<span class="telegram__text">Follow us on </span><a href="#" class="telegram__link">SmmKingdom</a>
+			</div>
+			<div class="footer__links"><a href="#" class="footer__link">Terms of Service</a><a href="#"
+					class="footer__link">Packages</a><a href="#" class="footer__link">Contact Us</a></div>
+		</div>
+		<div class="footer__copyright"><span class="copyright">All Rights Reserved &copy; 2019</span></div>
+	</footer>
+	<!-- jQuery -->
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/main.js"></script>
+	<!-- Flickity JavaScript -->
+	<script src="js/flickity.pkgd.min.js"></script>
+</body>
+
 </html>

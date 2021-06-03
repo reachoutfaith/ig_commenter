@@ -257,21 +257,22 @@ body {
 .main {
 	background: #fafafa;
 	.block__text {
-		padding: 0rem 1rem 1rem 1rem;
+		padding: 0rem .5rem 1rem .5rem;
 		&Headline {
 			@include Title();
-			@include fontSet(3rem, center, #111);
+			@include fontSet(2.4rem, center, #111);
 			margin: 0rem;
 
 			.colored {
+				display: block;
 				color: #BB175A;
 			}
 		}
 
 		&Subtitle {
 			@include Text();
-			@include fontSet(2rem, center, #111);
-			padding: 0rem 1rem;
+			@include fontSet(1.8rem, center, #111);
+			padding: 0rem 0rem;
 		}
 
 		&Button {
@@ -286,13 +287,49 @@ body {
 		position: relative;
 
 		.block__imgMobile{
-			background: url('../images/imgMobile.svg') no-repeat;
+			background: url('../images/imgMobileChanged.svg') no-repeat;
 			background-size: contain;
 			width: 239px;
 			height: 444px;
 			margin: 0rem auto;
 			
 		}
+		
+		.block__imgCounter {
+			display: block;
+			position: absolute;
+			font-family: Lato;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 22px;
+			color: #FFFFFF;
+		}
+
+		
+
+		.counter__followers {
+			bottom: 110px;
+			right: 68px;
+		}
+
+		.counter__likes {
+			bottom: 110px;
+			left: 72px;
+		}
+
+		.counter__comments{
+			bottom: 110px;
+			left: 107px;
+		}
+
+		.counter__dm {
+			font-size: 10px;
+			top: 32px;
+			right: 55px;
+		}
+
+
 
 		.imgMobile__Text {
 			display: none;
@@ -394,12 +431,12 @@ body {
 	margin-top: 9rem;
 
 	.benefit {
-		padding: 0rem 4rem;
+		padding: 0rem 1rem;
 		
 
 		&__title {
 			@include subTitle();
-			@include fontSet(2.2rem, center, #fff);
+			@include fontSet(2.5rem, center, #fff);
 			transform: translateY(6rem);
 			transition: all 1s ease;
 		}
@@ -416,7 +453,7 @@ body {
 		&__text {
 			margin-top: 3rem;
 			@include Text();
-			@include fontSet(1.6rem, center, #fff);
+			@include fontSet(1.5rem, center, #fff);
 			transform: translateY(6rem);
 			transition: all 1s ease;
 		}
@@ -478,15 +515,161 @@ body {
 	}
 }
 
+
+
 .offers--best {
 	background: #fafafa;
 	padding: 0rem 1rem;
+
+	
+	.offers__wrapper {
+		display: none;
+	}
+
+	.offers__wrapper--shown {
+		display: flex;
+		flex-direction: column;
+	}
+
 
 	.title {
 		@include Title();
 		@include fontSet(3rem, center, #AE1457);
 		margin-top: 8rem;
 		margin-bottom: 2rem;
+	}
+
+	.services__menu {
+		margin: 0rem .5rem 2.5rem .5rem;
+		list-style-type: none;
+		padding: 0px;
+
+		&Item{
+			display: flex;
+			justify-content: center;
+
+			.service__button {
+				outline: none;
+				border: 1px solid #CEC8C4;
+				display: flex;
+				padding: 2rem 3rem;
+				width: 25rem;
+				margin: 1rem auto;
+				border-radius: .5rem;
+				background: #E0E0E2;
+				transition: all .5s ease;
+
+				.button__text {
+					@include Text();
+					@include fontSet(1.5rem, center, #fff);
+					text-transform: uppercase;
+					margin: auto;
+
+				}
+
+				&:active {
+					background: darken($Decoration, 5%);
+				}
+			}
+
+			.service__comments--chosen {
+				background: $Decoration;
+				border: 1px solid #06AAAD;
+				box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15);
+			}
+
+			.service__likes--chosen {
+				background: #D81B60;
+				border: 1px solid #B00C48;
+				box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15);
+			}
+
+			.service__followers--chosen {
+				background: #7E1B91;
+				border: 1px solid #4C0D72;
+				box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15);
+			}
+
+			.service__automatic--chosen {
+				background: #FF3377;
+				border: 1px solid #DD044C;
+				box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15);
+			}
+
+			.service__freeTrial--chosen {
+				background: #FFCA28;
+				border: 1px solid #ECB408;
+				box-shadow: 1px 1px 4px rgba(33, 33, 33, 0.15);
+
+			}
+
+			.service__question {
+				display: none;
+				border: none;
+				outline: none;
+				width: 2.5rem;
+				height: 2.5rem;
+				background: url('../images/questionIcon.svg') no-repeat;
+				background-size: contain;
+				margin: auto;
+				margin-left: 1.3rem;
+			}
+
+			.service__question--shown {
+				display: block;
+			}
+		}
+	}
+
+	.services__accordion {
+		display: none;
+		padding: 0 1rem;
+		list-style-type: none;
+
+		&Item {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin: .8rem auto;
+
+			.accordion__questionWrapper {
+				display: flex;
+				
+				.accordion__icon {
+					width: 2.5rem;
+					height: 2.5rem;
+					background: url('../images/accordionPlus.svg') no-repeat;
+					background-size: contain;
+					margin: auto 1.5rem auto 0rem;
+				}
+
+				.accordion__text {
+					font-family: Raleway;
+					font-style: normal;
+					font-weight: 600;
+					font-size: 15px;
+					line-height: 18px;
+					color: #212121;
+				}
+
+				.accordion__icon--clicked {
+					background: url('../images/accordionMinus.svg') no-repeat;
+				}
+			}
+			.accordion__textAnswer {
+				font-family: Raleway;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 16px;
+				color: #212121;
+				margin-left: 4rem;
+			}
+		}
+	}
+
+	.accordion--shown{
+		display: block;
 	}
 
 	&__box {
@@ -604,120 +787,120 @@ body {
 		}
 
 
-		.packageAside--left {
-			background: url('../images/landingOfferCardLeft.svg') no-repeat;
-			background-position: bottom;
-			background-size: cover;
-			order: 2;
+		// .packageAside--left {
+		// 	background: url('../images/landingOfferCardLeft.svg') no-repeat;
+		// 	background-position: bottom;
+		// 	background-size: cover;
+		// 	order: 2;
 
-			.package__comments,
-			.package__comments--small {
-				color:$footerBg;
-			}
-
-
-			.package__button {
-				background: $footerBg;
-				transition: all .5s ease;
-
-				&:active {
-					background: lighten($footerBg, 5%);
-				}
-			}
-
-		}
-
-		.packageAside--right {
-			background: url('../images/landingOfferCardRight.svg') no-repeat;
-			background-position: bottom;
-			background-size: cover;
-			order: 3;
-
-			.package__comments,
-			.package__comments--small {
-				color: #880E4F;
-				transition: all .5s ease;
-			}
-
-			.package__button {
-				background: #880E4F;
-
-				&:active {
-					background: lighten(#880E4F, 5%);
-				}
-			}	
-		}
-
-		.packageMain {
-			background: url('../images/landingOfferCardCenter.svg') no-repeat;
-			background-position: bottom;
-			background-size: cover;
-			order: 1;
-
-			.package__comments,
-			.package__comments--small {
-				color: #4A214D;
-			}
-
-			.package__button {
-				background: #4A214D;
-				transition: all .5s ease;
-
-				&:active {
-					background: lighten(#4A214D, 5%);
-				}
-			}
-
-		}
+		// 	.package__comments,
+		// 	.package__comments--small {
+		// 		color:$footerBg;
+		// 	}
 
 
-		.hotPackage {
-			border: 3px solid $error;
-			background-color: #fff;
-			background: url('../images/landingOfferCardHot.svg') no-repeat;
-			background-position: bottom;
-			background-size: cover;
-			order: 1;
-			position: relative;
+		// 	.package__button {
+		// 		background: $footerBg;
+		// 		transition: all .5s ease;
+
+		// 		&:active {
+		// 			background: lighten($footerBg, 5%);
+		// 		}
+		// 	}
+
+		// }
+
+		// .packageAside--right {
+		// 	background: url('../images/landingOfferCardRight.svg') no-repeat;
+		// 	background-position: bottom;
+		// 	background-size: cover;
+		// 	order: 3;
+
+		// 	.package__comments,
+		// 	.package__comments--small {
+		// 		color: #880E4F;
+		// 		transition: all .5s ease;
+		// 	}
+
+		// 	.package__button {
+		// 		background: #880E4F;
+
+		// 		&:active {
+		// 			background: lighten(#880E4F, 5%);
+		// 		}
+		// 	}	
+		// }
+
+		// .packageMain {
+		// 	background: url('../images/landingOfferCardCenter.svg') no-repeat;
+		// 	background-position: bottom;
+		// 	background-size: cover;
+		// 	order: 1;
+
+		// 	.package__comments,
+		// 	.package__comments--small {
+		// 		color: #4A214D;
+		// 	}
+
+		// 	.package__button {
+		// 		background: #4A214D;
+		// 		transition: all .5s ease;
+
+		// 		&:active {
+		// 			background: lighten(#4A214D, 5%);
+		// 		}
+		// 	}
+
+		// }
+
+
+		// .hotPackage {
+		// 	border: 3px solid $error;
+		// 	background-color: #fff;
+		// 	background: url('../images/landingOfferCardHot.svg') no-repeat;
+		// 	background-position: bottom;
+		// 	background-size: cover;
+		// 	order: 1;
+		// 	position: relative;
 			
 
-			&:after {
-				@include pseudo();
-				top:0rem;
-				right: 0rem;
-				width: 0;
-				height: 0;
-				border-top: 50px solid $error;
-				border-left: 50px solid transparent;
+		// 	&:after {
+		// 		@include pseudo();
+		// 		top:0rem;
+		// 		right: 0rem;
+		// 		width: 0;
+		// 		height: 0;
+		// 		border-top: 50px solid $error;
+		// 		border-left: 50px solid transparent;
 
-			}
+		// 	}
 
-			&:before{
-				@include pseudo();
-				content: 'hot';
-				@include navText();
-				top:1rem;
-				right: 0rem;
-				z-index: 5;
-				text-transform: uppercase;
-				@include fontSet(1.3rem, center, #fff);
-				transform: rotate(50deg);
-			}
+		// 	&:before{
+		// 		@include pseudo();
+		// 		content: 'hot';
+		// 		@include navText();
+		// 		top:1rem;
+		// 		right: 0rem;
+		// 		z-index: 5;
+		// 		text-transform: uppercase;
+		// 		@include fontSet(1.3rem, center, #fff);
+		// 		transform: rotate(50deg);
+		// 	}
 
-			.package__comments,
-			.package__comments--small {
-				color: #881E00;
-			}
+		// 	.package__comments,
+		// 	.package__comments--small {
+		// 		color: #881E00;
+		// 	}
 
-			.package__button {
-				background: #881E00;
-				transition: all .5s ease;
+		// 	.package__button {
+		// 		background: #881E00;
+		// 		transition: all .5s ease;
 
-				&:active {
-					background: lighten(#881E00, 5%);
-				}
-			}
-		}
+		// 		&:active {
+		// 			background: lighten(#881E00, 5%);
+		// 		}
+		// 	}
+		// }
 
 	}
 
@@ -852,6 +1035,50 @@ body {
 			}
 
 		}
+
+		@each $name in 'commentsPackage1', 'commentsPackage2', 'commentsPackage3','commentsPackage4',
+		'likesPackage1', 'likesPackage2', 'likesPackage3','likesPackage4',
+		'followersPackage1', 'followersPackage2', 'followersPackage3','followersPackage4',
+		'automaticPackage1', 'automaticPackage2', 'automaticPackage3','automaticPackage4',
+		'freeTrialPackage1', 'freeTrialPackage2', 'freeTrialPackage3','freeTrialPackage4' {
+			.#{$name} {
+				background: url('../fonts/../images/#{$name}.svg') no-repeat;
+				display: block;
+				background-size: contain;
+				background-position: bottom;
+			}
+
+		.commentsPackage1, .commentsPackage2, .commentsPackage3, .commentsPackage4 {
+			.package__button {
+				background: #2F4858;
+			}
+		}
+
+		.likesPackage1, .likesPackage2, .likesPackage3,.likesPackage4 {
+			.package__button {
+				background: #880E4F;
+			}
+		}
+
+		.followersPackage1, .followersPackage2, .followersPackage3, .followersPackage4 {
+			.package__button {
+				background: #4C0D72;
+			}
+		}
+
+		.automaticPackage1, .automaticPackage2, .automaticPackage3, .automaticPackage4 {
+			.package__button{
+				background: #DD044C;
+			}
+		}
+
+		.freeTrialPackage1, .freeTrialPackage2, .freeTrialPackage3, .freeTrialPackage4 {
+			.package__button {
+				background: #F57F17;
+			}
+		}
+
+}
 
 
 	&__link {

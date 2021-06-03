@@ -1,5 +1,5 @@
 {
-  "name": "igcommenter",
+  "name": "igcomment",
   "version": "1.0.0",
   "description": "instagram commenter landing page",
   "main": "gulpfile.js",
@@ -12,7 +12,7 @@
     "babel-core": "^6.26.3",
     "browser-sync": "^2.24.6",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-htmlmin": "^4.0.0",
@@ -21,6 +21,15 @@
     "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
+    "browsersync": "0.0.1-security",
     "gulp-csso": "^4.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reachoutfaith/ig_commenter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reachoutfaith/ig_commenter/issues"
+  },
+  "homepage": "https://github.com/reachoutfaith/ig_commenter#readme"
 }
