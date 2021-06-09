@@ -61,6 +61,7 @@
 </g>
 <g filter="url(#filter5_d)">
 <rect x="22" y="308.375" width="38" height="30" rx="3" fill="#ED4956"/>
+<text xmlns="http://www.w3.org/2000/svg" x="22" y="338" font-family="Lato" font-size="18" fill="#fff" id="rect__likes">120</text>
 <path d="M41.4803 349.441L34.1517 338.25L48.6082 338.134L41.4803 349.441Z" fill="#ED4956"/>
 </g>
 <circle cx="49" cy="134.375" r="9" fill="#21B4B7"/>

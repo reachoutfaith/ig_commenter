@@ -623,33 +623,9 @@ body {
     background-position: right;
     position: relative; }
     .main .block__img .block__imgMobile {
-      background: url("../images/imgMobileChanged.svg") no-repeat;
-      background-size: contain;
       width: 239px;
       height: 444px;
       margin: 0rem auto; }
-    .main .block__img .block__imgCounter {
-      display: block;
-      position: absolute;
-      font-family: Lato;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 22px;
-      color: #FFFFFF; }
-    .main .block__img .counter__followers {
-      bottom: 110px;
-      right: 68px; }
-    .main .block__img .counter__likes {
-      bottom: 110px;
-      left: 72px; }
-    .main .block__img .counter__comments {
-      bottom: 110px;
-      left: 107px; }
-    .main .block__img .counter__dm {
-      font-size: 10px;
-      top: 32px;
-      right: 55px; }
     .main .block__img .imgMobile__Text {
       display: none;
       position: absolute;
@@ -870,7 +846,8 @@ body {
   .offers--best .services__accordion {
     display: none;
     padding: 0 1rem;
-    list-style-type: none; }
+    list-style-type: none;
+    margin-bottom: 3rem; }
     .offers--best .services__accordionItem {
       display: flex;
       flex-direction: column;
@@ -884,6 +861,11 @@ body {
           background: url("../images/accordionPlus.svg") no-repeat;
           background-size: contain;
           margin: auto 1.5rem auto 0rem; }
+        .offers--best .services__accordionItem .accordion__questionWrapper .accordion__icon--opened {
+          width: 2.5rem;
+          height: 2.5rem;
+          background: url("../images/accordionMinus.svg") no-repeat;
+          background-size: contain; }
         .offers--best .services__accordionItem .accordion__questionWrapper .accordion__text {
           font-family: Raleway;
           font-style: normal;
@@ -1062,21 +1044,23 @@ body {
         text-transform: capitalize;
         width: calc(100% - 5rem);
         margin: auto; }
-  .offers--best .package .package__comments--zero {
-    padding-bottom: 0rem;
-    padding-top: .5rem; }
-  .offers--best .package .package__comments--margin {
-    margin-top: -2rem; }
-  .offers--best .package .package__comments--small {
-    font-size: 1.3rem;
-    padding: 0rem;
-    padding-top: .5rem; }
-  .offers--best .package .package__price .package__price--modified {
-    margin: auto .5rem 0rem auto; }
-  .offers--best .package .package__price--cents {
-    margin: 0rem; }
-  .offers--best .package .package__price--cents--modified {
-    margin-right: auto; }
+  .offers--best .package {
+    width: 260px; }
+    .offers--best .package .package__comments--zero {
+      padding-bottom: 0rem;
+      padding-top: .5rem; }
+    .offers--best .package .package__comments--margin {
+      margin-top: -2rem; }
+    .offers--best .package .package__comments--small {
+      font-size: 1.3rem;
+      padding: 0rem;
+      padding-top: .5rem; }
+    .offers--best .package .package__price .package__price--modified {
+      margin: auto .5rem 0rem auto; }
+    .offers--best .package .package__price--cents {
+      margin: 0rem; }
+    .offers--best .package .package__price--cents--modified {
+      margin-right: auto; }
   .offers--best .packageAutomatic {
     background: url("../images/packageAutomatic1.svg") no-repeat;
     background-position: bottom;
@@ -1106,6 +1090,59 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@-webkit-keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .commentsPackage2 {
     background: url("../fonts/../images/commentsPackage2.svg") no-repeat;
     display: block;
@@ -1121,6 +1158,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .commentsPackage3 {
     background: url("../fonts/../images/commentsPackage3.svg") no-repeat;
     display: block;
@@ -1136,6 +1218,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .commentsPackage4 {
     background: url("../fonts/../images/commentsPackage4.svg") no-repeat;
     display: block;
@@ -1151,6 +1278,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .likesPackage1 {
     background: url("../fonts/../images/likesPackage1.svg") no-repeat;
     display: block;
@@ -1166,6 +1338,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .likesPackage2 {
     background: url("../fonts/../images/likesPackage2.svg") no-repeat;
     display: block;
@@ -1181,6 +1398,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .likesPackage3 {
     background: url("../fonts/../images/likesPackage3.svg") no-repeat;
     display: block;
@@ -1196,6 +1458,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .likesPackage4 {
     background: url("../fonts/../images/likesPackage4.svg") no-repeat;
     display: block;
@@ -1211,6 +1518,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .followersPackage1 {
     background: url("../fonts/../images/followersPackage1.svg") no-repeat;
     display: block;
@@ -1226,6 +1578,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .followersPackage2 {
     background: url("../fonts/../images/followersPackage2.svg") no-repeat;
     display: block;
@@ -1241,6 +1638,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .followersPackage3 {
     background: url("../fonts/../images/followersPackage3.svg") no-repeat;
     display: block;
@@ -1256,6 +1698,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .followersPackage4 {
     background: url("../fonts/../images/followersPackage4.svg") no-repeat;
     display: block;
@@ -1271,6 +1758,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .automaticPackage1 {
     background: url("../fonts/../images/automaticPackage1.svg") no-repeat;
     display: block;
@@ -1286,6 +1818,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .automaticPackage2 {
     background: url("../fonts/../images/automaticPackage2.svg") no-repeat;
     display: block;
@@ -1301,6 +1878,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .automaticPackage3 {
     background: url("../fonts/../images/automaticPackage3.svg") no-repeat;
     display: block;
@@ -1316,6 +1938,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .automaticPackage4 {
     background: url("../fonts/../images/automaticPackage4.svg") no-repeat;
     display: block;
@@ -1331,6 +1998,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .freeTrialPackage1 {
     background: url("../fonts/../images/freeTrialPackage1.svg") no-repeat;
     display: block;
@@ -1346,6 +2058,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .freeTrialPackage2 {
     background: url("../fonts/../images/freeTrialPackage2.svg") no-repeat;
     display: block;
@@ -1361,6 +2118,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .freeTrialPackage3 {
     background: url("../fonts/../images/freeTrialPackage3.svg") no-repeat;
     display: block;
@@ -1376,6 +2178,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best .freeTrialPackage4 {
     background: url("../fonts/../images/freeTrialPackage4.svg") no-repeat;
     display: block;
@@ -1391,6 +2238,51 @@ body {
     background: #DD044C; }
   .offers--best .freeTrialPackage1 .package__button, .offers--best .freeTrialPackage2 .package__button, .offers--best .freeTrialPackage3 .package__button, .offers--best .freeTrialPackage4 .package__button {
     background: #F57F17; }
+  .offers--best .package__bestOffer {
+    border: 2px solid #D81B60;
+    border-radius: 10px;
+    position: relative; }
+    .offers--best .package__bestOffer .bestOffer__label {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      padding: 1rem 3.5rem;
+      background: linear-gradient(90deg, #329CC0 0%, #C92668 95.82%);
+      box-shadow: 2px 2px 4px rgba(33, 33, 33, 0.15);
+      border-radius: 5px;
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      color: #FFFFFF;
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
+    .offers--best .package__bestOffer .package__button {
+      background: linear-gradient(120deg, #C2185B, #E91E63, #21B4B7);
+      background-size: 400% 400%;
+      -webkit-animation: gradientLink 2s ease infinite;
+              animation: gradientLink 2s ease infinite; }
+
+@keyframes gradientLink {
+  0% {
+    background-position: 14% 0%; }
+  50% {
+    background-position: 87% 100%; }
+  100% {
+    background-position: 14% 0%; } }
   .offers--best__link {
     display: flex;
     padding: 2rem;
@@ -1420,14 +2312,6 @@ body {
       background-size: 400% 400%;
       -webkit-animation: gradientLink 2s ease infinite;
               animation: gradientLink 2s ease infinite; }
-
-@-webkit-keyframes gradientLink {
-  0% {
-    background-position: 14% 0%; }
-  50% {
-    background-position: 87% 100%; }
-  100% {
-    background-position: 14% 0%; } }
 
 @keyframes gradientLink {
   0% {
@@ -1640,10 +2524,10 @@ body {
     position: relative; }
   .main .block__img .user1Comment {
     top: 15rem;
-    left: 5rem; }
+    left: 11rem; }
   .main .block__img .user2Comment {
     bottom: 15rem;
-    left: 4rem; }
+    left: 9rem; }
   .main .block__img .user3Comment {
     top: 21rem;
     right: 5rem; }
@@ -1654,7 +2538,7 @@ body {
     width: 80%;
     margin: 2rem auto; }
   .offers--best__box .package {
-    width: 60%; }
+    width: 260px; }
     .offers--best__box .package__price {
       font-size: 4rem;
       padding: 2rem; }
@@ -1697,10 +2581,10 @@ body {
     background-size: cover; }
     .main .block__img .user1Comment {
       top: 15rem;
-      left: 8rem; }
+      left: 14rem; }
     .main .block__img .user2Comment {
       bottom: 15rem;
-      left: 10rem; }
+      left: 15rem; }
     .main .block__img .user3Comment {
       top: 21rem;
       right: 7rem; }
@@ -1740,13 +2624,18 @@ body {
   .offers--best {
     padding: 2rem;
     justify-content: space-between; }
-    .offers--best__box {
-      flex-wrap: wrap;
-      flex-direction: row; }
-      .offers--best__box .package {
-        width: 40%; }
+    .offers--best__box .package {
+      width: 320px;
+      background-position: bottom right; }
+      .offers--best__box .package .bestOffer__label {
+        left: 90px; }
     .offers--best .title {
-      margin-top: 0rem; }
+      margin-top: 3rem; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
   .stats .card__wrapper .stats__card {
     width: 45%; }
   .comments .slide {
@@ -1859,9 +2748,9 @@ body {
       padding: 0rem;
       width: 50%; }
       .benefits .benefit__title {
-        margin-top: 2rem; }
+        margin-top: 1.8rem; }
       .benefits .benefit__text {
-        font-size: 1.5rem; }
+        font-size: 1.4rem; }
     .benefits .benefit__end {
       width: 100%; }
       .benefits .benefit__end:after {
@@ -1884,55 +2773,32 @@ body {
     .offers--best .title {
       margin-top: 0rem; }
     .offers--best__box {
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 5;
-      height: 50rem; }
-      .offers--best__box .package {
-        width: 28%;
-        padding: 0rem 1rem;
-        margin: 2rem auto; }
-        .offers--best__box .package__price {
-          font-size: 3.2rem;
-          padding: .5rem; }
-          .offers--best__box .package__price--currency, .offers--best__box .package__price--cents {
-            font-size: 1.6rem; }
-        .offers--best__box .package__comments {
-          font-size: 2.3rem;
-          padding: 3rem .5rem 2rem .5rem; }
-        .offers--best__box .package__button-text {
-          font-size: 1.5rem; }
-      .offers--best__box .packageAside--left {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -3;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-      .offers--best__box .packageAside--leftAnimated {
-        -webkit-transform: translate3D(240px, 130px, 0);
-                transform: translate3D(240px, 130px, 0); }
-      .offers--best__box .packageAside--right {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -5;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-      .offers--best__box .packageAside--rightAnimated {
-        -webkit-transform: translate3D(-240px, 130px, 0);
-                transform: translate3D(-240px, 130px, 0); }
-      .offers--best__box .packageMain {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 10;
-        position: absolute; }
+      display: flex; }
+      .offers--best__box .offers__wrapper--shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        .offers--best__box .offers__wrapper--shown .package {
+          width: 240px;
+          padding: 0rem 1rem;
+          margin: 2rem auto; }
+          .offers--best__box .offers__wrapper--shown .package__price {
+            font-size: 3.2rem;
+            padding: .5rem; }
+            .offers--best__box .offers__wrapper--shown .package__price--currency, .offers--best__box .offers__wrapper--shown .package__price--cents {
+              font-size: 1.6rem; }
+          .offers--best__box .offers__wrapper--shown .package__comments {
+            font-size: 2.3rem;
+            padding: 3rem .5rem 2rem .5rem; }
+          .offers--best__box .offers__wrapper--shown .package__button-text {
+            font-size: 1.5rem; }
     .offers--best__link {
       width: 50%; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
   .stats .card__wrapper .stats__card {
     width: 45%; }
   .comments .slide {
@@ -1945,7 +2811,7 @@ body {
         width: 2.5rem;
         height: 2.5rem; } }
 
-@media (min-width: 768px) and (max-width: 951px) {
+@media (min-width: 768px) and (max-width: 950px) {
   .header__logo {
     height: 3.1rem;
     width: 17.5rem;
@@ -2043,11 +2909,11 @@ body {
         font-size: 1.3rem; }
       .main .block__img .user1Comment {
         top: 15rem;
-        left: 6rem;
+        left: 11rem;
         z-index: 10; }
       .main .block__img .user2Comment {
         bottom: 15rem;
-        left: 5rem;
+        left: 11rem;
         z-index: 10; }
       .main .block__img .user3Comment {
         top: 21rem;
@@ -2078,18 +2944,21 @@ body {
     height: 41rem;
     margin-top: -13rem;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    justify-content: center; }
     .benefits .benefit {
-      margin-top: 15rem;
+      margin-top: 13rem;
       padding: 0rem;
-      background: none; }
+      background: none;
+      flex-basis: 33%; }
       .benefits .benefit__title {
-        margin-top: 1.8rem; }
+        margin-top: 1.8rem;
+        font-size: 1.8rem; }
       .benefits .benefit__icon {
         width: 5rem;
         height: 5rem; }
       .benefits .benefit__text {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin: 1rem auto;
         width: 70%; }
     .benefits .benefit__end:after {
@@ -2114,70 +2983,38 @@ body {
       margin-top: 0rem;
       margin-bottom: 1rem; }
     .offers--best__box {
-      display: flex;
-      position: relative;
-      z-index: 5;
-      height: 43rem;
-      align-items: center; }
-      .offers--best__box .package {
-        width: 25%;
-        padding: 0rem 1rem;
-        margin: 2rem auto; }
-        .offers--best__box .package__price {
-          font-size: 3.1rem;
-          padding: 1rem; }
-          .offers--best__box .package__price--currency, .offers--best__box .package__price--cents {
-            font-size: 1.5rem; }
-        .offers--best__box .package__comments {
-          font-size: 2.2rem;
-          padding: 3rem .5rem 1rem .5rem; }
-        .offers--best__box .package .package__comments--margin {
-          margin-top: -1rem; }
-        .offers--best__box .package__button {
-          margin: 2rem auto 1rem auto;
-          padding: 1.5rem 2rem; }
-          .offers--best__box .package__button-text {
-            font-size: 1.7rem; }
-      .offers--best__box .packageAside--left {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -3;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-        .offers--best__box .packageAside--left .package__button {
-          transition: all .5s ease; }
-          .offers--best__box .packageAside--left .package__button:hover {
-            background: #105759; }
-      .offers--best__box .packageAside--leftAnimated {
-        -webkit-transform: translate3D(265px, 130px, 0);
-                transform: translate3D(265px, 130px, 0); }
-      .offers--best__box .packageAside--right {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -5;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-        .offers--best__box .packageAside--right .package__button {
-          transition: all .5s ease; }
-          .offers--best__box .packageAside--right .package__button:hover {
-            background: #9f105c; }
-      .offers--best__box .packageAside--rightAnimated {
-        -webkit-transform: translate3D(-265px, 130px, 0);
-                transform: translate3D(-265px, 130px, 0); }
-      .offers--best__box .packageMain {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 10;
-        position: absolute; }
-      .offers--best__box .hotPackage .package__button {
-        transition: all .5s ease; }
-        .offers--best__box .hotPackage .package__button:hover {
-          background: #a22400; }
+      display: flex; }
+      .offers--best__box .offers__wrapper--shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; }
+        .offers--best__box .offers__wrapper--shown .package {
+          width: 240px;
+          padding: 0rem 1rem;
+          margin: 2rem auto;
+          background-position: bottom right; }
+          .offers--best__box .offers__wrapper--shown .package .bestOffer__label {
+            left: 45px; }
+          .offers--best__box .offers__wrapper--shown .package__price {
+            font-size: 3.1rem;
+            padding: 1rem; }
+            .offers--best__box .offers__wrapper--shown .package__price--currency, .offers--best__box .offers__wrapper--shown .package__price--cents {
+              font-size: 1.5rem; }
+          .offers--best__box .offers__wrapper--shown .package__comments {
+            font-size: 2.2rem;
+            padding: 3rem .5rem 1rem .5rem; }
+          .offers--best__box .offers__wrapper--shown .package .package__comments--margin {
+            margin-top: -1rem; }
+          .offers--best__box .offers__wrapper--shown .package__button {
+            margin: 2rem auto 1rem auto;
+            padding: 1.5rem 2rem; }
+            .offers--best__box .offers__wrapper--shown .package__button-text {
+              font-size: 1.7rem; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
     .offers--best__link {
       width: 30%;
       margin-bottom: 0rem; }
@@ -2232,7 +3069,7 @@ body {
     .footer__info .footer__links .footer__link:hover {
       color: #BF837C; } }
 
-@media (min-width: 952px) and (max-width: 1120px) {
+@media (min-width: 951px) and (max-width: 1120px) {
   .header {
     display: flex;
     justify-content: space-between;
@@ -2331,11 +3168,11 @@ body {
         font-size: 1.3rem; }
       .main .block__img .user1Comment {
         top: 15rem;
-        left: 19rem;
+        left: 25rem;
         z-index: 10; }
       .main .block__img .user2Comment {
         bottom: 15rem;
-        left: 17rem;
+        left: 25rem;
         z-index: 10; }
       .main .block__img .user3Comment {
         top: 21rem;
@@ -2368,22 +3205,22 @@ body {
     z-index: 1;
     justify-content: center; }
     .benefits .benefit {
-      margin-top: 19rem;
+      margin-top: 18rem;
       padding: 0rem;
       background: none;
       display: flex;
       flex-direction: column;
-      width: 25%; }
+      flex-basis: 33%; }
       .benefits .benefit__title {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         order: 2;
         margin-bottom: 0rem; }
       .benefits .benefit__icon {
-        width: 5rem;
-        height: 5rem;
+        width: 3rem;
+        height: 3rem;
         order: 1; }
       .benefits .benefit__text {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         margin: 1rem auto;
         width: 70%;
         order: 3; }
@@ -2406,73 +3243,39 @@ body {
       margin-top: 0rem;
       margin-bottom: 1rem; }
     .offers--best__box {
-      display: flex;
-      position: relative;
-      z-index: 5;
-      height: 43rem;
-      align-items: center; }
-      .offers--best__box .package {
-        width: 25%;
-        padding: 0rem 1rem;
-        margin: 2rem auto; }
-        .offers--best__box .package__price {
-          font-size: 3.1rem;
-          padding: 1rem; }
-          .offers--best__box .package__price--currency, .offers--best__box .package__price--cents {
-            font-size: 1.5rem; }
-        .offers--best__box .package__comments {
-          font-size: 2.2rem;
-          padding: 3rem .5rem 1rem .5rem; }
-        .offers--best__box .package .package__comments--margin {
-          margin-top: -1rem; }
-        .offers--best__box .package__button {
-          margin: 2rem auto 1rem auto;
-          padding: 1.5rem 2rem; }
-          .offers--best__box .package__button-text {
-            font-size: 1.7rem; }
-      .offers--best__box .packageAside--left {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -3;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-        .offers--best__box .packageAside--left .package__button {
-          background: #0C4243;
-          transition: all .5s ease; }
-          .offers--best__box .packageAside--left .package__button:hover {
-            background: #105759; }
-      .offers--best__box .packageAside--leftAnimated {
-        -webkit-transform: translate3D(350px, 130px, 0);
-                transform: translate3D(350px, 130px, 0); }
-      .offers--best__box .packageAside--right {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -5;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-        .offers--best__box .packageAside--right .package__button {
-          background: #880E4F;
-          transition: all .5s ease; }
-          .offers--best__box .packageAside--right .package__button:hover {
-            background: #9f105c; }
-      .offers--best__box .packageAside--rightAnimated {
-        -webkit-transform: translate3D(-350px, 130px, 0);
-                transform: translate3D(-350px, 130px, 0); }
-      .offers--best__box .packageMain {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 10;
-        position: absolute; }
-      .offers--best__box .hotPackage .package__button {
-        background: #881E00;
-        transition: all .5s ease; }
-        .offers--best__box .hotPackage .package__button:hover {
-          background: #a22400; }
+      display: flex; }
+      .offers--best__box .offers__wrapper--shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .offers--best__box .offers__wrapper--shown .package {
+          width: 240px;
+          padding: 0rem 1rem;
+          margin: 2rem;
+          background-position: bottom right; }
+          .offers--best__box .offers__wrapper--shown .package .bestOffer__label {
+            left: 45px; }
+          .offers--best__box .offers__wrapper--shown .package__price {
+            font-size: 3.1rem;
+            padding: 1rem; }
+            .offers--best__box .offers__wrapper--shown .package__price--currency, .offers--best__box .offers__wrapper--shown .package__price--cents {
+              font-size: 1.5rem; }
+          .offers--best__box .offers__wrapper--shown .package__comments {
+            font-size: 2.2rem;
+            padding: 3rem .5rem 1rem .5rem; }
+          .offers--best__box .offers__wrapper--shown .package .package__comments--margin {
+            margin-top: -1rem; }
+          .offers--best__box .offers__wrapper--shown .package__button {
+            margin: 2rem auto 1rem auto;
+            padding: 1.5rem 2rem; }
+            .offers--best__box .offers__wrapper--shown .package__button-text {
+              font-size: 1.7rem; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
     .offers--best__link {
       width: 30%;
       margin-bottom: 0rem;
@@ -2528,7 +3331,7 @@ body {
     .footer__info .footer__links .footer__link:hover {
       color: #BF837C; } }
 
-@media screen and (min-width: 1121px) {
+@media (min-width: 1121px) and (max-width: 1205px) {
   .header {
     display: flex;
     justify-content: space-between;
@@ -2676,7 +3479,8 @@ body {
         order: 2;
         margin-bottom: 1rem;
         -webkit-transform: translateY(4rem);
-                transform: translateY(4rem); }
+                transform: translateY(4rem);
+        font-size: 1.8rem; }
       .benefits .benefit__icon {
         width: 5rem;
         height: 5rem;
@@ -2684,7 +3488,7 @@ body {
         -webkit-transform: translateY(4rem);
                 transform: translateY(4rem); }
       .benefits .benefit__text {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin: 0rem auto;
         width: 70%;
         order: 3;
@@ -2708,76 +3512,42 @@ body {
     .offers--best .title {
       margin-top: 2rem; }
     .offers--best__box {
-      display: flex;
-      align-items: center;
-      position: relative;
-      z-index: 5;
-      height: 45rem; }
-      .offers--best__box .package {
-        width: 20%;
-        padding: 0rem 1rem;
-        margin: 2rem auto; }
-        .offers--best__box .package__price {
-          font-size: 3.1rem;
-          padding: 1rem; }
-          .offers--best__box .package__price--currency, .offers--best__box .package__price--cents {
-            font-size: 1.5rem; }
-        .offers--best__box .package__comments {
-          font-size: 2.2rem;
-          padding: 3rem .5rem 1rem .5rem; }
-        .offers--best__box .package .package__comments--margin {
-          margin-top: -1rem; }
-        .offers--best__box .package__button {
-          margin: 2rem auto 1rem auto;
-          padding: 1.5rem 2rem; }
-          .offers--best__box .package__button-text {
-            font-size: 1.7rem; }
-      .offers--best__box .packageAside--left {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -3;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-        .offers--best__box .packageAside--left .package__button {
-          background: #0C4243;
-          transition: all .5s ease; }
-          .offers--best__box .packageAside--left .package__button:hover {
-            background: #105759; }
-      .offers--best__box .packageAside--leftAnimated {
-        -webkit-transform: translate3D(360px, 150px, 0);
-                transform: translate3D(360px, 150px, 0); }
-      .offers--best__box .packageAside--right {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -5;
-        -webkit-transform: translate3D(0, 0, 0);
-                transform: translate3D(0, 0, 0);
-        transition: all 1s ease; }
-        .offers--best__box .packageAside--right .package__button {
-          background: #880E4F;
-          transition: all .5s ease; }
-          .offers--best__box .packageAside--right .package__button:hover {
-            background: #9f105c; }
-      .offers--best__box .packageAside--rightAnimated {
-        -webkit-transform: translate3D(-360px, 150px, 0);
-                transform: translate3D(-360px, 150px, 0); }
-      .offers--best__box .packageMain {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: 10;
-        position: absolute; }
-      .offers--best__box .hotPackage .package__button {
-        background: #881E00;
-        transition: all .5s ease; }
-        .offers--best__box .hotPackage .package__button:hover {
-          background: #a22400; }
+      display: flex; }
+      .offers--best__box .offers__wrapper--shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .offers--best__box .offers__wrapper--shown .package {
+          width: 240px;
+          padding: 0rem 1rem;
+          margin: 2rem;
+          background-position: bottom right; }
+          .offers--best__box .offers__wrapper--shown .package .bestOffer__label {
+            left: 45px; }
+          .offers--best__box .offers__wrapper--shown .package__price {
+            font-size: 3.1rem;
+            padding: 1rem; }
+            .offers--best__box .offers__wrapper--shown .package__price--currency, .offers--best__box .offers__wrapper--shown .package__price--cents {
+              font-size: 1.5rem; }
+          .offers--best__box .offers__wrapper--shown .package__comments {
+            font-size: 2.2rem;
+            padding: 3rem .5rem 1rem .5rem; }
+          .offers--best__box .offers__wrapper--shown .package .package__comments--margin {
+            margin-top: -1rem; }
+          .offers--best__box .offers__wrapper--shown .package__button {
+            margin: 2rem auto 1rem auto;
+            padding: 1.5rem 2rem; }
+            .offers--best__box .offers__wrapper--shown .package__button-text {
+              font-size: 1.7rem; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
     .offers--best__link {
       width: 30%;
-      margin-bottom: 0rem;
+      margin-bottom: 3rem;
       font-size: 1.5rem; }
       .offers--best__link:hover {
         color: #C2185B; }
@@ -2849,6 +3619,560 @@ body {
     font-size: 2rem; }
   .tos strong {
     font-size: 1.5rem; }
+
+@media (min-width: 1206px) and (max-width: 1320px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 0rem 2rem; }
+    .header__logo {
+      height: 3.1rem;
+      width: 17.5rem;
+      margin: 1rem; }
+    .header__nav {
+      display: flex;
+      flex-basis: 40%;
+      justify-content: flex-end;
+      position: static;
+      flex-direction: row;
+      height: 70px;
+      padding-top: 0.7rem; }
+      .header__nav .menu__list {
+        flex-direction: row;
+        opacity: 1;
+        background: none;
+        border: none;
+        position: static;
+        width: 100%;
+        margin: 0rem;
+        padding: 0rem;
+        visibility: visible; }
+        .header__nav .menu__list-item {
+          display: flex;
+          margin-top: 0rem; }
+          .header__nav .menu__list-item .item__link {
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+            position: relative;
+            color: #111;
+            font-weight: 400;
+            font-size: 1.5rem;
+            border: none;
+            text-align: center; }
+            .header__nav .menu__list-item .item__link:before {
+              content: none; }
+            .header__nav .menu__list-item .item__link:after {
+              content: '';
+              position: absolute;
+              transition: -webkit-transform .5s ease;
+              transition: transform .5s ease;
+              transition: transform .5s ease, -webkit-transform .5s ease;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: #D81B60;
+              -webkit-transform: scaleX(0);
+                      transform: scaleX(0); }
+            .header__nav .menu__list-item .item__link:hover:after {
+              -webkit-transform: scaleX(1);
+                      transform: scaleX(1); }
+      .header__nav .menu__icon {
+        display: none; }
+      .header__nav .lang__box {
+        flex-basis: 10%;
+        margin-left: 1rem; }
+        .header__nav .lang__box .lang {
+          font-size: 1.3rem;
+          padding: 0.5rem; }
+          .header__nav .lang__box .lang:hover {
+            color: #d91b66; }
+        .header__nav .lang__box .lang--chosen {
+          font-size: 1.3rem; }
+  .main {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row; }
+    .main .block__text {
+      margin: auto;
+      margin-left: 10rem; }
+      .main .block__textHeadline {
+        width: 100%;
+        margin: 0rem auto;
+        font-size: 2.7rem;
+        text-align: left; }
+      .main .block__textSubtitle {
+        font-size: 1.7rem;
+        text-align: left;
+        padding-left: 0rem; }
+    .main .block__img {
+      background: url("../images/landingOfferCardRight.svg") no-repeat;
+      background-position: right;
+      background-size: auto;
+      width: 75%;
+      position: relative; }
+      .main .block__img .block__imgMobile {
+        position: relative;
+        z-index: 3;
+        margin: 0rem 15rem 0rem auto; }
+      .main .block__img .imgMobile__Text {
+        font-size: 1.3rem; }
+      .main .block__img .user1Comment {
+        top: 15rem;
+        left: 28rem;
+        z-index: 10; }
+      .main .block__img .user2Comment {
+        bottom: 15rem;
+        left: 28rem;
+        z-index: 10; }
+      .main .block__img .user3Comment {
+        top: 21rem;
+        right: 7rem;
+        z-index: 10; }
+      .main .block__img .user4Comment {
+        bottom: 8rem;
+        right: 5rem;
+        z-index: 10; }
+    .main .main__button {
+      width: 50%;
+      margin: 3rem auto 3rem 0rem;
+      padding: 1.5rem 2rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 5; }
+      .main .main__button:hover {
+        background: #c11856;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25); }
+  .benefits {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 0rem;
+    background: url("../images/benefitBgBig.svg") no-repeat;
+    background-size: cover;
+    margin-top: -25rem;
+    position: relative;
+    z-index: 1;
+    justify-content: center; }
+    .benefits .benefit {
+      margin-top: 27rem;
+      margin-bottom: 4rem;
+      padding: 0rem;
+      background: none;
+      width: 22%;
+      display: flex;
+      flex-direction: column; }
+      .benefits .benefit__title {
+        margin-top: 1.8rem;
+        order: 2;
+        margin-bottom: 1rem;
+        -webkit-transform: translateY(4rem);
+                transform: translateY(4rem);
+        font-size: 1.7rem; }
+      .benefits .benefit__icon {
+        width: 5rem;
+        height: 5rem;
+        order: 1;
+        -webkit-transform: translateY(4rem);
+                transform: translateY(4rem); }
+      .benefits .benefit__text {
+        font-size: 1.4rem;
+        margin: 0rem auto;
+        width: 70%;
+        order: 3;
+        text-align: left;
+        -webkit-transform: translateY(4rem);
+                transform: translateY(4rem); }
+    .benefits .benefit__end:after {
+      content: none; }
+    .benefits .benefit__end .benefit__text {
+      margin: 1rem auto; }
+    .benefits .benefit__middle .benefit__text {
+      margin: 1rem auto; }
+    .benefits .benefit__start {
+      background: none; }
+      .benefits .benefit__start:before {
+        content: none; }
+      .benefits .benefit__start .benefit__text {
+        margin: 1rem auto; }
+  .offers--best {
+    padding: 2rem 1rem; }
+    .offers--best .title {
+      margin-top: 2rem; }
+    .offers--best__box {
+      display: flex; }
+      .offers--best__box .offers__wrapper--shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .offers--best__box .offers__wrapper--shown .package {
+          width: 240px;
+          padding: 0rem 1rem;
+          margin: 2rem auto;
+          background-position: bottom right; }
+          .offers--best__box .offers__wrapper--shown .package .bestOffer__label {
+            left: 45px; }
+          .offers--best__box .offers__wrapper--shown .package__price {
+            font-size: 3.1rem;
+            padding: 1rem; }
+            .offers--best__box .offers__wrapper--shown .package__price--currency, .offers--best__box .offers__wrapper--shown .package__price--cents {
+              font-size: 1.5rem; }
+          .offers--best__box .offers__wrapper--shown .package__comments {
+            font-size: 2.2rem;
+            padding: 3rem .5rem 1rem .5rem; }
+          .offers--best__box .offers__wrapper--shown .package .package__comments--margin {
+            margin-top: -1rem; }
+          .offers--best__box .offers__wrapper--shown .package__button {
+            margin: 2rem auto 1rem auto;
+            padding: 1.5rem 2rem; }
+            .offers--best__box .offers__wrapper--shown .package__button-text {
+              font-size: 1.7rem; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
+    .offers--best__link {
+      width: 30%;
+      margin-bottom: 3rem;
+      font-size: 1.5rem; }
+      .offers--best__link:hover {
+        color: #C2185B; }
+  .stats {
+    margin-top: 0rem;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(to top, #D81B60, #d41a5f, #cf1a5e, #cb195d, #c7195c, #b72371, #a13082, #863c8d);
+    flex-direction: row;
+    justify-content: center;
+    padding: 0rem; }
+    .stats .card__wrapper {
+      margin: 0rem;
+      width: 25%; }
+      .stats .card__wrapper .stats__card .stats__subtitle {
+        font-size: 1.4rem; }
+      .stats .card__wrapper .stats__card .stats__icon {
+        width: 4rem;
+        height: 4rem; }
+      .stats .card__wrapper .stats__card .stats__title {
+        font-size: 4.3rem; }
+      .stats .card__wrapper .stats__card .stats__subtitle--right {
+        font-size: 1.4rem; }
+  .comments {
+    padding: 0rem 1rem 4rem 1rem; }
+    .comments .slide {
+      height: 200px; }
+      .comments .slide .card__user {
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+        margin: 5rem auto; }
+        .comments .slide .card__user .user__image {
+          width: 60px;
+          height: 60px;
+          margin: 0rem 2rem; }
+        .comments .slide .card__user .user__info .user__comment {
+          padding: 0rem;
+          width: 100%;
+          margin: 1rem auto; }
+        .comments .slide .card__user .user__info .user__name {
+          padding: 1rem 3rem; }
+          .comments .slide .card__user .user__info .user__name:before {
+            width: 2.5rem;
+            height: 2.5rem; }
+    .comments .flickity-button:hover .flickity-button-icon {
+      fill: #157476;
+      opacity: .7; }
+    .comments .flickity-prev-next-button.previous {
+      top: 50%;
+      left: 230px; }
+    .comments .flickity-prev-next-button.next {
+      top: 50%;
+      right: 230px; }
+  .footer__info .telegram__link:hover {
+    color: #47dbde; }
+  .footer__info .footer__links .footer__link {
+    margin: 4rem 4rem 1rem 4rem; }
+    .footer__info .footer__links .footer__link:hover {
+      color: #BF837C; } }
+
+@media screen and (min-width: 1321px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem 0rem 2rem; }
+    .header__logo {
+      height: 3.1rem;
+      width: 17.5rem;
+      margin: 1rem; }
+    .header__nav {
+      display: flex;
+      flex-basis: 40%;
+      justify-content: flex-end;
+      position: static;
+      flex-direction: row;
+      height: 70px;
+      padding-top: 0.7rem; }
+      .header__nav .menu__list {
+        flex-direction: row;
+        opacity: 1;
+        background: none;
+        border: none;
+        position: static;
+        width: 100%;
+        margin: 0rem;
+        padding: 0rem;
+        visibility: visible; }
+        .header__nav .menu__list-item {
+          display: flex;
+          margin-top: 0rem; }
+          .header__nav .menu__list-item .item__link {
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+            position: relative;
+            color: #111;
+            font-weight: 400;
+            font-size: 1.5rem;
+            border: none;
+            text-align: center; }
+            .header__nav .menu__list-item .item__link:before {
+              content: none; }
+            .header__nav .menu__list-item .item__link:after {
+              content: '';
+              position: absolute;
+              transition: -webkit-transform .5s ease;
+              transition: transform .5s ease;
+              transition: transform .5s ease, -webkit-transform .5s ease;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: #D81B60;
+              -webkit-transform: scaleX(0);
+                      transform: scaleX(0); }
+            .header__nav .menu__list-item .item__link:hover:after {
+              -webkit-transform: scaleX(1);
+                      transform: scaleX(1); }
+      .header__nav .menu__icon {
+        display: none; }
+      .header__nav .lang__box {
+        flex-basis: 10%;
+        margin-left: 1rem; }
+        .header__nav .lang__box .lang {
+          font-size: 1.3rem;
+          padding: 0.5rem; }
+          .header__nav .lang__box .lang:hover {
+            color: #d91b66; }
+        .header__nav .lang__box .lang--chosen {
+          font-size: 1.3rem; }
+  .main {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row; }
+    .main .block__text {
+      margin: auto;
+      margin-left: 10rem; }
+      .main .block__textHeadline {
+        width: 100%;
+        margin: 0rem auto;
+        font-size: 2.7rem;
+        text-align: left; }
+      .main .block__textSubtitle {
+        font-size: 1.7rem;
+        text-align: left;
+        padding-left: 0rem; }
+    .main .block__img {
+      background: url("../images/landingOfferCardRight.svg") no-repeat;
+      background-position: right;
+      background-size: auto;
+      width: 75%;
+      position: relative; }
+      .main .block__img .block__imgMobile {
+        position: relative;
+        z-index: 3;
+        margin: 0rem 15rem 0rem auto; }
+      .main .block__img .imgMobile__Text {
+        font-size: 1.3rem; }
+      .main .block__img .user1Comment {
+        top: 15rem;
+        left: 44rem;
+        z-index: 10; }
+      .main .block__img .user2Comment {
+        bottom: 15rem;
+        left: 44rem;
+        z-index: 10; }
+      .main .block__img .user3Comment {
+        top: 21rem;
+        right: 7rem;
+        z-index: 10; }
+      .main .block__img .user4Comment {
+        bottom: 8rem;
+        right: 5rem;
+        z-index: 10; }
+    .main .main__button {
+      width: 50%;
+      margin: 3rem auto 3rem 0rem;
+      padding: 1.5rem 2rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 5; }
+      .main .main__button:hover {
+        background: #c11856;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25); }
+  .benefits {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 0rem;
+    background: url("../images/benefitBgBig.svg") no-repeat;
+    background-size: cover;
+    margin-top: -25rem;
+    position: relative;
+    z-index: 1;
+    justify-content: center; }
+    .benefits .benefit {
+      margin-top: 27rem;
+      margin-bottom: 4rem;
+      padding: 0rem;
+      background: none;
+      width: 22%;
+      display: flex;
+      flex-direction: column; }
+      .benefits .benefit__title {
+        margin-top: 1.8rem;
+        order: 2;
+        margin-bottom: 1rem;
+        -webkit-transform: translateY(4rem);
+                transform: translateY(4rem);
+        font-size: 1.7rem; }
+      .benefits .benefit__icon {
+        width: 5rem;
+        height: 5rem;
+        order: 1;
+        -webkit-transform: translateY(4rem);
+                transform: translateY(4rem); }
+      .benefits .benefit__text {
+        font-size: 1.4rem;
+        margin: 0rem auto;
+        width: 70%;
+        order: 3;
+        text-align: left;
+        -webkit-transform: translateY(4rem);
+                transform: translateY(4rem); }
+    .benefits .benefit__end:after {
+      content: none; }
+    .benefits .benefit__end .benefit__text {
+      margin: 1rem auto; }
+    .benefits .benefit__middle .benefit__text {
+      margin: 1rem auto; }
+    .benefits .benefit__start {
+      background: none; }
+      .benefits .benefit__start:before {
+        content: none; }
+      .benefits .benefit__start .benefit__text {
+        margin: 1rem auto; }
+  .offers--best {
+    padding: 2rem 1rem; }
+    .offers--best .title {
+      margin-top: 2rem; }
+    .offers--best .services__menu .service__button {
+      margin: 1rem 0rem; }
+    .offers--best .services__menu .service__question {
+      margin: auto 0rem;
+      margin-left: 2rem; }
+    .offers--best__box {
+      display: flex; }
+      .offers--best__box .offers__wrapper--shown {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; }
+        .offers--best__box .offers__wrapper--shown .package {
+          width: 240px;
+          padding: 0rem 1rem;
+          margin: 2rem;
+          background-position: bottom right; }
+          .offers--best__box .offers__wrapper--shown .package .bestOffer__label {
+            left: 45px; }
+          .offers--best__box .offers__wrapper--shown .package__price {
+            font-size: 3.1rem;
+            padding: 1rem; }
+            .offers--best__box .offers__wrapper--shown .package__price--currency, .offers--best__box .offers__wrapper--shown .package__price--cents {
+              font-size: 1.5rem; }
+          .offers--best__box .offers__wrapper--shown .package__comments {
+            font-size: 2.2rem;
+            padding: 3rem .5rem 1rem .5rem; }
+          .offers--best__box .offers__wrapper--shown .package .package__comments--margin {
+            margin-top: -1rem; }
+          .offers--best__box .offers__wrapper--shown .package__button {
+            margin: 2rem auto 1rem auto;
+            padding: 1.5rem 2rem; }
+            .offers--best__box .offers__wrapper--shown .package__button-text {
+              font-size: 1.7rem; }
+    .offers--best__link {
+      width: 30%;
+      margin-bottom: 3rem;
+      font-size: 1.5rem; }
+      .offers--best__link:hover {
+        color: #C2185B; }
+  .stats {
+    margin-top: 0rem;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(to top, #D81B60, #d41a5f, #cf1a5e, #cb195d, #c7195c, #b72371, #a13082, #863c8d);
+    flex-direction: row;
+    justify-content: center;
+    padding: 0rem; }
+    .stats .card__wrapper {
+      margin: 0rem;
+      width: 25%; }
+      .stats .card__wrapper .stats__card .stats__subtitle {
+        font-size: 1.4rem; }
+      .stats .card__wrapper .stats__card .stats__icon {
+        width: 4rem;
+        height: 4rem; }
+      .stats .card__wrapper .stats__card .stats__title {
+        font-size: 4.3rem; }
+      .stats .card__wrapper .stats__card .stats__subtitle--right {
+        font-size: 1.4rem; }
+  .comments {
+    padding: 0rem 1rem 4rem 1rem; }
+    .comments .slide {
+      height: 200px; }
+      .comments .slide .card__user {
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+        margin: 5rem auto; }
+        .comments .slide .card__user .user__image {
+          width: 60px;
+          height: 60px;
+          margin: 0rem 2rem; }
+        .comments .slide .card__user .user__info .user__comment {
+          padding: 0rem;
+          width: 100%;
+          margin: 1rem auto; }
+        .comments .slide .card__user .user__info .user__name {
+          padding: 1rem 3rem; }
+          .comments .slide .card__user .user__info .user__name:before {
+            width: 2.5rem;
+            height: 2.5rem; }
+    .comments .flickity-button:hover .flickity-button-icon {
+      fill: #157476;
+      opacity: .7; }
+    .comments .flickity-prev-next-button.previous {
+      top: 50%;
+      left: 230px; }
+    .comments .flickity-prev-next-button.next {
+      top: 50%;
+      right: 230px; }
+  .footer__info .telegram__link:hover {
+    color: #47dbde; }
+  .footer__info .footer__links .footer__link {
+    margin: 4rem 4rem 1rem 4rem; }
+    .footer__info .footer__links .footer__link:hover {
+      color: #BF837C; } }
 
 /* -------------------- Importing other pages -------------------- */
 /* -------------------- Packages Page -------------------- */

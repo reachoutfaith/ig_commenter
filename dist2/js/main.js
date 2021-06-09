@@ -70,7 +70,7 @@ $(window).load(function () {
 
     // counter on elements on imgMobile
 
-    $('.block__imgCounter').each(function () {
+    $('.rect').each(function () {
         let counter = 0;
         let element = $(this);
 
@@ -85,6 +85,8 @@ $(window).load(function () {
             counter += 100;
         }
     })
+
+    console.log($('#rect__likes').text())
 
 
     // Animation on scroll when the elements are in the view 
@@ -145,6 +147,13 @@ $(window).load(function () {
 
     // -------------------- Landing Offers Menu -------------------- //
 
+    $('.services__accordionItem--closed').slideUp();
+
+    $('.services__accordionItem').on('click', function () {
+        $(this).find('.services__accordionItem--closed').slideToggle();
+        $(this).find('.accordion__icon').toggleClass('accordion__icon--opened')
+
+    })
     $('.service__button').each(function () {
         $(this).on('click', function () {
             let prevBtnName = $('.service--chosen').attr('data-name');
