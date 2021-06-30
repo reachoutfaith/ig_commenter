@@ -1505,84 +1505,10 @@
 		}
 	}
 
-	.likes__checkBox {
-		display: flex;
-		justify-content: center;
-		margin: 2rem 0rem 1rem 0rem;
-
-		.checkbox{
-			display: flex;
-			outline: none;
-			border: none;
-			width: 2.5rem;
-			height: 2.5rem;
-			background: #D81B60;
-			border-radius: 5px;
-			position: relative;
-			margin: auto 0rem auto auto;
-		}
-
-		.checkbox--clicked {
-
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: .6rem;
-				left: .5rem;
-				width: 1.6rem;
-				height: 1.6rem;
-				background: url('../images/checkboxClicked.svg') no-repeat;
-				background-size: contain;
-			}
-		}
-
-		.checkbox__text {
-			@include Text();
-			@include fontSet(1.5rem, center, $Text);
-			margin: auto auto auto 1rem;
-		}
-	}
-
-	.likesBtn__addMore {
-		display: flex;
-		margin: 0rem auto 1rem auto;
-		padding: 2rem 0rem;
-		width: 20rem;
-		//background: $linkHover;
-		@include btnShadow();
-		border-radius: 5px;
-		outline: none;
-		border: none;
-		transition: background .5s ease;
-		margin-bottom: 2rem;
-		background: linear-gradient(120deg, #C2185B, #E91E63, $Decoration);
-			background-size: 400% 400%;
-			animation: gradientLink 2s ease infinite;
-
-			@keyframes gradientLink {
-			  0% {
-			    background-position: 14% 0%;
-			  }
-			  50% {
-			    background-position: 87% 100%;
-			  }
-			  100% {
-			    background-position: 14% 0%;
-			  }
-			}
-
-		.button__text{
-			@include Text();
-			@include fontSet(1.5rem, center, #fff);
-			text-transform: none;
-			margin: auto;
-		}
-		
-
-		&:active {
-			background: darken($linkHover, 5%);
-		}
+	.order__undertitle--left{
+		margin-top: 0rem;
+		text-align: left;
+		margin-bottom: 3rem;
 	}
 
 	.form__button--submit {
@@ -1612,24 +1538,138 @@
 			
 		}
 
-		.likes__button--skip {
-			background: #EEEEEE;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			border-radius: 5px;
-			margin-bottom: 3rem;
-			
-			.button__text{
-				@include fontSet(1.4rem, center, #212121);
-				text-transform: none;
-			}
-
-			&:active {
-				background: darken(#EEEEEE, 5%);
-			}
-		}
-
 	
 }
+
+ #main_bot {
+	display: flex;
+	width: 80%;
+	height: auto;
+	margin: 2rem auto 5rem auto;
+	position: relative; }
+   #slider_bottom {
+	width: 100%;
+	position: relative;
+	height: 7px;
+	border: none;
+	background: linear-gradient(89.21deg, #7B2A72 2.69%, #D81B60 100%);
+	box-shadow: -1px 2px 7px rgba(141, 15, 80, 0.2); }
+   .tooltip_bottom {
+	position: absolute;
+	display: none;
+	top: 45px;
+	left: -15px;
+	padding: 1rem 1.5rem;
+	color: #fff;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+	text-align: center;
+	background: #7B2A72;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15); }
+   #ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 15px;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	top: -12px;
+	margin-left: -12px;
+	background: #7B2A72;
+	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+	border: none; }
+   .ui-slider-range {
+	background: transparent;
+	position: absolute;
+	border: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 25px; }
+   #textarea_three {
+	top: 1.5rem;
+	left: -2.5rem; }
+   #textarea_four {
+	top: 1.5rem;
+	right: -2rem; }
+   #textarea_three,  #textarea_four {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 1.4rem;
+	text-align: center;
+	color: #212121;
+	padding: 1rem;
+	position: absolute; }
+
+.order .toggleBox {
+	display: flex;
+	margin: 1rem auto 3rem auto;
+	justify-content: center;
+  }
+  
+  
+  .order .toggleBox .toggle {
+	display: flex;
+	background: #858484;
+	border-radius: 50px;
+	width: 21rem;
+	height: 5rem;
+	margin: 1rem auto;
+	position: relative;
+  }
+  
+  .order .toggleBox .toggle .toggle__btn {
+	width: 7rem;
+	border-radius: 50px;
+	outline: none;
+	border: none;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	text-align: center;
+	color: #eee;
+	background: transparent;
+	height: 5rem;
+	z-index: 5;
+  }
+  
+  .order .toggleBox .toggle .toggle__btn--yes {
+	margin-right: auto;
+  }
+  
+  .likes__number--bold {
+	font-weight: 600;
+  }
+  
+  .order .toggleBox .toggle .toggle__btn--no {
+	margin-left: auto;
+  }
+  
+  .order .toggleBox .toggle .toggler {
+	width: 7rem;
+	height: 5rem;
+	background: #D81B60;
+	border-radius: 50px;
+	position: absolute;
+	top: 0rem;
+	left: 7rem;
+	transition: all .3s ease;
+	box-shadow: 2px 2px 4px rgba(105, 17, 49, 0.3);
+  }
+  
+  .order .toggleBox .toggle .toggler--yes {
+	left: 0rem;
+	transition: all .3s ease;
+	z-index: 1;
+  }
+  
+  .order .toggleBox .toggle .toggler--no {
+	left: 14rem;
+	transition: all .3s ease;
+	z-index: 1;
+  }
+
+
 
 /* -------------------- Mediaqueries -------------------- */
 @media (min-width: 450px) and (max-width: 549px) {

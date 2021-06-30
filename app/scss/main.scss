@@ -1011,49 +1011,6 @@ body {
 
 		}
 
-
-		@each $name in 'commentsPackage1', 'commentsPackage2', 'commentsPackage3','commentsPackage4',
-		'likesPackage1', 'likesPackage2', 'likesPackage3','likesPackage4',
-		'followersPackage1', 'followersPackage2', 'followersPackage3','followersPackage4',
-		'automaticPackage1', 'automaticPackage2', 'automaticPackage3','automaticPackage4',
-		'freeTrialPackage1', 'freeTrialPackage2', 'freeTrialPackage3','freeTrialPackage4' {
-			.#{$name} {
-				background: url('../fonts/../images/#{$name}.svg') no-repeat;
-				display: block;
-				background-size: contain;
-				background-position: bottom;
-			}
-
-		.commentsPackage1, .commentsPackage2, .commentsPackage3, .commentsPackage4 {
-			.package__button {
-				background: #2F4858;
-			}
-		}
-
-		.likesPackage1, .likesPackage2, .likesPackage3,.likesPackage4 {
-			.package__button {
-				background: #880E4F;
-			}
-		}
-
-		.followersPackage1, .followersPackage2, .followersPackage3, .followersPackage4 {
-			.package__button {
-				background: #4C0D72;
-			}
-		}
-
-		.automaticPackage1, .automaticPackage2, .automaticPackage3, .automaticPackage4 {
-			.package__button{
-				background: #DD044C;
-			}
-		}
-
-		.freeTrialPackage1, .freeTrialPackage2, .freeTrialPackage3, .freeTrialPackage4 {
-			.package__button {
-				background: #F57F17;
-			}
-		}
-
 		.package__bestOffer {
 			border: 2px solid #D81B60;
 			border-radius: 10px;
@@ -1114,6 +1071,51 @@ body {
 
 			}
 		}
+
+		.commentsPackage1, .commentsPackage2, .commentsPackage3, .commentsPackage4 {
+			.package__button {
+				background: #2F4858;
+			}
+		}
+
+		.likesPackage1, .likesPackage2, .likesPackage3,.likesPackage4 {
+			.package__button {
+				background: #880E4F;
+			}
+		}
+
+		.followersPackage1, .followersPackage2, .followersPackage3, .followersPackage4 {
+			.package__button {
+				background: #4C0D72;
+			}
+		}
+
+		.automaticPackage1, .automaticPackage2, .automaticPackage3, .automaticPackage4 {
+			.package__button{
+				background: #DD044C;
+			}
+		}
+
+		.freeTrialPackage1, .freeTrialPackage2, .freeTrialPackage3, .freeTrialPackage4 {
+			.package__button {
+				background: #F57F17;
+			}
+		}
+
+		@each $name in 'commentsPackage1', 'commentsPackage2', 'commentsPackage3','commentsPackage4',
+		'likesPackage1', 'likesPackage2', 'likesPackage3','likesPackage4',
+		'followersPackage1', 'followersPackage2', 'followersPackage3','followersPackage4',
+		'automaticPackage1', 'automaticPackage2', 'automaticPackage3','automaticPackage4',
+		'freeTrialPackage1', 'freeTrialPackage2', 'freeTrialPackage3','freeTrialPackage4' {
+			.#{$name} {
+				background: url('../fonts/../images/#{$name}.svg') no-repeat;
+				display: block;
+				background-size: contain;
+				background-position: bottom;
+			}
+
+		
+
 
 }
 
